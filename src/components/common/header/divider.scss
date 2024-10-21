@@ -1,0 +1,28 @@
+.divider {
+    height: 5px; // Divider yüksekliği
+    width: 100%; // Tam genişlik
+    background: linear-gradient(
+      270deg,
+      red,
+      orange,
+      yellow,
+      green,
+      blue,
+      indigo,
+      violet
+    );
+    background-size: 400%; // Geçişin daha fazla görünmesini sağlamak için
+    animation: gradientAnimation 9s ease infinite; // Animasyon
+  
+    @keyframes gradientAnimation {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+  }

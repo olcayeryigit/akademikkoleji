@@ -1,0 +1,18 @@
+.section-1-content {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.5rem; // Kartlara yuvarlak köşe eklemek için
+
+  // İçerik hover sırasında gösterilecek
+  .btn-zoom {
+    background-color: transparent; // Buton arka planı başlangıçta şeffaf
+    border-radius: 9999px; // Butonları yuvarlak yapmak için
+    border: 2px solid white; // Kenar rengi beyaz
+    transition: background-color 0.3s ease, transform 0.3s ease; // Renk ve büyütme geçiş
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.2); // Buton hover sırasında arka plan rengi hafif koyu
+      transform: scale(1.05); // Hover sırasında butonu büyütme
+    }
+  }
+}
