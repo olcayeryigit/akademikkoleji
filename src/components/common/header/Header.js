@@ -66,22 +66,22 @@ const Header = () => {
         {/* Navigation Links */}
         <div className={`hidden lg:flex items-center space-x-8`}>
           <nav className="text-blue-900 font-semibold space-x-6">
-            <Link href="#" className="transition duration-300 hover:text-blue-600">
+            <Link href="#" className="">
               Anasayfa
             </Link>
-            <Link href="#" className="transition duration-300 hover:text-blue-600">
+            <Link href="#" className="">
               Eğitimlerimiz
             </Link>
-            <Link href="#" className="transition duration-300 hover:text-blue-600">
+            <Link href="#" className="">
               Öğrenci Kulüpleri
             </Link>
-            <Link href="#" className="transition duration-300 hover:text-blue-600">
+            <Link href="#" className="">
               Kurumsal
             </Link>
-            <Link href="#" className="transition duration-300 hover:text-blue-600">
+            <Link href="#" className="">
               Kampüs
             </Link>
-            <Link href="#" className="transition duration-300 hover:text-blue-600">
+            <Link href="#" className="">
               İletişim
             </Link>
           </nav>
@@ -102,22 +102,22 @@ const Header = () => {
       <div className={`lg:hidden ${isOpen ? "block" : "hidden"}`}>
         <nav className="bg-blue-100 shadow-md rounded-lg p-4 mt-2">
           <div className="flex flex-col space-y-4 text-blue-900 font-medium">
-            <Link href="#" className="transition duration-300 hover:text-blue-600">
+            <Link href="#" className="">
               Anasayfa
             </Link>
-            <Link href="#" className="transition duration-300 hover:text-blue-600">
+            <Link href="#" className="">
               Eğitimlerimiz
             </Link>
-            <Link href="#" className="transition duration-300 hover:text-blue-600">
+            <Link href="#" className="">
               Öğrenci Kulüpleri
             </Link>
-            <Link href="#" className="transition duration-300 hover:text-blue-600">
+            <Link href="#" className="">
               Kurumsal
             </Link>
-            <Link href="#" className="transition duration-300 hover:text-blue-600">
+            <Link href="#" className="">
               Kampüs
             </Link>
-            <Link href="#" className="transition duration-300 hover:text-blue-600">
+            <Link href="#" className="">
               İletişim
             </Link>
                      <Image

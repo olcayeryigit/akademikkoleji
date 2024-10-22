@@ -17,7 +17,7 @@ const ActionBar = () => {
             >
               <FaSquareXTwitter
                 size={24}
-                className="text-white hover:text-blue-400 transition duration-300"
+                className="text-white"
               />
             </a>
             <a
@@ -27,7 +27,7 @@ const ActionBar = () => {
             >
               <FaFacebook
                 size={24}
-                className="text-white hover:text-blue-600 transition duration-300"
+                className="text-white"
               />
             </a>
             <a
@@ -37,7 +37,7 @@ const ActionBar = () => {
             >
               <FaInstagram
                 size={24}
-                className="text-white hover:text-pink-500 transition duration-300"
+                className="text-white"
               />
             </a>
             <a
@@ -47,7 +47,7 @@ const ActionBar = () => {
             >
               <FaYoutube
                 size={24}
-                className="text-white hover:text-red-600 transition duration-300"
+                className="text-white"
               />
             </a>
             <a
@@ -57,7 +57,7 @@ const ActionBar = () => {
             >
               <FaLinkedin
                 size={24}
-                className="text-white hover:text-blue-500 transition duration-300"
+                className="text-white"
               />
             </a>
 

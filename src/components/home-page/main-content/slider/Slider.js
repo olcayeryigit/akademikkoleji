@@ -42,15 +42,14 @@ const Slider = () => {
         >
             {images.map((image, index) => (
                 <SwiperSlide key={index} className='hover:cursor-grab transition duration-300'>
-                    <div className="flex justify-center w-full h-[68vh] relative">
+                    <div className="flex justify-center w-full h-[72vh] relative">
                         <Image
                             src={image.src}
                             alt={image.alt}
                             fill
-                            className="object-cover"
+                            className="object-contain object-top"
                         />
                     </div>
-                    <div className='w-full h-8'></div>
                 </SwiperSlide>
             ))}
         </Swiper>

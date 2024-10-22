@@ -58,12 +58,12 @@ const Section4 = () => {
       {/* Ortadaki video */}
       <div className="md:col-span-3 flex flex-col justify-center items-center">
         {/* Üst logo */}
-        <div className='shadow-2xl rounded w-full h-full mb-4 flex justify-center items-center'>
-          <Image width={304} height={77} src="/img/logo/2.png" alt="Logo" className="transform "/>
+        <div className='w-full h-full mb-2 flex justify-center items-center'>
+          <Image width={288} height={73} src="/img/logo/2.png" alt="Logo" className="transform "/>
         </div>
 
         {/* Video */}
-        <div className="relative w-full h-0 mb-4" style={{ paddingBottom: '56.25%' }}>
+        <div className="relative w-full h-0 mb-2" style={{ paddingBottom: '56.25%' }}>
           <iframe
             className="absolute top-0 left-0 w-full h-full border-2 border-gray-400 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300"
             src="https://www.youtube.com/embed/0aFJtpYco0E?si=WJwq3XH39dHs6zh_"
@@ -73,7 +73,7 @@ const Section4 = () => {
         </div>
 
         {/* Alt logo */}
-        <Image width={309} height={77} src="/img/logo/1.png" alt="Logo" className="transform hover:scale-110 transition duration-500"/>
+        <Image width={309} height={77} src="/img/logo/1.png" alt="Logo" className=""/>
       </div>
 
       {/* Sağ tarafta kare linkler */}
