@@ -3,7 +3,6 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
-import Image from 'next/image';
 
 const Slider = () => {
     const images = [
@@ -30,7 +29,7 @@ const Slider = () => {
                 renderBullet: (index, className) => {
                     // Renkli noktalar için renk dizisi
                     const colors = ['#FF5733', '#33FF57', '#3357FF', '#FF33A1'];
-                    return `<span class="${className}" style="background-color: ${colors[index % colors.length]}"></span>`;
+                    return `<span class="${className} flex" style="background-color: ${colors[index % colors.length]}"></span>`;
                 },
             }}
             autoplay={{
@@ -39,19 +38,16 @@ const Slider = () => {
             }}
             loop={true}
             modules={[Pagination, Autoplay]}
+            className='w-1/2'
         >
             {images.map((image, index) => (
                 <SwiperSlide key={index} className='hover:cursor-grab transition duration-300'>
-                    <div className="flex justify-center w-full h-[72vh] relative">
-                        <Image
-                            src={image.src}
-                            alt={image.alt}
-                            fill
-                            className="object-contain object-top"
-                        />
+                    <div className="flex justify-center w-full h-[450px]">
+                       <div></div>
                     </div>
                 </SwiperSlide>
             ))}
+
         </Swiper>
     );
 };

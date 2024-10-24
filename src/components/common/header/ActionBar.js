@@ -1,85 +1,63 @@
 "use client";
-import { FaFacebook, FaInstagram, FaYoutube, FaLinkedin, FaHeadphonesAlt } from "react-icons/fa";
+import {
+  FaFacebook,
+  FaInstagram,
+  FaYoutube,
+  FaLinkedin,
+  FaHeadphonesAlt,
+} from "react-icons/fa";
 import { FaSquareXTwitter } from "react-icons/fa6";
-import { FaPhoneAlt } from "react-icons/fa"; // Telefon ikonu
+
+// Sosyal medya ikonlarını ve linklerini tanımlayan bir dizi
+const socialLinks = [
+  { href: "https://twitter.com", icon: FaSquareXTwitter },
+  { href: "https://facebook.com", icon: FaFacebook },
+  { href: "https://instagram.com", icon: FaInstagram },
+  { href: "https://youtube.com", icon: FaYoutube },
+  { href: "https://linkedin.com", icon: FaLinkedin },
+];
+
+// Buton verilerini tanımlayan bir dizi
+const buttons = [
+  {
+    label: "Veli Girişi",
+    className:
+      "bg-[#143256] text-white font-semibold py-2 px-4 shadow-md rounded-md transition duration-300 hover:bg-[#1e4a6b] focus:outline-none focus:ring-2 focus:ring-[#1e4a6b] focus:ring-opacity-50",
+  },
+  {
+    label: "Öğrenci Girişi",
+    className:
+      "bg-[#143256] text-white font-semibold py-2 px-4 shadow-md rounded-md transition duration-300 hover:bg-[#1e4a6b] focus:outline-none focus:ring-2 focus:ring-[#1e4a6b] focus:ring-opacity-50",
+  },
+];
 
 const ActionBar = () => {
   return (
-    <div className="flex justify-between items-center">
-      <div className="w-full bg-blue-900 py-1" style={{ backgroundColor: "#084576" }}>
-        <div className="container mx-auto flex justify-between items-center px-5 py-2">
-          {/* Sol Taraf - Sosyal Medya İkonları */}
-          <div className="flex gap-4 items-center">
-            <a
-              href="https://twitter.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FaSquareXTwitter
+    <div className="bg-[#F4F1ED]">
+      <div className="container mx-auto flex justify-between items-center px-5 py-3">
+        {/* Sol Taraf - Sosyal Medya İkonları */}
+        <div className="flex gap-4 items-center">
+          {socialLinks.map(({ href, icon: Icon }) => (
+            <a href={href} target="_blank" rel="noopener noreferrer" key={href}>
+              <Icon
                 size={24}
-                className="text-white"
+                className="text-[#143256] transition duration-300"
               />
             </a>
-            <a
-              href="https://facebook.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FaFacebook
-                size={24}
-                className="text-white"
-              />
-            </a>
-            <a
-              href="https://instagram.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FaInstagram
-                size={24}
-                className="text-white"
-              />
-            </a>
-            <a
-              href="https://youtube.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FaYoutube
-                size={24}
-                className="text-white"
-              />
-            </a>
-            <a
-              href="https://linkedin.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FaLinkedin
-                size={24}
-                className="text-white"
-              />
-            </a>
+          ))}
+        </div>
 
-            {/* Müşteri Hizmetleri Telefon Numarası */}
-            
-          </div>
-
-          {/* Sağ Taraf - Buton Grubu */}
-          <div className="flex gap-3">
-            <button className="bg-blue-600 text-sm text-white font-bold py-2 px-4 rounded shadow-lg hover:bg-blue-400 transition duration-300">
-              Veli Girişi
+        {/* Sağ Taraf - Buton Grubu */}
+        <div className="flex gap-3 items-center">
+          {buttons.map(({ label, className }) => (
+            <button key={label} className={`${className}`}>
+              {label}
             </button>
-            <button className="bg-green-600 text-sm text-white font-bold py-2 px-4 rounded shadow-lg hover:bg-green-400 transition duration-300">
-              Öğrenci Girişi
-            </button>
-            <button className="bg-orange-600 text-sm text-white font-bold py-2 px-4 rounded shadow-lg hover:bg-orange-400 transition duration-300">
-              Ön Bilgi Formu
-            </button>
+          ))}
 
-              <div className="text-white ms-3 items-center flex font-semibold text-xl gap-2"><FaHeadphonesAlt size={20} className="text-xl" /> 444 80 16 </div>
-
-        
+          <div className="flex items-center text-lg gap-2 text-[#143256] font-bold ms-5">
+            <FaHeadphonesAlt size={20} />
+            444 80 16
           </div>
         </div>
       </div>

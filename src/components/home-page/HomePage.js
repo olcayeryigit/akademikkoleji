@@ -8,14 +8,17 @@ import Section3 from './section-3/Section3'
 import Section4 from './section-4/Section4'
 import Section5 from './section-5/Section5'
 import Announcements from './anouncements/anouncements'
-
+import "./home-page.scss"
 const HomePage = () => {
   return (
-    <div className=''>
+    <div className="">
+      <div className='main' 
+   >
 <MainContent/>
-<Spacer height='h-8'/>
+<Spacer height='h-10'/>
 <Section1/>
-<Spacer height='h-24'/>
+<Spacer height='h-24'/>       
+      </div>
 <Section2/>
 <Spacer height='h-24'/>
 <Section3/>

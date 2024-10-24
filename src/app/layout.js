@@ -1,21 +1,23 @@
+import ActionBar from "@/components/common/header/ActionBar";
 import Header from "@/components/common/header/Header";
 import "@/styles/index.scss";
-import { Open_Sans } from "next/font/google";
+import { Roboto } from "next/font/google";  // Roboto yazı tipini içe aktarıyoruz
 
 export const metadata = {
   title: "Eğitim Sayfası",
   description: "Eğitimle ilgili bilgiler.",
 };
 
-const openSans = Open_Sans({
+// Roboto yazı tipini tanımlıyoruz
+const roboto = Roboto({
   subsets: ['latin'],
-  weights: [400, 600, 700], 
+  weight: ['400', '500', '700'], // Ağırlıkları belirliyoruz
 });
 
 export default function RootLayout({ children }) {
   return (
     <html lang="tr">
-      <body className={openSans.className}>
+      <body className={roboto.className}> 
         <Header />
         {children}
       </body>
