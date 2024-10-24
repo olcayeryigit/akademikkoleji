@@ -4,9 +4,14 @@ import PreRegistrationForm from './pre-registration-form/PreRegistrationForm;'
 
 const MainContent = () => {
   return (
-    <div className='w-full flex container mx-auto'>
-<Slider/>
-<PreRegistrationForm/>
+    <div className='container mx-auto flex justify-between '>
+      <div>
+<Slider/>        
+      </div>
+<div>
+<PreRegistrationForm/>  
+</div>
+
 
     </div>
   )

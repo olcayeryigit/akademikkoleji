@@ -22,7 +22,7 @@ const buttons = [
   {
     label: "Veli Girişi",
     className:
-      "bg-[#143256] text-white font-semibold py-2 px-4 shadow-md rounded-md transition duration-300 hover:bg-[#1e4a6b] focus:outline-none focus:ring-2 focus:ring-[#1e4a6b] focus:ring-opacity-50",
+      "bg-[#E12640] text-white font-semibold py-2 px-4 shadow-md rounded-md transition duration-300 hover:bg-[#EA2B48]  focus:outline-none focus:ring-2 focus:ring-[#D82129] focus:ring-opacity-50",
   },
   {
     label: "Öğrenci Girişi",
@@ -41,7 +41,7 @@ const ActionBar = () => {
             <a href={href} target="_blank" rel="noopener noreferrer" key={href}>
               <Icon
                 size={24}
-                className="text-[#143256] transition duration-300"
+                className="text-[#143256] hover:text-[#D82129] transition duration-300"
               />
             </a>
           ))}
@@ -55,7 +55,7 @@ const ActionBar = () => {
             </button>
           ))}
 
-          <div className="flex items-center text-lg gap-2 text-[#143256] font-bold ms-5">
+          <div className="flex items-center text-lg gap-2 text-[#143256] font-bold ms-5 text-3xl transition-transform duration-1000 transform hover:scale-110 ">
             <FaHeadphonesAlt size={20} />
             444 80 16
           </div>

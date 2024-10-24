@@ -15,7 +15,7 @@ const HomePage = () => {
       <div className='main' 
    >
 <MainContent/>
-<Spacer height='h-10'/>
+<Spacer height='h-24'/>
 <Section1/>
 <Spacer height='h-24'/>       
       </div>

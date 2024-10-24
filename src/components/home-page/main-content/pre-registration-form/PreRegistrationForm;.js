@@ -29,14 +29,14 @@ const PreRegistrationForm = () => {
   };
 
   return (
-    <div className="mt-40 p-3 bg-white shadow-lg rounded-lg w-[350px] h-auto max-h-[450px] border border-[#D85B29] ">
-      <h2 className="text-lg font-bold text-center mb-3 text-[#2D3748]">
+    <div className="mt-48 p-3 bg-white shadow-md rounded-lg max-w-xs mx-auto border border-[#DC001E]">
+      <h2 className="text-base font-semibold text-center mb-2 text-[#2D3748]">
         Ön Bilgilendirme Formu
       </h2>
       <form onSubmit={handleSubmit} className="space-y-2">
         {/* Adınız Soyadınız */}
         <div>
-          <label className="block text-sm font-medium text-[#4A5568] mb-1">
+          <label className="block text-xs font-medium text-gray-700 mb-1">
             Adınız Soyadınız
           </label>
           <input
@@ -45,14 +45,14 @@ const PreRegistrationForm = () => {
             value={formData.name}
             onChange={handleChange}
             placeholder="Adınız Soyadınız"
-            className="w-full p-1.5 rounded-md focus:outline-none text-sm text-[#333333] bg-[#FFFAF0] border border-[#D85B29] shadow-md focus:ring focus:ring-[#FFA07A] focus:ring-opacity-50 transition duration-200"
+            className="w-full p-1 rounded-md focus:outline-none text-xs text-gray-700 bg-gray-50 border border-gray-300 shadow-sm focus:ring focus:ring-[#DC001E] transition"
             required
           />
         </div>
 
         {/* Telefon Numaranız */}
         <div>
-          <label className="block text-sm font-medium text-[#4A5568] mb-1">
+          <label className="block text-xs font-medium text-gray-700 mb-1">
             Telefon Numaranız
           </label>
           <input
@@ -61,21 +61,21 @@ const PreRegistrationForm = () => {
             value={formData.phone}
             onChange={handleChange}
             placeholder="0(5**) *** ** **"
-            className="w-full p-1.5 rounded-md focus:outline-none text-sm text-[#333333] bg-[#FFFAF0] border border-[#D85B29] shadow-md focus:ring focus:ring-[#FFA07A] focus:ring-opacity-50 transition duration-200"
+            className="w-full p-1 rounded-md focus:outline-none text-xs text-gray-700 bg-gray-50 border border-gray-300 shadow-sm focus:ring focus:ring-[#DC001E] transition"
             required
           />
         </div>
 
         {/* Öğrenim Durumu */}
         <div>
-          <label className="block text-sm font-medium text-[#4A5568] mb-1">
+          <label className="block text-xs font-medium text-gray-700 mb-1">
             Öğrenim Durumu
           </label>
           <select
             name="education"
             value={formData.education}
             onChange={handleChange}
-            className="w-full p-1.5 rounded-md focus:outline-none text-sm text-[#333333] bg-[#FFFAF0] border border-[#D85B29] shadow-md focus:ring focus:ring-[#FFA07A] focus:ring-opacity-50 transition duration-200"
+            className="w-full p-1 rounded-md focus:outline-none text-xs text-gray-700 bg-gray-50 border border-gray-300 shadow-sm focus:ring focus:ring-[#DC001E] transition"
             required
           >
             <option value="">Seçiniz</option>
@@ -88,7 +88,7 @@ const PreRegistrationForm = () => {
 
         {/* Mesajınız */}
         <div>
-          <label className="block text-sm font-medium text-[#4A5568] mb-1">
+          <label className="block text-xs font-medium text-gray-700 mb-1">
             Mesajınız
           </label>
           <textarea
@@ -96,8 +96,8 @@ const PreRegistrationForm = () => {
             value={formData.message}
             onChange={handleChange}
             placeholder="Mesajınız"
-            className="w-full p-1.5 rounded-md focus:outline-none text-sm text-[#333333] bg-[#FFFAF0] border border-[#D85B29] shadow-md focus:ring focus:ring-[#FFA07A] focus:ring-opacity-50 transition duration-200"
-            rows="2"
+            className="w-full p-1 rounded-md focus:outline-none text-xs text-gray-700 bg-gray-50 border border-gray-300 shadow-sm focus:ring focus:ring-[#DC001E] transition"
+            rows="1"
             required
           />
         </div>
@@ -109,12 +109,12 @@ const PreRegistrationForm = () => {
             name="termsAccepted"
             checked={formData.termsAccepted}
             onChange={handleChange}
-            className="h-4 w-4 text-[#D85B29] focus:ring focus:ring-[#D85B29] focus:outline-none border border-[#D85B29] rounded"
+            className="h-3 w-3 text-[#D85B29] focus:ring focus:ring-[#D82129] focus:outline-none border border-gray-300 rounded"
             required
           />
-          <label className="ml-2 text-sm text-[#4A5568]">
+          <label className="ml-2 text-xs text-gray-700">
             Bilgi Formunu Doldurarak,{" "}
-            <a href="/terms" className="text-[#2D3748] underline">
+            <a href="/terms" className="text-[#DC001E] underline">
               Yasal Uyarı/Kullanım Şartlarını
             </a>{" "}
             Kabul Ediyorum.
@@ -125,7 +125,7 @@ const PreRegistrationForm = () => {
         <div>
           <button
             type="submit"
-            className="w-full py-1 px-4 bg-[#D85B29] text-white text-sm font-semibold rounded-md shadow-md"
+            className="w-full py-2 bg-[#DC001E] text-white text-xs font-medium rounded-md shadow-md hover:bg-[#EA2B48]  transition duration-150"
           >
             Mesajı Gönder
           </button>
