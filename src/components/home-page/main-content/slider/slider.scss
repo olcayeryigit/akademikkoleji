@@ -2,6 +2,8 @@
     .swiper-slide {
       position: relative;
       overflow: hidden;
+      cursor: grab !important;
+
     }
   
     .swiper-pagination {
@@ -19,15 +21,15 @@
     }
   
     .swiper-pagination-bullet {
-      width: 15px !important; /* Genişlik arttırıldı */
-      height: 15px !important; /* Yükseklik arttırıldı */
+      width: 20px !important; /* Genişlik arttırıldı */
+      height: 20px !important; /* Yükseklik arttırıldı */
       background: rgba(255, 255, 255, 0.3); /* Arka plan rengi */
-      opacity: 0.8; /* Şeffaflık */
+      opacity: 1; /* Şeffaflık */
       transition: opacity 0.3s; /* Geçiş efekti */
       margin: 5px 0; /* Dikey aralık vermek için */
       
       &.swiper-pagination-bullet-active {
-        opacity: 1; /* Aktif sayfanın rengi */
+     border: 4px solid rgb(252, 251, 250,0.6);
       }
     }
   }

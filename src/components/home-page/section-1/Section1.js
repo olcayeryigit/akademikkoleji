@@ -2,6 +2,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
+import { FaArrowRight } from 'react-icons/fa';
 
 const Section1 = () => {
   const datas = [
@@ -59,16 +60,16 @@ const Section1 = () => {
               className="section-1-image object-cover w-full h-54" 
             />
             {/* "İLKOKUL" Metni */}
-            <div className='bg-gradient-to-r from-[#0F2A46] to-[#143256]  absolute bottom-0 left-0 w-full'>
-              <p className='text-xl font-bold text-white p-4'>{data.title}</p>
+            <div className='bg-gradient-to-r from-[#0F2A46] to-[#143256]  absolute bottom-0 left-0 w-full '>
+              <p className='text-md font-bold text-white p-4 flex justify-between items-center'>{data.title} <FaArrowRight /> </p> 
+
+
             </div>
-            {/* Açıklama Metni */}
-            <div className={`absolute inset-0 flex justify-center items-center opacity-0 transition-opacity duration-500 group-hover:opacity-100`}>
-             
-            </div>
+          
             {/* Kutu Hover Durumunda Genişleme */}
-            <div className={`bg-gradient-to-r from-[#0F2A46] to-[#143256] absolute inset-0 transition-transform duration-500 ease-in-out transform translate-y-full group-hover:translate-y-0 rounded`}>
-              <p className='text-xl font-bold text-white px-4 pt-4 pb-2'>{data.title}</p>
+            <div className={`bg-gradient-to-r from-[#0F2A46] to-[#143256]  absolute inset-0 transition-transform duration-500 ease-in-out transform translate-y-full group-hover:translate-y-0 `}>
+              <p className='text-md font-bold text-white px-4 pt-4 pb-2 flex justify-between items-center'>
+                {data.title} <FaArrowRight /></p> 
               {data.links.map((link, linkIndex) => (
              <Link
              key={linkIndex}

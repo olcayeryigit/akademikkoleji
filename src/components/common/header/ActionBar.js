@@ -33,7 +33,7 @@ const buttons = [
 
 const ActionBar = () => {
   return (
-    <div className="bg-[#F4F1ED]">
+    <div className="bg-[#F4F1ED] " >
       <div className="container mx-auto flex justify-between items-center px-5 py-3">
         {/* Sol Taraf - Sosyal Medya İkonları */}
         <div className="flex gap-4 items-center">

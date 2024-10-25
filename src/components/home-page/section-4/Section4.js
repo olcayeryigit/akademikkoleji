@@ -21,13 +21,13 @@ const Section4 = () => {
   return (
     <div className="container mx-auto w-full h-auto grid grid-cols-1 md:grid-cols-9 gap-8 p-8">
       {/* Sol tarafta kare linkler */}
-      <div className="md:col-span-3 grid grid-cols-2 gap-6">
+      <div className="md:col-span-3 grid grid-cols-2">
         {leftLinks.map((link, index) => (
           <div
           as={Link}
           href=""
             key={index}
-            className="relative bg-black flex items-center justify-center group overflow-hidden rounded shadow-xl aspect-square transform transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:bg-gradient-to-r from-blue-500 to-purple-600 cursor-pointer"
+            className="relative bg-black flex items-center justify-center group overflow-hidden shadow-xl aspect-square transform transition-all  hover:bg-gradient-to-r from-blue-800 to-gray-800 cursor-pointer transition-transform duration-1000"
           >
             {/* Arka plan resmi */}
             <Image
@@ -38,7 +38,7 @@ const Section4 = () => {
             />
 
             {/* Opak mavi katman */}
-            <div className="absolute inset-0 bg-blue-900 opacity-60 group-hover:opacity-50 transition-opacity duration-300"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-[#0F2A46] to-gray-800 opacity-80 group-hover:opacity-60 transition-opacity duration-300"></div>
 
             {/* Icon */}
             <div className="relative z-10 flex flex-col items-center text-white">
@@ -65,7 +65,7 @@ const Section4 = () => {
         {/* Video */}
         <div className="relative w-full h-0 mb-2" style={{ paddingBottom: '56.25%' }}>
           <iframe
-            className="absolute top-0 left-0 w-full h-full border-2 border-gray-400 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300"
+            className="absolute top-0 left-0 w-full h-full border-2 border-gray-400 shadow-lg hover:shadow-2xl transition-shadow duration-300"
             src="https://www.youtube.com/embed/0aFJtpYco0E?si=WJwq3XH39dHs6zh_"
             title="Video"
             allowFullScreen
@@ -77,13 +77,13 @@ const Section4 = () => {
       </div>
 
       {/* Sağ tarafta kare linkler */}
-      <div className="md:col-span-3 grid grid-cols-2 gap-6">
+      <div className="md:col-span-3 grid grid-cols-2">
         {rightLinks.map((link, index) => (
           <div
              as={Link}
           href=""
             key={index}
-            className="relative bg-black flex items-center justify-center group overflow-hidden rounded shadow-xl aspect-square transform transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:bg-gradient-to-r from-purple-600 to-blue-500 cursor-pointer"
+            className="relative bg-black flex items-center justify-center group overflow-hidden shadow-xl aspect-square transform transition-all  hover:bg-gradient-to-r from-blue-800 to-gray-800 cursor-pointer transition-transform duration-1000"
           >
             {/* Arka plan resmi */}
             <Image
@@ -94,7 +94,7 @@ const Section4 = () => {
             />
 
             {/* Opak mavi katman */}
-            <div className="absolute inset-0 bg-blue-900 opacity-60 group-hover:opacity-50 transition-opacity duration-300"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-[#0F2A46] to-gray-800 opacity-80 group-hover:opacity-60 transition-opacity duration-300"></div>
 
             {/* Icon */}
             <div className="relative z-10 flex flex-col items-center text-white">

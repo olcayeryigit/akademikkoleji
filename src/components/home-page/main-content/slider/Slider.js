@@ -40,12 +40,11 @@ const Slider = () => {
             }}
             loop={true}
             modules={[Pagination, Autoplay]}
-            className='w-[55rem] h-[22rem] mt-48 hover:cursor-grab transition duration-300 '
+            className='w-[55rem] h-[22rem] '
         >
             {images.map((image, index) => (
                 <SwiperSlide key={index} className='relative' >
-                  <Image src="/img/0.png" fill className='object-cover'/>
-                </SwiperSlide>
+              </SwiperSlide>
             ))}
 
         </Swiper>

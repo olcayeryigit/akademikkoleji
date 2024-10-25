@@ -29,7 +29,7 @@ const PreRegistrationForm = () => {
   };
 
   return (
-    <div className="mt-48 p-3 bg-white shadow-md rounded-lg max-w-xs mx-auto border border-[#DC001E]">
+    <div className=" p-3 bg-white shadow-md rounded-lg max-w-xs mx-auto border border-[#DC001E]">
       <h2 className="text-base font-semibold text-center mb-2 text-[#2D3748]">
         Ön Bilgilendirme Formu
       </h2>

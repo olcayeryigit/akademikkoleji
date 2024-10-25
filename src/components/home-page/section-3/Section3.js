@@ -9,37 +9,37 @@ const Section3 = () => {
       order: "1.",
       title: "Dijital Eğitim Modeli Endüstri 4.0",
       text: "Uyguladığımız benzersiz eğitim modeliyle, değişime açık ve uyumlu, yüksek problem çözme kabiliyetine sahip, etkili reel ve sanal iletişim becerilerini geliştirmiş, büyük verileri teknoloji ile analiz edebilen ve yöneten donanımlı öğrenciler yetiştiriyoruz.",
-      icon: <FaGraduationCap size={50} className="text-blue-600" />,
-      bgColor: "bg-blue-300",
-      borderColor: "border-blue-600",
-      textColor: "text-blue-900",
+      icon: <FaGraduationCap size={60} className="text-white" />,
+      bgColor: "bg-gradient-to-r from-blue-700 to-blue-500",
+      borderColor: "border-blue-800",
+      textColor: "text-white",
     },
     {
       order: "2.",
       title: "YKS ve LGS Başarısı",
       text: "Bilimsel temelli ve uluslararası standartlarda sunduğumuz nitelikli eğitim programları başarıyı beraberinde getiriyor. YKS ve LGS sınavlarındaki %96’lık başarı oranımızla, ülkemizin ve dünyanın öne gelen prestijli üniversitelerine donanımlı öğrenciler yetiştiriyoruz.",
-      icon: <FaChartLine size={50} className="text-green-600" />,
-      bgColor: "bg-green-300",
-      borderColor: "border-green-600",
-      textColor: "text-green-900",
+      icon: <FaChartLine size={60} className="text-white" />,
+      bgColor: "bg-gradient-to-r from-green-700 to-green-500",
+      borderColor: "border-green-800",
+      textColor: "text-white",
     },
     {
       order: "3.",
       title: "Multilingual Education / Çok Dilli Eğitim",
       text: "Çok dilli eğitimle, öğrencilerimize iki dilli olma fırsatı sunuyoruz. Çok sayıda araştırma, iki dilliliğin yaşam boyu çeşitli bilişsel ve sosyal becerilere fayda sağladığını gösteriyor.",
-      icon: <FaLanguage size={50} className="text-yellow-600" />,
-      bgColor: "bg-yellow-300",
-      borderColor: "border-yellow-600",
-      textColor: "text-yellow-900",
+      icon: <FaLanguage size={60} className="text-white" />,
+      bgColor: "bg-gradient-to-r from-yellow-700 to-yellow-500",
+      borderColor: "border-yellow-800",
+      textColor: "text-white",
     },
     {
       order: "4.",
       title: "Sportif ve Sanatsal Etkinlikler",
       text: "Eğitimin her yönü ile bir bütündür. Sanatsal ve bedensel etkinliklerin, akademik başarıyı perçinlediği bir ortam oluşturuyoruz. Spor ve sanat kulüplerimizle, öğrencilerimizin sosyal becerilerini geliştiriyor ve yüksek standartlarda beden sağlığına sahip olmalarını sağlıyoruz.",
-      icon: <FaSwimmer size={50} className="text-red-600" />,
-      bgColor: "bg-red-300",
-      borderColor: "border-red-600",
-      textColor: "text-red-900",
+      icon: <FaSwimmer size={60} className="text-white" />,
+      bgColor: "bg-gradient-to-r from-red-700 to-red-500",
+      borderColor: "border-red-800",
+      textColor: "text-white",
     },
   ];
 
@@ -68,18 +68,18 @@ const Section3 = () => {
                 <h4 className={`font-semibold text-xl ${corner.textColor} mb-2 flex-grow`}>
                   <span className="font-bold">{corner.order}</span> {corner.title}
                 </h4>
-                <p className={`text-base text-gray-600 flex-grow`}>{corner.text}</p>
+                <p className={`text-base text-white flex-grow`}>{corner.text}</p>
               </div>
             ))}
           </div>
 
           <div className="flex flex-col items-center justify-center w-full lg:w-1/4">
-            <div className="flex items-center ">
-              <div className={`relative w-[100px] h-[100px] flex justify-center items-center overflow-hidden rounded-full shadow-lg  ${corners[0].bgColor} border ${corners[0].borderColor} border-4`}>
+            <div className="flex items-center">
+              <div className={`relative w-[100px] h-[100px] flex justify-center items-center overflow-hidden rounded-full shadow-lg ${corners[0].bgColor} border ${corners[0].borderColor} border-4`}>
                 {corners[0].icon}
               </div>
             </div>
-            <div className="flex justify-between gap-24 ">
+            <div className="flex justify-between gap-24">
               <div className={`relative w-[100px] h-[100px] flex justify-center items-center overflow-hidden rounded-full shadow-lg ${corners[1].bgColor} border ${corners[1].borderColor} border-4`}>
                 {corners[1].icon}
               </div>
@@ -103,7 +103,7 @@ const Section3 = () => {
                 <h4 className={`font-semibold text-xl ${corner.textColor} mb-2 flex-grow`}>
                   <span className="font-bold">{corner.order}</span> {corner.title}
                 </h4>
-                <p className={`text-base text-gray-600 flex-grow`}>{corner.text}</p>
+                <p className={`text-base text-white flex-grow`}>{corner.text}</p>
               </div>
             ))}
           </div>
