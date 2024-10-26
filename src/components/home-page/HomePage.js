@@ -20,7 +20,7 @@ const HomePage = () => {
 <Spacer height='h-24'/>       
       </div>
 <Section2/>
-<Spacer height='h-24'/>
+<Spacer height='h-10'/>
 <Section3/>
 <Spacer height='h-24'/>
 <Section4/>
@@ -28,6 +28,8 @@ const HomePage = () => {
 <Section5/>
 <Spacer height='h-24'/>
 <Announcements/>
+<Spacer height='h-24'/>
+
     </div>
   )
 }

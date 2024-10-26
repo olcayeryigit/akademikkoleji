@@ -12,3 +12,15 @@
     font-weight: 500;
     font-style: normal;
   }
+
+  @keyframes bell-animation {
+     0% { transform: translateY(0); }
+     50% { transform: translateY(-10px); }
+     100% { transform: translateY(0); }
+   }
+   
+   .animate-bell {
+     animation: bell-animation 1s infinite;
+   }
+
+  

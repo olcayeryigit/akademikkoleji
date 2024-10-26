@@ -1,9 +1,13 @@
 "use client";
 import Image from 'next/image';
 import Link from 'next/link';
-import React from 'react';
+import React, { useState } from 'react';
 
 const Section4 = () => {
+  const [hoverIndex, setHoverIndex] = useState(null);
+  const [moveX, setMoveX] = useState(0);
+  const [moveY, setMoveY] = useState(0);
+
   const leftLinks = [
     { href: '#', text: 'KARİYER GELİŞİM KULÜBÜ', icon: "/img/home-page/section-4/icons/speech.svg", src: "/img/home-page/section-4/images/kariyer.jpg" },
     { href: '#', text: 'SPOR ve SATRANÇ KULÜBÜ', icon: "/img/home-page/section-4/icons/chess.png", src: "/img/home-page/section-4/images/satranc.jpg" },
@@ -18,27 +22,58 @@ const Section4 = () => {
     { href: '#', text: 'BİLİM, FEN ve TEKNOLOJİ KULÜBÜ', icon: "/img/home-page/section-4/icons/science.png", src: "/img/home-page/section-4/images/fen.jpg" }
   ];
 
+  const handleMouseEnter = (index) => {
+    setHoverIndex(index);
+  };
+
+  const handleMouseMove = (e) => {
+    const { clientX, clientY, currentTarget } = e;
+    const { left, top, width, height } = currentTarget.getBoundingClientRect();
+
+    const x = ((clientX - left) / width - 0.5) * 10; // -5 ile 5 arası kayma
+    const y = ((clientY - top) / height - 0.5) * 10; // -5 ile 5 arası kayma
+
+    setMoveX(x / 12);
+    setMoveY(y / 12);
+  };
+
+  const handleMouseLeave = () => {
+    setHoverIndex(null);
+    setMoveX(0);
+    setMoveY(0);
+  };
+
   return (
     <div className="container mx-auto w-full h-auto grid grid-cols-1 md:grid-cols-9 gap-8 p-8">
       {/* Sol tarafta kare linkler */}
       <div className="md:col-span-3 grid grid-cols-2">
         {leftLinks.map((link, index) => (
           <div
-          as={Link}
-          href=""
             key={index}
-            className="relative bg-black flex items-center justify-center group overflow-hidden shadow-xl aspect-square transform transition-all  hover:bg-gradient-to-r from-blue-800 to-gray-800 cursor-pointer transition-transform duration-1000"
+            className="relative bg-black flex items-center justify-center group overflow-hidden shadow-xl aspect-square transition-all duration-500 cursor-pointer"
+            onMouseEnter={() => handleMouseEnter(index)}
+            onMouseMove={handleMouseMove}
+            onMouseLeave={handleMouseLeave}
           >
             {/* Arka plan resmi */}
             <Image
               fill
               src={link.src}
               alt={link.text}
-              className="object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out"
+              className="object-cover"
             />
 
-            {/* Opak mavi katman */}
-            <div className="absolute inset-0 bg-gradient-to-r from-[#0F2A46] to-gray-800 opacity-80 group-hover:opacity-60 transition-opacity duration-300"></div>
+            {/* Koyu overlay */}
+            <div className="absolute inset-0 bg-[#1a1a2e] opacity-75"></div>
+
+            {/* Gezinme efekti için katman */}
+            <div
+              className={`absolute inset-0 bg-gradient-to-r from-[#007bff] to-[#5bc0de] transition-transform duration-800`} // Geçiş süresi artırıldı
+              style={{
+                transform: `translate(${moveX * 0.5}px, ${moveY * 0.5}px)`, // Daha az hareket
+                opacity: hoverIndex === index ? 0.5 : 0
+              }}
+            ></div>
 
             {/* Icon */}
             <div className="relative z-10 flex flex-col items-center text-white">
@@ -77,24 +112,34 @@ const Section4 = () => {
       </div>
 
       {/* Sağ tarafta kare linkler */}
-      <div className="md:col-span-3 grid grid-cols-2">
+      <div className="md:col-span-3 grid grid-cols-2 ">
         {rightLinks.map((link, index) => (
           <div
-             as={Link}
-          href=""
             key={index}
-            className="relative bg-black flex items-center justify-center group overflow-hidden shadow-xl aspect-square transform transition-all  hover:bg-gradient-to-r from-blue-800 to-gray-800 cursor-pointer transition-transform duration-1000"
+            className="relative bg-black flex items-center justify-center group overflow-hidden shadow-xl aspect-square transition-all duration-500 cursor-pointer"
+            onMouseEnter={() => handleMouseEnter(index + leftLinks.length)}
+            onMouseMove={handleMouseMove}
+            onMouseLeave={handleMouseLeave}
           >
             {/* Arka plan resmi */}
             <Image
               fill
               src={link.src}
               alt={link.text}
-              className="object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out"
+              className="object-cover"
             />
 
-            {/* Opak mavi katman */}
-            <div className="absolute inset-0 bg-gradient-to-r from-[#0F2A46] to-gray-800 opacity-80 group-hover:opacity-60 transition-opacity duration-300"></div>
+            {/* Koyu overlay */}
+            <div className="absolute inset-0 bg-[#1a1a2e] opacity-75"></div>
+
+            {/* Gezinme efekti için katman */}
+            <div
+              className={`absolute inset-0 bg-gradient-to-r from-[#007bff] to-[#5bc0de] transition-transform duration-800`} // Geçiş süresi artırıldı
+              style={{
+                transform: `translate(${moveX * 0.5}px, ${moveY * 0.5}px)`, // Daha az hareket
+                opacity: hoverIndex === (index + leftLinks.length) ? 0.5 : 0
+              }}
+            ></div>
 
             {/* Icon */}
             <div className="relative z-10 flex flex-col items-center text-white">

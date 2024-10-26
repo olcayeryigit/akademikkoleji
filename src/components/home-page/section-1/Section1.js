@@ -13,7 +13,7 @@ const Section1 = () => {
       links: [
         { href: "/anaokulu", label: "Anaokulu Programı" },
         { href: "/anaokulu/galeri", label: "Anaokulu Galerisi" },
-      ], // Birden fazla link eklendi
+      ],
     },
     {
       title: "İLKOKUL",
@@ -22,7 +22,7 @@ const Section1 = () => {
       links: [
         { href: "/ilkokul", label: "İlkokul Programı" },
         { href: "/ilkokul/galeri", label: "İlkokul Galerisi" },
-      ], // Birden fazla link eklendi
+      ],
     },
     {
       title: "ORTAOKUL",
@@ -31,7 +31,7 @@ const Section1 = () => {
       links: [
         { href: "/ortaokul", label: "Ortaokul Programı" },
         { href: "/ortaokul/galeri", label: "Ortaokul Galerisi" },
-      ], // Birden fazla link eklendi
+      ],
     },
     {
       title: "LİSE",
@@ -40,50 +40,51 @@ const Section1 = () => {
       links: [
         { href: "/lise", label: "Lise Programı" },
         { href: "/lise/galeri", label: "Lise Galerisi" },
-      ], // Birden fazla link eklendi
+      ],
     },
   ];
 
   return (
-    <div className="section-1-wrapper">
-      <div className="container mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+    <div className="section-1-wrapper container mx-auto py-12">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {datas.map((data, index) => (
-          <div 
-            className={`section-1-content shadow-lg relative overflow-hidden group`}
+          <div
+            className="section-1-content relative overflow-hidden group rounded-lg shadow-lg transition-all duration-300 ease-in-out"
             key={index}
           >
-            <Image 
-              src="/img/0.png"
-              alt={data.alt} 
+            <Image
+              src="/img/2-.jpg"
+              alt={data.alt}
               width={318}
-              height={185}
-              className="section-1-image object-cover w-full h-54" 
+              height={240}
+              className="object-cover w-full h-56 rounded-lg"
             />
-            {/* "İLKOKUL" Metni */}
-            <div className='bg-gradient-to-r from-[#0F2A46] to-[#143256]  absolute bottom-0 left-0 w-full '>
-              <p className='text-md font-bold text-white p-4 flex justify-between items-center'>{data.title} <FaArrowRight /> </p> 
-
-
+            
+            {/* Kart Başlığı ve Açıklama */}
+            <div className="absolute bottom-0 left-0 w-full p-4 bg-black bg-opacity-60 rounded-b-lg transition-opacity duration-300 group-hover:opacity-0">
+              <h2 className="text-xl font-bold text-white">{data.title}</h2>  
+              <p className="text-sm text-white">{data.text}</p> 
             </div>
-          
-            {/* Kutu Hover Durumunda Genişleme */}
-            <div className={`bg-gradient-to-r from-[#0F2A46] to-[#143256]  absolute inset-0 transition-transform duration-500 ease-in-out transform translate-y-full group-hover:translate-y-0 `}>
-              <p className='text-md font-bold text-white px-4 pt-4 pb-2 flex justify-between items-center'>
-                {data.title} <FaArrowRight /></p> 
+            
+            {/* Hover Durumu İçin Kutu */}
+            <div className="bg-black bg-opacity-50 absolute inset-0 flex flex-col justify-center items-center p-4 transition-transform duration-300 transform translate-y-full group-hover:translate-y-0">
+              <p className="text-lg font-bold text-white flex items-center">
+                {data.title} <FaArrowRight className="ml-2" />
+              </p>
               {data.links.map((link, linkIndex) => (
-             <Link
-             key={linkIndex}
-             href={link.href} 
-             className='block px-4 py-2 text-gray-200 text-md hover:text-white'
-           >
-             {link.label}
-           </Link>
+                <Link
+                  key={linkIndex}
+                  href={link.href}
+                  className="block mt-2 px-4 py-2 text-white text-md hover:text-gray-300 transition-colors duration-200"
+                >
+                  {link.label}
+                </Link>
               ))}
             </div>
           </div>
         ))}
       </div>
-    </div> 
+    </div>
   );
 }
 
