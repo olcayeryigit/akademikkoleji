@@ -1,0 +1,89 @@
+
+.react-calendar {
+
+  width: 100% !important;
+   height: 100% !important;  
+background-color: rgb(255, 255, 255,0) !important;  
+border: none; // Takvim kenarını kaldır
+
+border: 0;
+ }
+
+
+
+
+/*
+calender SCSS
+
+.react-calendar {
+
+ width: 100% !important;
+  height: 100% !important;  
+  background: #ffffff; // Arka plan rengi
+  border: 1px solid #dcdcdc; // Kenar rengi
+  border-radius: 10px; // Kenar yuvarlama
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); // Gölge efekti
+}
+
+.react-calendar__month-view {
+  padding: 1rem; // İç boşluk
+}
+
+.react-calendar__tile {
+  padding: 10px; // Her bir tarih için iç boşluk
+  text-align: center; // Merkezde hizalama
+  border-radius: 5px; // Yuvarlak kenarlar
+  transition: background-color 0.2s ease; // Arka plan geçişi
+
+  &:hover {
+    background-color: #f0f8ff; // Üzerine gelindiğinde arka plan rengi
+  }
+}
+
+.react-calendar__tile--active {
+  background-color: #007bff; // Seçili tarih arka plan rengi
+  color: #ffffff; // Seçili tarih metin rengi
+}
+
+.react-calendar__tile--now {
+  background-color: #e7f3fe; // Bugünün tarihi arka plan rengi
+  font-weight: bold; // Bugün tarihi kalın yap
+}
+
+.react-calendar__month-view__weekdays {
+  font-weight: bold; // Haftanın günleri kalın
+  text-align: center; // Merkezde hizalama
+}
+
+.react-calendar__month-view__days {
+  margin: 0; // Günler arasındaki boşluk
+}
+
+.react-calendar__month-view__weekdays__weekday {
+  color: #007bff; // Haftanın günleri rengi
+}
+
+.react-calendar__navigation button {
+  background-color: transparent; // Navigasyon butonları arka plan rengi
+  border: none; // Kenarları kaldır
+  cursor: pointer; // İmleci göster
+  color: #007bff; // Navigasyon butonları metin rengi
+
+  &:hover {
+    color: #0056b3; // Üzerine gelindiğinde buton rengi
+  }
+}
+*/
+
+.highlight {
+  background-color: #bebebe; // İşaretli günlerin arka plan rengi
+}
+
+
+
+.react-calendar__tile--active {
+  background-color: rgb(0, 134, 134) !important; // Aktif gün rengi
+  color: rgb(87, 87, 87) !important; // Aktif gün yazı rengi
+}
+
+

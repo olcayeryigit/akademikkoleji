@@ -1,117 +1,104 @@
-import React, { useState, useEffect } from "react";
-import { FaBell, FaFutbol, FaBriefcase, FaLaptopCode, FaGraduationCap } from 'react-icons/fa';
-import { AiOutlineCalendar } from 'react-icons/ai';
-import Image from "next/image";
+"use client";
 
-// Duyuru verileri
+import React, { useState, useEffect } from "react";
+import Calendar from "react-calendar";
+import { FaFutbol, FaBriefcase, FaLaptopCode, FaGraduationCap } from "react-icons/fa";
+import 'react-calendar/dist/Calendar.css';
+import "./announcements.scss";
+
 const announcements = [
-  { title: "Yeni Eğitim Programı Başlıyor", date: "Ekim 22 2024", description: "Yeni eğitim programımız Kasım ayında başlıyor. Detaylar için web sitemizi ziyaret edin.", icon: <FaGraduationCap className="text-3xl" /> },
-  { title: "Okul Spor Etkinliği", date: "Kasım 1 2024", description: "Bu hafta sonu düzenlenecek olan okul spor etkinliğimize herkesi bekliyoruz.", icon: <FaFutbol className="text-3xl" /> },
-  { title: "Mezuniyet Töreni", date: "Aralık 15 2024", description: "Mezuniyet töreni hazırlıkları başladı. Ayrıntılı bilgi yakında duyurulacaktır.", icon: <FaGraduationCap className="text-3xl" /> },
-  { title: "Kariyer Günü Etkinliği", date: "Kasım 10 2024", description: "Kariyer günü etkinliğimizde birçok sektör temsilcisi yer alacak. Katılım herkese açıktır.", icon: <FaBriefcase className="text-3xl" /> },
-  { title: "Yazılım Atölyesi", date: "Aralık 5 2024", description: "Yazılım alanında uzmanların yer alacağı atölye çalışmalarımıza kayıtlar başladı.", icon: <FaLaptopCode className="text-3xl" /> },
-  { title: "STEM Proje Yarışması", date: "Ocak 20 2025", description: "Öğrencilerimizin STEM projelerini sergileyeceği yarışmamıza herkesi bekliyoruz.", icon: <FaGraduationCap className="text-3xl" /> },
+  { title: "Yeni Eğitim Programı Başlıyor", date: "22-10-2024", description: "Yeni eğitim programımız 22-10-2024 tarihinde başlıyor.", icon: <FaGraduationCap className="text-xl" /> },
+  { title: "Okul Spor Etkinliği", date: "01-11-2024", description: "01-11-2024 tarihinde düzenlenecek olan okul spor etkinliğine bekliyoruz.", icon: <FaFutbol className="text-xl" /> },
+  { title: "Mezuniyet Töreni", date: "15-12-2024", description: "15-12-2024 tarihinde gerçekleşecek olan Mezuniyet töreni için hazırlıklara başlandı.", icon: <FaGraduationCap className="text-xl" /> },
+  { title: "Kariyer Günü Etkinliği", date: "10-11-2024", description: "10-11-2024 tarihinde gerçekleşecek Kariyer günü etkinliğimizde birçok sektör temsilcisi yer alacak.", icon: <FaBriefcase className="text-xl" /> },
+  { title: "Yazılım Atölyesi", date: "05-12-2024", description: "Yazılım alanında uzmanların katılacağı atölyeler 05-12-2024 tarihinde başlıyor.", icon: <FaLaptopCode className="text-xl" /> },
+  { title: "STEM Proje Yarışması", date: "20-01-2025", description: "Öğrencilerin STEM projelerini sergileyeceği yarışma 20-01-2025 tarihinde gerçekleşecek.", icon: <FaGraduationCap className="text-xl" /> },
 ];
 
-const Announcements = () => {
-  const [currentPage, setCurrentPage] = useState(0);
-  const announcementsPerPage = 3;
-  const totalPages = Math.ceil(announcements.length / announcementsPerPage);
-  const currentAnnouncements = announcements.slice(
-    currentPage * announcementsPerPage,
-    currentPage * announcementsPerPage + announcementsPerPage
-  );
+function convertDateFormat(dateString) {
+  const [day, month, year] = dateString.split('-');
+  return `${year}.${month}.${day}`;
+}
 
-  const [activeIndex, setActiveIndex] = useState(0);
-  const [animationComplete, setAnimationComplete] = useState(false);
+const Announcements = () => {
+  const [value, setValue] = useState(new Date());
+  const [currentPage, setCurrentPage] = useState(0);
+  const [highlightedIndex, setHighlightedIndex] = useState(0);
+  const announcementsPerPage = 3;
+
+  const markedDates = announcements.map(announcement => new Date(convertDateFormat(announcement.date)));
+  const indexOfLastAnnouncement = (currentPage + 1) * announcementsPerPage;
+  const indexOfFirstAnnouncement = indexOfLastAnnouncement - announcementsPerPage;
+  const currentAnnouncements = announcements.slice(indexOfFirstAnnouncement, indexOfLastAnnouncement);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setActiveIndex((prevIndex) => {
-        const nextIndex = (prevIndex + 1) % currentAnnouncements.length;
-        if (nextIndex === 0) setAnimationComplete(true);
-        return nextIndex;
+      setHighlightedIndex(prevIndex => {
+        const nextIndex = prevIndex + 1;
+        return nextIndex >= currentAnnouncements.length ? 0 : nextIndex;
       });
-    }, 7000); // Toplam bekleme süresi (4.5s geçiş + 2.5s bekleme)
+    }, 8000); // Her 8 saniyede bir değiştir
 
-    return () => clearInterval(interval);
-  }, [currentAnnouncements]);
-
-  useEffect(() => {
-    if (activeIndex > 0) {
-      setAnimationComplete(false); // Her animasyonun başlangıcında
-    }
-  }, [activeIndex]);
+    return () => clearInterval(interval); // Temizleme işlemi
+  }, [currentAnnouncements.length]);
 
   return (
-    <div className="announcement-container bg-[#ECF3F5] py-8">
-      <div className="container mx-auto w-full md:w-11/12 lg:w-2/3">
-        <h2 className="text-3xl font-bold text-center text-gray-800 mb-6">Duyurular</h2>
+    <div className="bg-[#F9FAFB] px-32 py-10">
 
-        <div className="flex gap-10">
-          <div className="w-2/3">
-            <div className="relative">
-              {/* Aktif duyuru için animasyonlu çizgi */}
-              <div 
-                className={`absolute h-1 bg-red-600 transition-all duration-500 ${animationComplete ? 'animated-line' : ''}`}
-                style={{
-                  left: `${(activeIndex * 100) / currentAnnouncements.length}%`,
-                  top: 0,
-                  transform: `translateX(-50%)`,
-                }} 
-              />
-              <div className="space-y-4">
-                {currentAnnouncements.map((announcement, index) => (
-                  <div key={index} className={`announcement-card  flex bg-white rounded-lg shadow-sm relative`}>
-                    <div className={`h-1 absolute top-0 w-full transition-all duration-500 ${activeIndex === index ? 'bg-[#E85446]' : 'bg-[#C0E1ED]'}`} />
-                    <div className="flex flex-col items-center justify-center rounded-lg px-5">
-                 
-
-                      <p className="announcement-date font-semibold text-black"  >
-{announcement.date.split(" ")[1]}
-                      </p>
-
-                      <p className="text-xs text-gray-600">{announcement.date.split(" ")[0]} </p>
-                 <p className="text-xs text-gray-600">{announcement.date.split(" ")[2]}</p>
-                    </div>
-
-                    <div className="flex-1 ml-5 py-3">
-                      <div className="flex items-center">
-                        <h3 className="announcement-title text-sm font-semibold text-gray-800">{announcement.title}</h3>
-                        <div className={`ml-2 transition-transform duration-1000  ${activeIndex === index ? 'animate-bell' : ''}`}>
-                          <FaBell className={`bell-icon ${activeIndex === index ? 'text-red-600' : 'text-[#C0E1ED]'}`} />
-                        </div>
-                      </div>
-                      <p className="announcement-description text-gray-600 leading-relaxed mt-2 text-sm">{announcement.description}</p>
-                    </div>
-                  </div>
-                ))}
+    <div className="announcement-container container mx-auto  rounded-lg shadow-lg p-4">
+      <h2 className="text-3xl font-bold text-center text-gray-900 mb-8">Akademik Koleji Duyurular</h2>
+      <div className="grid md:grid-cols-5 gap-4">
+        
+        <div className="md:col-span-2 announcements-column flex flex-col">
+          {currentAnnouncements.map((announcement, index) => (
+            <div 
+              key={index} 
+              className={`flex flex-col p-3 mb-3 rounded-lg shadow-md transition duration-300 ease-in-out bg-white text-gray-800 ${highlightedIndex === index ? "bg-gray-300" : ""}`}
+            >
+              <div className="flex items-center mb-1">
+                {announcement.icon}
+                <span className="font-semibold text-md ml-2">{announcement.title}</span>
               </div>
+              <p className="text-xs text-gray-600">{announcement.description}</p>
+              <span className="text-xs text-gray-500">{announcement.date}</span>
             </div>
+          ))}
 
-            <div className="flex justify-center mt-4 space-x-2">
-              {Array.from({ length: totalPages }, (_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setCurrentPage(index)}
-                  className={`h-1 w-4 rounded-full transition-colors duration-300 
-                    ${currentPage === index ? "bg-red-500" : "bg-[#C0E1ED] hover:bg-red-300"}`}
-                />
-              ))}
-            </div>
+          <div className="flex justify-center gap-2 ">
+            <button 
+              onClick={() => setCurrentPage(prev => Math.max(prev - 1, 0))} 
+              disabled={currentPage === 0} 
+              className="bg-gray-300 w-6 h-2 rounded-full flex justify-center items-center hover:bg-gray-400 transition duration-300"
+            >
+            </button>
+            <button 
+              onClick={() => setCurrentPage(prev => Math.min(prev + 1, Math.ceil(announcements.length / announcementsPerPage) - 1))} 
+              disabled={currentPage >= Math.ceil(announcements.length / announcementsPerPage) - 1} 
+              className="bg-gray-300 w-6 h-2 rounded-full flex justify-center items-center hover:bg-gray-400 transition duration-300"
+            >
+            </button>
           </div>
+        </div>
 
-          <div className="relative w-1/3 h-auto">
-            <Image
-              src="/img/home-page/announcements/annoncements.png"
-              fill
-              className="object-contain"
-              alt="Duyurular"
-            />
-          </div>
+        <div className="calendar-column bg-white p-4 rounded-lg shadow-md md:col-span-3">
+          <Calendar 
+            className="react-calendar" 
+            locale="tr-TR" 
+            tileClassName={({ date }) => {
+              return markedDates.some(markedDate => 
+                markedDate.getFullYear() === date.getFullYear() &&
+                markedDate.getMonth() === date.getMonth() &&
+                markedDate.getDate() === date.getDate()
+              ) ? 'highlight' : null; 
+            }}
+            onChange={setValue} 
+            value={value} 
+          />
         </div>
       </div>
     </div>
+    </div>
+
   );
 };
 
