@@ -1,0 +1,62 @@
+
+  
+  .calendar-cover {
+    background-color: #4A90E2; // Kapak rengi
+    color: white;
+    padding: 20px;
+    border-top-left-radius: 10px; // Yuvarlama
+    border-top-right-radius: 10px; // Yuvarlama
+    position: relative; // Tel için konumlandırma
+    z-index: 1; // Telin kapaktan üstte görünmesi için
+  }
+  
+  .calendar-header {
+    text-align: center;
+  }
+  
+  .day {
+    font-size: 2rem; // Gün boyutu
+    font-weight: bold;
+  }
+  
+  .month {
+    font-size: 1.25rem; // Ay ve yıl boyutu
+  }
+  
+  .calendar-container {
+    background: white; // Takvim arka planı
+    border-radius: 0 0 10px 10px; // Alt kısım yuvarlama
+    overflow: hidden; // Taşan içeriği gizlemek için
+  }
+  
+  .react-calendar {
+    width: 100%; // Takvimi kapsaması için
+    border: none; // Sınır kaldırma
+  }
+  
+  // Tel için stil
+  .wires {
+    position: absolute;
+    top: 80%; // Kapak altında görünmesi için
+    left: 50%;
+    transform: translateX(-50%); // Ortalamak için
+    display: flex;
+    justify-content: space-between; // Tel aralığını ayarlamak için
+    width: 90%; // Tel genişliği
+    z-index: 0; // Telin altta görünmesi için
+  }
+  
+  .wire {
+    width: 8px; // Tel kalınlığı
+    background-color: #B0B0B0; // Gri tel rengi
+    border-radius: 3px; // Yuvarlama
+  }
+  
+  .wire.left {
+    height: 35px; // Sol tel yüksekliği
+  }
+  
+  .wire.right {
+    height: 35px; // Sağ tel yüksekliği
+  }
+  
