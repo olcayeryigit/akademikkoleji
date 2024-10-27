@@ -1,62 +1,101 @@
 
-  
-  .calendar-cover {
-    background-color: #4A90E2; // Kapak rengi
-    color: white;
-    padding: 20px;
-    border-top-left-radius: 10px; // Yuvarlama
-    border-top-right-radius: 10px; // Yuvarlama
-    position: relative; // Tel için konumlandırma
-    z-index: 1; // Telin kapaktan üstte görünmesi için
-  }
-  
-  .calendar-header {
-    text-align: center;
-  }
-  
-  .day {
-    font-size: 2rem; // Gün boyutu
-    font-weight: bold;
-  }
-  
-  .month {
-    font-size: 1.25rem; // Ay ve yıl boyutu
-  }
-  
-  .calendar-container {
-    background: white; // Takvim arka planı
-    border-radius: 0 0 10px 10px; // Alt kısım yuvarlama
-    overflow: hidden; // Taşan içeriği gizlemek için
-  }
-  
   .react-calendar {
     width: 100%; // Takvimi kapsaması için
-    border: none; // Sınır kaldırma
+    border: none; // Takvim kenarını kaldır
+    background-color: rgb(255, 255, 255,0);
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   }
   
-  // Tel için stil
-  .wires {
-    position: absolute;
-    top: 80%; // Kapak altında görünmesi için
-    left: 50%;
-    transform: translateX(-50%); // Ortalamak için
-    display: flex;
-    justify-content: space-between; // Tel aralığını ayarlamak için
-    width: 90%; // Tel genişliği
-    z-index: 0; // Telin altta görünmesi için
-  }
+
+
+
+.highlight {
+  background-color:#63B6CC  !important; // İşaretli günlerin arka plan rengi
+  z-index: 99999;
   
-  .wire {
-    width: 8px; // Tel kalınlığı
-    background-color: #B0B0B0; // Gri tel rengi
-    border-radius: 3px; // Yuvarlama
+}
+
+.react-calendar__tile--active{
+  background-color:#dbdbdb   !important; // İşaretli günlerin arka plan rengi
+}
+abbr{
+  text-decoration:  none !important;
+
+}
+
+.react-calendar__month-view__weekdays__weekday{
+ text-decoration:  none !important;
+  font-weight:bold;
+  font-size: 1.2rem;
+  color: #0a4958;
+padding: 1rem 0;
+margin-top: 1rem !important;
+
+}
+
+.react-calendar__month-view__days__day--neighboringMonth{
+  color: #474747 !important;
+
+}
+
+.react-calendar__navigation__label{
+  font-size: 2rem; 
+  font-weight: bold;
+  &:hover{
+    background-color: #ffffff !important;
   }
-  
-  .wire.left {
-    height: 35px; // Sol tel yüksekliği
+  &:focus{
+    background-color: #ffffff !important;
+
   }
-  
-  .wire.right {
-    height: 35px; // Sağ tel yüksekliği
+}
+
+.react-calendar__navigation {
+  margin-top: 2rem !important;
+ 
+}
+.react-calendar__navigation__prev-button, .react-calendar__navigation__next-button, .react-calendar__navigation__prev2-button, .react-calendar__navigation__next2-button{
+  font-size: 2rem; 
+  font-weight: bold;
+  &:hover{
+    background-color: #ffffff !important;
   }
-  
+
+&:focus{
+  background-color: #ffffff !important;
+}
+
+}
+
+
+
+  // Gün hücreleri için gri kenarlık ile kutu görünümü
+  .react-calendar__tile {
+    background-color: #fff;
+    color: #007491;
+ padding: 1.5rem 0 !important;
+    font-weight: bold;
+border-radius:  0.1rem;
+    box-sizing: border-box;
+    font-size: 1.2rem;
+ 
+  }
+
+
+
+
+
+  .react-calendar__month-view__days{
+    position: relative !important;
+      &::after{
+    content: '';
+    position: absolute ;
+    top: 0 ;
+    left: 0 ;
+    right: 0 ;
+    bottom: 0;
+    background-color: rgb(153, 228, 175,0) ;
+    opacity: 0.2;   
+      z-index: 111110 ;
+  }
+  }

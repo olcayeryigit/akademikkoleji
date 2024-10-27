@@ -9,6 +9,7 @@ import Section4 from './section-4/Section4'
 import Section5 from './section-5/Section5'
 import "./home-page.scss"
 import Section6 from './section-6/section6'
+import Section7 from './gallery/Gallery'
 const HomePage = () => {
   return (
     <div className="">
@@ -28,7 +29,8 @@ const HomePage = () => {
 <Section5/>
 <Spacer height='h-24'/>
       <Section6/>
-   
+   <Section7/>
+   <Spacer height='h-24'/>
 
     </div>
   )

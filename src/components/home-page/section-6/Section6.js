@@ -1,59 +1,123 @@
-// components/Section6.js
 "use client";
-import React, { useState } from 'react';
-import Calendar from 'react-calendar';
+
+import React, { useState, useEffect } from "react";
+import Calendar from "react-calendar";
 import 'react-calendar/dist/Calendar.css';
-import './section6.scss'; // SCSS dosyasını içe aktar
-import { FaBriefcase, FaFutbol, FaGraduationCap, FaLaptopCode } from 'react-icons/fa';
+import "./section6.scss";
+import Image from "next/image";
 
 const announcements = [
-  { title: "Yeni Eğitim Programı Başlıyor", date: "22-10-2024", description: "Yeni eğitim programımız 22-10-2024 tarihinde başlıyor.", icon: <FaGraduationCap className="text-xl" /> },
-  { title: "Okul Spor Etkinliği", date: "01-11-2024", description: "01-11-2024 tarihinde düzenlenecek olan okul spor etkinliğine bekliyoruz.", icon: <FaFutbol className="text-xl" /> },
-  { title: "Mezuniyet Töreni", date: "15-12-2024", description: "15-12-2024 tarihinde gerçekleşecek olan Mezuniyet töreni için hazırlıklara başlandı.", icon: <FaGraduationCap className="text-xl" /> },
-  { title: "Kariyer Günü Etkinliği", date: "10-11-2024", description: "10-11-2024 tarihinde gerçekleşecek Kariyer günü etkinliğimizde birçok sektör temsilcisi yer alacak.", icon: <FaBriefcase className="text-xl" /> },
-  { title: "Yazılım Atölyesi", date: "05-12-2024", description: "Yazılım alanında uzmanların katılacağı atölyeler 05-12-2024 tarihinde başlıyor.", icon: <FaLaptopCode className="text-xl" /> },
-  { title: "STEM Proje Yarışması", date: "20-01-2025", description: "Öğrencilerin STEM projelerini sergileyeceği yarışma 20-01-2025 tarihinde gerçekleşecek.", icon: <FaGraduationCap className="text-xl" /> },
+  { title: "Yeni Eğitim Programı Başlıyor", date: "22-10-2024", description: "Yeni eğitim programımız 22-10-2024 tarihinde başlıyor." },
+  { title: "Okul Spor Etkinliği", date: "01-11-2024", description: "01-11-2024 tarihinde düzenlenecek olan okul spor etkinliğine bekliyoruz." },
+  { title: "Mezuniyet Töreni", date: "15-12-2024", description: "15-12-2024 tarihinde gerçekleşecek olan Mezuniyet töreni için hazırlıklara başlandı." },
+  { title: "Kariyer Günü Etkinliği", date: "10-11-2024", description: "10-11-2024 tarihinde gerçekleşecek Kariyer günü etkinliğimizde birçok sektör temsilcisi yer alacak." },
+  { title: "Yazılım Atölyesi", date: "05-12-2024", description: "Yazılım alanında uzmanların katılacağı atölyeler 05-12-2024 tarihinde başlıyor." },
+  { title: "STEM Proje Yarışması", date: "20-01-2025", description: "Öğrencilerin STEM projelerini sergileyeceği yarışma 20-01-2025 tarihinde gerçekleşecek." },
 ];
 
+function convertDateFormat(dateString) {
+  const [day, month, year] = dateString.split('-');
+  return `${year}.${month}.${day}`;
+}
 
 const Section6 = () => {
-  const [date, setDate] = useState(new Date());
+  const [value, setValue] = useState(new Date());
+  const [currentPage, setCurrentPage] = useState(0);
+  const [highlightedIndex, setHighlightedIndex] = useState(0);
+  const announcementsPerPage = 3;
 
-  const handleDateChange = (newDate) => {
-    setDate(newDate);
-  };
+  const markedDates = announcements.map(announcement => new Date(convertDateFormat(announcement.date)));
+  const indexOfLastAnnouncement = (currentPage + 1) * announcementsPerPage;
+  const indexOfFirstAnnouncement = indexOfLastAnnouncement - announcementsPerPage;
+  const currentAnnouncements = announcements.slice(indexOfFirstAnnouncement, indexOfLastAnnouncement);
+
+  const today = new Date();
+  const formattedDay = today.getDate();
+  const formattedMonth = today.toLocaleString("tr-TR", { month: "long" });
+  const formattedYear = today.getFullYear();
+  
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setHighlightedIndex(prevIndex => {
+        const nextIndex = prevIndex + 1;
+        return nextIndex >= currentAnnouncements.length ? 0 : nextIndex;
+      });
+    }, 8000);
+
+    return () => clearInterval(interval);
+  }, [currentAnnouncements.length]);
 
   return (
-    <div className='container mx-auto p-6 flex flex-col items-center'>
-        <h1 className='text-3xl md:text-5xl font-extrabold text-gray-800 leading-tight text-center mb-6'>
-        Akademik Koleji Duyurular</h1>
-    <div className="calendar-wrapper relative w-1/2 shadow-lg">
-      <div className="calendar-cover">
-        <header className="calendar-header">
-          <h2 className="day">{date.getDate()}</h2>
-          <h3 className="month">{date.toLocaleString('tr-TR', { month: 'long', year: 'numeric' })}</h3>
-        </header>
-        <div className="wires">
-        <div className='flex gap-7'>
-                  <div className="wire left"></div>
-          <div className="wire left"></div>
-            </div>
-        <div className='flex gap-7'>
-             <div className="wire right"></div>
-          <div className="wire right"></div>
-        </div>
+    <div className="px-5 lg:px-24 py-10 bg-gray-50">
+      <div className="announcement-container container mx-auto ">
+        <h2 className="text-3xl font-bold text-center text-gray-800 mb-8">Akademik Koleji Duyurular</h2>
+        
+        <div className="flex flex-col grid grid-cols-1 lg:grid-cols-5 shadow-lg mx-auto rounded-lg overflow-hidden bg-white max-w-[1200px] ">
+
+          <div className="lg:col-span-2 announcements-column flex flex-col p-6 text-gray-800 bg-[#63B6CC]">
+            <div className="text-center mb-6 flex justify-center gap-2">
          
+          
+              <div className="flex flex-col gap-2">
+               <div className="text-7xl font-semibold">{formattedDay}</div>
+              <div className="text-3xl text-gray-600">{formattedMonth}</div>
+              <div className="text-3xl text-gray-600">{formattedYear}</div>  
+              </div>
+              <div className="relative h-44 w-44">
+ <Image src="/img/home-page/announcements/3-.png"
+          fill
+          className="object-cover"/>
+            </div>
+            </div>
+
+            {currentAnnouncements.map((announcement, index) => (
+              <div 
+                key={index} 
+                className={`flex flex-col p-4 mb-4 rounded-lg transition duration-300 h-28 bg-white
+                            ${highlightedIndex === index ? "bg-opacity-80" : "bg-opacity-50"}`}
+              >
+                <div className="font-semibold text-lg">{announcement.title}</div>
+                <p className="text-sm text-gray-700">{announcement.description}</p>
+                <span className="text-xs text-gray-500">{announcement.date}</span>
+              </div>
+            ))}
+
+            <div className="flex justify-center gap-2 mt-8">
+              <button 
+                onClick={() => setCurrentPage(prev => Math.max(prev - 1, 0))} 
+                disabled={currentPage === 0} 
+                className={`text-sm w-8 h-2 rounded-md transition duration-300 bg-white
+                            ${currentPage === 0 ? "bg-opacity-80" : "bg-opacity-50"}`}
+              >
+              </button>
+              <button 
+                onClick={() => setCurrentPage(prev => Math.min(prev + 1, Math.ceil(announcements.length / announcementsPerPage) - 1))} 
+                disabled={currentPage >= Math.ceil(announcements.length / announcementsPerPage) - 1} 
+                className={`text-sm w-8 h-2 rounded-md transition duration-300 bg-white 
+                            ${currentPage >= Math.ceil(announcements.length / announcementsPerPage) - 1 ? "bg-opacity-80" : "bg-opacity-50"}`}
+              >
+              </button>
+            </div>
+          </div>
+
+          <div className="calendar-column lg:col-span-3 border-l border-gray-100">
+            <Calendar 
+
+              locale="tr-TR" 
+              tileClassName={({ date }) => {
+                return markedDates.some(markedDate => 
+                  markedDate.getFullYear() === date.getFullYear() &&
+                  markedDate.getMonth() === date.getMonth() &&
+                  markedDate.getDate() === date.getDate()
+                ) ? 'highlight' : null; 
+              }}
+              onChange={setValue} 
+              value={value} 
+              className="border-l w-full h-full px-20 flex flex-col justify-center mt-3"
+            />
+          </div>
         </div>
       </div>
-      <div className="calendar-container">
-        <Calendar
-          onChange={handleDateChange}
-          value={date}
-          locale="tr-TR" // Türkçe dil ayarı
-          className="react-calendar"
-        />
-      </div>
-    </div>
     </div>
   );
 };
