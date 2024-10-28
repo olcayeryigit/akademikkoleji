@@ -5,12 +5,12 @@ import React from 'react'
 
 const Logo = () => {
   return (
-    <div className="relative" style={{height:"4.5rem",width:"20rem"}}>
+    <div className="relative" style={{height:"4.4rem",width:"14rem"}}>
     <Image 
-      src="/img/common/akademik-koleji-ozel-okulu.svg" 
+      src="/img/common/akademik-koleji-kısa-footer.svg" 
       alt="Phone Top Navigation" 
       fill 
-      className="object-cover"  
+      className="object-contain"  
     />
   </div>
   

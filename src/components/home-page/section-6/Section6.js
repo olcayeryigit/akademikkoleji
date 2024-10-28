@@ -63,11 +63,7 @@ const Section6 = () => {
               <div className="text-3xl text-gray-600">{formattedMonth}</div>
               <div className="text-3xl text-gray-600">{formattedYear}</div>  
               </div>
-              <div className="relative h-44 w-44">
- <Image src="/img/home-page/announcements/3-.png"
-          fill
-          className="object-cover"/>
-            </div>
+             
             </div>
 
             {currentAnnouncements.map((announcement, index) => (

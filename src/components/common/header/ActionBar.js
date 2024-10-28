@@ -1,4 +1,4 @@
-"use client";
+import Link from "next/link";
 import {
   FaFacebook,
   FaInstagram,
@@ -20,42 +20,41 @@ const socialLinks = [
 // Buton verilerini tanımlayan bir dizi
 const buttons = [
   {
-    label: "Veli Girişi",
-    className:
-      "bg-[#E12640] text-white font-semibold py-2 px-4 shadow-md rounded-md transition duration-300 hover:bg-[#EA2B48]  focus:outline-none focus:ring-2 focus:ring-[#D82129] focus:ring-opacity-50",
+    label: "VELİ GİRİŞİ",
+    className: "",
   },
   {
-    label: "Öğrenci Girişi",
-    className:
-      "bg-[#143256] text-white font-semibold py-2 px-4 shadow-md rounded-md transition duration-300 hover:bg-[#1e4a6b] focus:outline-none focus:ring-2 focus:ring-[#1e4a6b] focus:ring-opacity-50",
+    label: "ÖĞRENCİ GİRİŞİ",
+    className: "",
   },
 ];
 
 const ActionBar = () => {
   return (
-    <div className="bg-[#F4F1ED] " >
-      <div className="container mx-auto flex justify-between items-center px-5 py-3">
+    <div className="bg-gray-800">
+      <div className="container mx-auto flex justify-between items-center  py-4 text-white ">
         {/* Sol Taraf - Sosyal Medya İkonları */}
         <div className="flex gap-4 items-center">
           {socialLinks.map(({ href, icon: Icon }) => (
             <a href={href} target="_blank" rel="noopener noreferrer" key={href}>
               <Icon
-                size={24}
-                className="text-[#143256] hover:text-[#D82129] transition duration-300"
+                size={20}
+                className="text-white hover:text-gray-200 transition duration-300"
               />
             </a>
           ))}
         </div>
 
-        {/* Sağ Taraf - Buton Grubu */}
-        <div className="flex gap-3 items-center">
+        {/* Sağ Taraf - Link Grubu */}
+        <div className="flex gap-8 items-center font-semibold">
           {buttons.map(({ label, className }) => (
-            <button key={label} className={`${className}`}>
+            <Link href="" key={label} className={`${className} group relative`}>
               {label}
-            </button>
+              <span className="block h-0.5 bg-[#D82129] absolute left-0 bottom-0 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
+            </Link>
           ))}
 
-          <div className="flex items-center text-lg gap-2 text-[#143256] font-bold ms-5 text-3xl transition-transform duration-1000 transform hover:scale-110 ">
+          <div className="flex items-center text-lg gap-2 font-bold ms-5 text-3xl transition-transform duration-1000 transform hover:scale-110">
             <FaHeadphonesAlt size={20} />
             444 80 16
           </div>

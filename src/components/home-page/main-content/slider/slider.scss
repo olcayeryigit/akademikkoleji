@@ -23,13 +23,32 @@
     .swiper-pagination-bullet {
       width: 20px !important; /* Genişlik arttırıldı */
       height: 20px !important; /* Yükseklik arttırıldı */
-      background: rgba(255, 255, 255, 0.3); /* Arka plan rengi */
+      background: rgba(175, 175, 175, 0.3); /* Arka plan rengi */
       opacity: 1; /* Şeffaflık */
       transition: opacity 0.3s; /* Geçiş efekti */
       margin: 5px 0; /* Dikey aralık vermek için */
       
       &.swiper-pagination-bullet-active {
-     border: 4px solid rgb(252, 251, 250,0.6);
+     border: 4px solid rgb(252, 251, 250,0.8);
       }
     }
   }
+
+
+
+  @keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.diller {
+    // Add any necessary styles for the diller container
+}
+
+.diller div {
+    animation: fadeIn 0.5s ease-in forwards; // Apply the fade-in animation
+}

@@ -13,7 +13,8 @@ const Header = () => {
   };
 
   const handleScroll = () => {
-    if (window.scrollY > 50) {
+    // Burada 100 piksel daha fazla kaydırmayı kontrol ediyoruz
+    if (window.scrollY > 0) {
       setIsScrolled(true);
     } else {
       setIsScrolled(false);
@@ -28,30 +29,30 @@ const Header = () => {
   }, []);
 
   const links = [
-    { name: "Anasayfa", href: "#" },
-    { name: "Eğitimlerimiz", href: "#" },
-    { name: "Öğrenci Kulüpleri", href: "#" },
-    { name: "Kurumsal", href: "#" },
-    { name: "Kampüs", href: "#" },
-    { name: "İletişim", href: "#" },
+    { name: "ANASAYFA", href: "#" },
+    { name: "EĞİTİMLERİMİZ", href: "#" },
+    { name: "ÖĞRENCİ KULÜPLERİ", href: "#" },
+    { name: "KURUMSAL", href: "#" },
+    { name: "KAMPÜS", href: "#" },
+    { name: "İLETİŞİM", href: "#" },
   ];
 
   return (
     <header
-      className="fixed top-0 w-full bg-white bg-opacity-20 shadow-lg backdrop-blur-md"
+      className={`fixed top-0 w-full text-white transition-colors duration-300 ${isScrolled ? 'bg-gray-900 ' : 'bg-transparent'}`} // Arka plan rengini buradan ayarlıyoruz
       style={{ zIndex: "999999" }}
     >
       {/* ActionBar sadece en üstteyken gösterilsin ve tamamen kaybolsun */}
       <div
         className={`transition-all duration-[1s] ease-in-out overflow-hidden ${
-          isScrolled ? "opacity-0 max-h-0" : "opacity-100 max-h-20"
+          isScrolled ? " opacity-0 max-h-0" : " opacity-100 max-h-20"
         }`}
       >
         <ActionBar />
       </div>
 
       {/* Main header */}
-      <div className="container mx-auto flex justify-between items-center px-6 py-3">
+      <div className="container mx-auto flex justify-between items-center px-6 py-2">
         {/* Logo */}
         <div className="flex items-center space-x-4">
           <Logo />
@@ -99,7 +100,7 @@ const Header = () => {
 
         {/* Navigation Links */}
         <div className="hidden lg:flex items-center space-x-8">
-          <nav className="space-x-6 font-semibold text-gray-800 ">
+          <nav className="space-x-6 font-medium">
             {links.map((link) => (
               <Link key={link.name} href={link.href}>
                 {link.name}
