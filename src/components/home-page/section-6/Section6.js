@@ -48,20 +48,20 @@ const Section6 = () => {
   }, [currentAnnouncements.length]);
 
   return (
-    <div className="px-5 lg:px-24 py-10 bg-gray-50">
+    <div className="px-5 lg:px-24 py-24 bg-[#F4F5F6]">
       <div className="announcement-container container mx-auto ">
         <h2 className="text-3xl font-bold text-center text-gray-800 mb-8">Akademik Koleji Duyurular</h2>
         
         <div className="flex flex-col grid grid-cols-1 lg:grid-cols-5 shadow-lg mx-auto rounded-lg overflow-hidden bg-white max-w-[1200px] ">
 
-          <div className="lg:col-span-2 announcements-column flex flex-col p-6 text-gray-800 bg-[#63B6CC]">
+          <div className="lg:col-span-2 announcements-column flex flex-col p-6 text-gray-800 bg-[#85ABB8]">
             <div className="text-center mb-6 flex justify-center gap-2">
          
           
               <div className="flex flex-col gap-2">
-               <div className="text-7xl font-semibold">{formattedDay}</div>
-              <div className="text-3xl text-gray-600">{formattedMonth}</div>
-              <div className="text-3xl text-gray-600">{formattedYear}</div>  
+               <div className="text-5xl font-semibold">{formattedDay}</div>
+              <div className="text-2xl text-gray-600">{formattedMonth}</div>
+              <div className="text-2xl text-gray-600">{formattedYear}</div>  
               </div>
              
             </div>
@@ -72,13 +72,13 @@ const Section6 = () => {
                 className={`flex flex-col p-4 mb-4 rounded-lg transition duration-300 h-28 bg-white
                             ${highlightedIndex === index ? "bg-opacity-80" : "bg-opacity-50"}`}
               >
-                <div className="font-semibold text-lg">{announcement.title}</div>
+                <div className="font-semibold text-md">{announcement.title}</div>
                 <p className="text-sm text-gray-700">{announcement.description}</p>
                 <span className="text-xs text-gray-500">{announcement.date}</span>
               </div>
             ))}
 
-            <div className="flex justify-center gap-2 mt-8">
+            <div className="flex justify-center gap-2 mt-4">
               <button 
                 onClick={() => setCurrentPage(prev => Math.max(prev - 1, 0))} 
                 disabled={currentPage === 0} 
@@ -96,7 +96,7 @@ const Section6 = () => {
             </div>
           </div>
 
-          <div className="calendar-column lg:col-span-3 border-l border-gray-100">
+          <div className="calendar-column lg:col-span-3 border-l border-gray-100 ">
             <Calendar 
 
               locale="tr-TR" 
@@ -109,7 +109,7 @@ const Section6 = () => {
               }}
               onChange={setValue} 
               value={value} 
-              className="border-l w-full h-full px-20 flex flex-col justify-center mt-3"
+              className="border-l w-full h-full px-20 flex flex-col mt-10"
             />
           </div>
         </div>

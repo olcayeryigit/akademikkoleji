@@ -10,7 +10,7 @@ const MainContent = () => {
         <div className='lg:col-span-3 flex justify-center'> {/* Center the Slider component */}
           <Slider />
         </div>
-        <div className='lg:col-span-1 z-50' > {/* Center the PreRegistrationForm component */}
+        <div className='lg:col-span-1 z-50 flex justify-center md:block mt-28 md:mt-0' > {/* Center the PreRegistrationForm component */}
           <PreRegistrationForm />
         </div>
       </div>

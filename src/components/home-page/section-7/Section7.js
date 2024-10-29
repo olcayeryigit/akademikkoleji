@@ -4,7 +4,7 @@ import { Navigation, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation'; // Navigation stil dosyası
 import Image from 'next/image';
-import "./section7.scss";
+import './section7.scss';
 
 const Section7 = () => {
     const images = [
@@ -23,7 +23,6 @@ const Section7 = () => {
             <h2 className="text-4xl font-bold text-center mb-6">Okul Galerisi</h2>
             <Swiper
                 spaceBetween={20} // Resimler arasında boşluk
-                slidesPerView={4} // Aynı anda 4 resim göster
                 navigation={true} // Navigation butonlarını etkinleştir
                 autoplay={{
                     delay: 3000,
@@ -31,22 +30,32 @@ const Section7 = () => {
                 }}
                 loop={true}
                 modules={[Navigation, Autoplay]}
+                breakpoints={{
+                    640: {
+                        slidesPerView: 1, // Küçük ekranlar için 1 resim göster
+                    },
+                    768: {
+                        slidesPerView: 2, // Orta boy ekranlar için 2 resim göster
+                    },
+                    1024: {
+                        slidesPerView: 3, // Büyük ekranlar için 3 resim göster
+                    },
+                    1280: {
+                        slidesPerView: 4, // En büyük ekranlar için 4 resim göster
+                    },
+                }}
                 className=''
             >
                 {images.map((image, index) => (
-                    <SwiperSlide key={index} className=' opacity-80 hover:opacity-100 transition-opacity duration-300'>
-                      <div className='relative w-76 h-52'>
-                        <Image      src={image.src}
-                            alt={image.alt}
-                          fill
-                          className='object-cover rounded'
-                      />     
-                      </div>
-                       
-                       
-                          
-                            
-                       
+                    <SwiperSlide key={index} className='opacity-80 hover:opacity-100 transition-opacity duration-300'>
+                        <div className='relative w-76 h-52'>
+                            <Image
+                                src={image.src}
+                                alt={image.alt}
+                                fill
+                                className='object-cover rounded'
+                            />
+                        </div>
                     </SwiperSlide>
                 ))}
             </Swiper>

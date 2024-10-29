@@ -62,38 +62,67 @@ const Slider = () => {
             }}
             loop={true}
             modules={[Pagination, Autoplay]}
-            className='w-[55rem] h-[28rem]'
+            className='w-[370px] h-[500px] md:w-[55rem] md:h-[28rem]'
         >
-            <SwiperSlide className='relative px-12'>
-                <div className='flex flex-col gap-8 p-8'>
-                    <h1 className='text-3xl font-extrabold text-white '>
-                        5 DİLDE EĞİTİM VEREN TEK ÖZEL OKULUZ!
-                    </h1>
-                    <h2 className='text-xl text-gray-300 mb-6'>
-                        Kids ve Teens Yaş Gruplarına Özgü Nitelik Kazandıran Dil Eğitimi
-                    </h2>
+            <SwiperSlide className='relative p-0 px-2 md:ps-16  md:pt-32'>
+                <div className='flex flex-col gap-4 md:gap-4 pt-10 md:pt-0'>
+                <h1 style={{textShadow: "2px 2px 4px rgba(0, 0, 0, 0.5)"
+   }} className='text-xl md:text-3xl font-extrabold text-white tracking-wide'>
+ <span className="text-[#ED1F25]">5 DİLDE </span>Eğitim Veren <span className="text-[#FECC07]"> TEK ÖZEL OKULUZ!   </span>
+</h1>
+<h2 className='text-md md:text-xl text-gray-300  tracking-wide mb-6'>
+    Kids ve Teens Yaş Gruplarına Özgü Nitelik Kazandıran Dil Eğitimi
+</h2>
 
-                    <div className='diller flex gap-8'>
+
+                    <div className='diller flex flex-col  md:flex-row gap-4 md:gap-8 '>
                         {visibleLanguages.map((lang, index) => (
                             <div
                                 key={index}
-                                className={`flex flex-col items-center transition-opacity duration-500 ease-in-out`} 
+                                className={`flex  flex-row md:flex-col gap-4 items-center transition-opacity duration-500 ease-in-out`} 
                                 style={{ opacity: lang.opacity || 1 }} // Use opacity from state
                             >
-                                <Image width={60} height={60} className='object-contain' src={lang.img} alt={`${lang.name} flag`} />
-                                <h1 className='text-xl font-bold text-white mt-2'>{lang.name}</h1>
+                                <div className='relative w-10 h-10 md:w-16 md:h-16'>
+                                     <Image fill className='object-contain  rounded-full ' src={lang.img} alt={`${lang.name} flag`} />
+                                </div>
+
+                               
+                                <h1 className='text-sm md:text-xl font-bold text-white mt-0 md:mt-2'>{lang.name}</h1>
                             </div>
                         ))}
                     </div>
                 </div>
             </SwiperSlide>
 
-            <SwiperSlide className='relative mx-8'>
-                <div className=''>
-                    {/* Diğer slayt içeriği buraya eklenebilir */}
+            <SwiperSlide className='relative p-0 px-2 md:ps-16  md:pt-32'>
+                <div className='flex flex-col gap-4 md:gap-4 pt-10 md:pt-0'>
+                <h1 style={{textShadow: "2px 2px 4px rgba(0, 0, 0, 0.5)"
+   }} className='text-xl md:text-3xl font-extrabold text-white tracking-wide'>
+ <span className="text-[#ED1F25]">BİLİŞİM  </span> ve <span className="text-[#FECC07]"> ROBOTİK </span>
+Programları</h1> 
+<h2 className='text-md md:text-xl text-gray-300  tracking-wide mb-6'>
+ Bilişim, Yapay Zeka (AI), Robotik, Kodlama ve 3D Art </h2>
+
+
+                    <div className='diller flex flex-col  md:flex-row gap-4 md:gap-8 '>
+                        {visibleLanguages.map((lang, index) => (
+                            <div
+                                key={index}
+                                className={`flex  flex-row md:flex-col gap-4 items-center transition-opacity duration-500 ease-in-out`} 
+                                style={{ opacity: lang.opacity || 1 }} // Use opacity from state
+                            >
+                                <div className='relative w-10 h-10 md:w-16 md:h-16'>
+                                     <Image fill className='object-contain  rounded-full ' src={lang.img} alt={`${lang.name} flag`} />
+                                </div>
+
+                               
+                                <h1 className='text-sm md:text-xl font-bold text-white mt-0 md:mt-2'>{lang.name}</h1>
+                            </div>
+                        ))}
+                    </div>
                 </div>
             </SwiperSlide>
-            <SwiperSlide className='relative mx-8'>
+            <SwiperSlide className='relative'>
                 <div className=''>
                     {/* Diğer slayt içeriği buraya eklenebilir */}
                 </div>

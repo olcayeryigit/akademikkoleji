@@ -11,6 +11,7 @@ import "./home-page.scss"
 import Section6 from './section-6/section6'
 import Section7 from './section-7/Section7'
 import Section8 from './section-8/Section8'
+import Section9 from './section-9/Section9'
 const HomePage = () => {
   return (
     <div className="">
@@ -24,29 +25,27 @@ const HomePage = () => {
       
       {/* Overlay */}
       <div className="absolute inset-0 bg-black opacity-50" /> {/* Opaklık ayarı, siyah overlay */}
-
-
-
 <MainContent/>
   </div>
   <Spacer height='h-10'/>
-
 <Section1/>
-<Spacer height='h-24'/> 
+<Spacer height='h-14'/>
 <Section2/>
-<Spacer height='h-10'/>
+<Spacer height='h-8'/>
 <Section3/>
-<Spacer height='h-24'/>
+<Spacer height='h-20'/>
 <Section4/>
 <Spacer height='h-24'/>
 <Section5/>
-<Spacer height='h-24'/>
 <Section6/>
-<Spacer height='h-24'/>
-
+<Spacer height='h-4'/>
 <Section7 />
-<Spacer height='h-24'/>
+<Spacer height='h-16'/>
 <Section8/>
+<Spacer height='h-16'/>
+
+<Section9/>
+<Spacer height='h-16'/>
 
 </div>
   )
