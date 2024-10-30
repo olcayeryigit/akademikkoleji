@@ -6,6 +6,8 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import './slider.scss';
 import Image from 'next/image';
+import { FaCircleDot, FaCircleH } from 'react-icons/fa6';
+import { FaCircle, FaRegCircle } from 'react-icons/fa';
 
 const Slider = () => {
     const languages = [
@@ -17,14 +19,15 @@ const Slider = () => {
     ];
 
     const informatics = [
-        { name: 'BİLİŞİM', img: '/img/home-page/main-content/informatics/1.png' },
+        { name: 'BİLİŞİM', img: '/img/home-page/main-content/informatics/3.png' },
         { name: 'YAPAY ZEKA (AI)', img: '/img/home-page/main-content/informatics/2.png' },
-        { name: 'ROBOTİK', img: '/img/home-page/main-content/informatics/3.png' },
-        { name: 'KODLAMA', img: '/img/home-page/main-content/informatics/4.png' },
+        { name: 'ROBOTİK', img: '/img/home-page/main-content/informatics/1.png' },
+        { name: 'KODLAMA', img: '/img/home-page/main-content/informatics/4.png'},
         { name: '3D ART', img: '/img/home-page/main-content/informatics/5.png' },
     ];
+    
 
-
+   
 
     const [visibleLanguages, setVisibleLanguages] = useState([]);
 
@@ -80,7 +83,7 @@ const Slider = () => {
    }} className='text-xl md:text-3xl font-extrabold text-white tracking-wide'>
  <span className="text-[#ED1F25]">5 DİLDE </span>Eğitim Veren <span className="text-[#FECC07]"> TEK ÖZEL OKULUZ!   </span>
 </h1>
-<h2 className='text-md md:text-xl text-gray-300  tracking-wide mb-6'>
+<h2 className='text-md md:text-xl text-white tracking-wide mb-6'>
     Kids ve Teens Yaş Gruplarına Özgü Nitelik Kazandıran Dil Eğitimi
 </h2>
 
@@ -103,36 +106,64 @@ const Slider = () => {
                     </div>
                 </div>
             </SwiperSlide>
-            <SwiperSlide className='relative p-0 px-2 md:ps-16 md:pt-48'>
-    <div className='flex flex-col items-center relative'>
+            <SwiperSlide className='relative p-0 px-4 md:ps-24 md:pt-4'>
+    {/* Arka Plan Görseli */}
+    <div className='absolute inset-0 bg-[url("/path/to/background-image.jpg")] bg-cover bg-center opacity-90'></div>
+    
+    {/* İçerik Katmanı */}
+    <div className='relative z-10 flex flex-col items-center'>
+        {/* Başlıklar */}
         <h1
-            style={{ textShadow: "2px 2px 4px rgba(0, 0, 0, 0.5)" }}
-            className='md:text-xl font-extrabold text-white tracking-wide z-10 text-center w-52'
+            style={{ textShadow: "3px 3px 12px rgba(0, 0, 0, 0.8)" }} // Daha belirgin gölge
+            className='text-center text-lg md:text-3xl font-extrabold text-white tracking-wide mb-2'
         >
-            <span className="text-[#D4A017]">BİLİŞİM</span> ve <span className="text-[#D4A017]">ROBOTİK</span> Programları
+            <span className="text-[#4585a8]" style={{ textShadow: "1px 1px 5px rgba(0, 0, 0, 1)" }}>BİLİŞİM</span> ve <span className="text-[#95b1b2]" style={{ textShadow: "1px 1px 5px rgba(0, 0, 0, 1)" }}>ROBOTİK</span> Programları
         </h1>
+        <h2 className='text-md md:text-xl text-white tracking-wide mb-6 text-center px-4'>
+            Bilişim, Yapay Zeka (AI), Robotik, Kodlama ve 3D Art
+        </h2>
 
-        <div className='absolute flex justify-center items-center w-full h-full'>
-            {informatics.map((inf, index) => {
-                const angle = (index / informatics.length) * (2 * Math.PI); // Açıyı hesapla
-                const radius = 170; // Dairenin yarıçapı (px cinsinden)
-                const x = Math.cos(angle) * radius; // Dönüşüm hesapla
-                const y = Math.sin(angle) * radius; // Dönüşüm hesapla
-
-                return (
-                    <div
-                        key={index}
-                        className={`flex flex-col items-center gap-2 absolute`}
-                        style={{ transform: `translate(${x}px, ${y}px)` }}
+        {/* 3-üst, 2-alt Resim Grid Yapısı */}
+        <div className='grid grid-cols-3 gap-6'>
+            {/* İlk Satırda 3 Resim */}
+            {informatics.slice(0, 3).map((inf, index) => (
+                <div key={index} className='relative flex justify-center items-center text-center'>
+                    <div 
+                        className='relative w-20 h-20 md:w-28 md:h-28 rounded-full border-8 border-[rgba(0,119,190,0.5)] shadow-2xl shadow-black ' // Kalın ve Saydam Turkuaz border
                     >
-                      
-                        <div className='relative w-16 h-16 md:w-24 md:h-24  flex items-center justify-center'>
-                            <Image fill className='object-cover ' src={inf.img} alt={`${inf.name} icon`} />
-                            <h1 className='absolute text-xs md:text-sm font-semibold text-[#D4A017] tracking-wider'>{inf.name}</h1>
-                        </div>
+                        <Image 
+                            fill 
+                            className='object-cover rounded-full bg-blue-50' 
+                            src={inf.img} 
+                            alt={`${inf.name} image`} 
+                        />
                     </div>
-                );
-            })}
+                    <h1 className='absolute -bottom-8 text-sm md:text-lg font-semibold text-white whitespace-nowrap'>
+                        {inf.name}
+                    </h1>
+                </div>
+            ))}
+        </div>
+
+        {/* İkinci Satırda 2 Resim */}
+        <div className='grid grid-cols-2 gap-6 mt-10'>
+            {informatics.slice(3, 5).map((inf, index) => (
+                <div key={index} className='relative flex justify-center items-center text-center '>
+                    <div 
+                        className='relative w-20 h-20 md:w-28 md:h-28 rounded-full border-8 border-[rgba(113,206,204,0.4)] shadow-2xl shadow-black ' // Kalın ve Saydam Turkuaz border
+                    >
+                        <Image 
+                            fill 
+                            className='object-cover rounded-full bg-blue-50' 
+                            src={inf.img} 
+                            alt={`${inf.name} image`} 
+                        />
+                    </div>
+                    <h1 className='absolute -bottom-8 text-sm md:text-lg font-semibold text-white whitespace-nowrap'>
+                        {inf.name}
+                    </h1>
+                </div>
+            ))}
         </div>
     </div>
 </SwiperSlide>
