@@ -1,5 +1,5 @@
-import ActionBar from "@/components/common/header/ActionBar";
-import Header from "@/components/common/header/Header";
+import Footer from "@/components/root-layout/footer/Footer";
+import Header from "@/components/root-layout/header/Header";
 import "@/styles/index.scss";
 import { Open_Sans } from "next/font/google";  // Open Sans yazı tipini içe aktarıyoruz
 
@@ -22,7 +22,14 @@ export default function RootLayout({ children }) {
           <Header />
         </div>
         {children}
-      </body>
+
+
+     
+  <Footer/>    
+ 
+         
+      </body>  
+
     </html>
   );
 }

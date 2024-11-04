@@ -2,6 +2,7 @@
 import Image from "next/image";
 import React, { useState } from "react";
 import { FaBook, FaPen, FaSchool } from "react-icons/fa";
+import { RiBook2Fill } from "react-icons/ri";
 
 const Section2 = () => {
   const data = [
@@ -23,7 +24,7 @@ const Section2 = () => {
       p1: "Geniş anlamda ise akademik başarının ve iyi bir kariyer hedefinin yanı sıra, eşitlik, doğruluk, adalet ve erdem kavramlarını özümsemiş, ahlaki değerlere sahip, çevresine ve insanlığa faydalı olma ilkesini benimsemiş, üstün insani değerler taşıyan vasıflı bireyler yetiştirmektir. Bu hedeflere ulaşabilmek için belirli etkileşimli ve eleştirel düşünme becerilerinin geliştirmesi gerekir.",
       p2: "Akademik Koleji olarak Dijital Eğitim Modeli Endüstri 4.0 ile teknolojiyi eğitim sistemimizin her alanında etkili bir çarpan olarak kullanıyoruz. Teknolojik alt yapımız ve donanımlı sınıflarımızla, öğretmenlerimiz önderliğinde, öğrencilerimize hızlıca ulaşabilecekleri sınırsız nitelikli eğitim materyali sunuyoruz. Multi Lingual (Çok Dilli) eğitim programlarımızla öğrencilerimizin ikinci ve üçüncü yabancı dil öğrenimlerini sağlarken birer dünya vatandaşı olmaları yolunda onlara rehberlik ediyoruz. Üstün kişilik özelliklerini donanımlı akademik gelişimle birleştirmeyi ve yalnızca ülkemizde değil, dünyada da aranan, vasıflı ve aydın bireyler yetiştirmeyi eğitim sistemimizin odağına koyuyoruz.",
       image: "/img/home-page/section-2/3-.jpeg",
-      icon: <FaBook />,
+      icon: <FaPen />,
     },
     {
       id: 3,
@@ -33,7 +34,8 @@ const Section2 = () => {
       p1: "Bilim, sanat, teknoloji ve kültür alanında büyük bir hızla büyüyen ve gelişen dünyamızda, öğrencilerimizin eğitiminde kullandığımız yayınlarımızın da bu büyüme ve gelişime uygun olarak güncel tutulmasını önemsiyoruz. Bir üst sınıfa en donanımlı hazırlığı sağlayacak ve nihayetinde ülkemizin ve dünyanın önde gelen üniversitelerine öğrenci kazandıracak donanımlı yayınları kullanmak temel ilkelerimizdendir.",
       p2: "Okulumuz bünyesinde kurmuş olduğumuz ve nitelikli akademisyenlerden oluşan Eğitim Komisyonumuzca, dünyada ve ülkemizde, eğitim alanında meydana gelen gelişmeleri yakından takip ederek, öğrencilerimizin emsallerinin önüne geçmesini sağlayacak, ulusal ve uluslararası yayınları sistemimize entegre ediyoruz. Kariyerlerinde kilometre taşı niteliğinde olacak olan LGS ve YKS sınavlarına yönelik stratejik çalışma programlarını, nitelikli yayınlarla sunuyoruz. Bunun yanı sıra sosyal ve kültürel anlamda donanımlı birer birey olmaları adına ihtiyaç duyacakları yayınları, kişilik eğitimi, bireye özgü eğitim, STEM ART Eğitimi, Multi Lingual Eğitim ve daha birçok özellik arz eden eğitim programlarımız dahilinde istifadelerine sunuyoruz.",
       image: "/img/home-page/section-2/2-.jpg",
-      icon: <FaPen />,
+      icon:<RiBook2Fill />
+      ,
     },
 
   ];
@@ -42,7 +44,7 @@ const Section2 = () => {
   const selectedData = data.find((item) => item.id === selectedId);
 
   return (
-    <div className="container mx-auto py-12 px-4 md:px-0">
+    <div className="container mx-auto py-4 px-4 md:px-0">
       {/* Kartlar */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-10">
         {data.map((item) => (

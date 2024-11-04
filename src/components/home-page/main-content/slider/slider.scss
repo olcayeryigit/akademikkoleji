@@ -71,6 +71,7 @@
 min-width:375px;
       flex-direction: row !important;
       width: auto !important; // Let the width adjust automatically
+      z-index: 99999999 !important;
     }
 
     .swiper-pagination-bullet {
@@ -84,6 +85,18 @@ min-width:375px;
     // Add any specific styles for the diller container on small screens
     padding: 10px; // Example: add padding
     font-size: 14px; // Example: adjust font size 
+  }
+}
+
+//
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
   }
 }
 

@@ -45,7 +45,10 @@ const Section1 = () => {
   ];
 
   return (
-    <div className="section-1-wrapper container mx-auto py-12">
+    <div className="relative py-24  bg-[url('/img/common/x.png')] bg-cover bg-center bg-no-repeat ">
+        <div class="absolute inset-0 bg-gradient-to-r from-gray-800 to-white opacity-30"></div>
+
+    <div className="section-1-wrapper container mx-auto">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {datas.map((data, index) => (
           <div
@@ -67,15 +70,24 @@ const Section1 = () => {
             </div>
             
             {/* Hover Durumu İçin Kutu */}
-            <div className="bg-black bg-opacity-50 absolute inset-0 flex flex-col justify-center items-center p-4 transition-transform duration-300 transform translate-y-full group-hover:translate-y-0">
-              <p className="text-lg font-bold text-white flex items-center">
-                {data.title} <FaArrowRight className="ml-2" />
-              </p>
+            <div className="bg-black bg-opacity-50 absolute inset-0 flex flex-col transition-transform duration-300 transform translate-y-full group-hover:translate-y-0 ps-16 pt-12">
+              <div className="text-lg font-bold text-white flex items-center gap-2  ">
+             
+<p>{data.title} </p>  
+
+              <div className=' bg-black p-2 rounded-full border-2 border-white'>
+                <div className='relative w-4 h-4'>
+
+          <Image src="/img/logo/ak-1.png" fill className='contain'/>        
+                </div>
+
+              </div > 
+              </div>
               {data.links.map((link, linkIndex) => (
                 <Link
                   key={linkIndex}
                   href={link.href}
-                  className="block mt-2 px-4 py-2 text-white text-md hover:text-gray-300 transition-colors duration-200"
+                  className="block mt-2 text-white text-md hover:text-gray-200 transition-colors duration-200"
                 >
                   {link.label}
                 </Link>
@@ -84,7 +96,7 @@ const Section1 = () => {
           </div>
         ))}
       </div>
-    </div>
+    </div> </div>
   );
 }
 

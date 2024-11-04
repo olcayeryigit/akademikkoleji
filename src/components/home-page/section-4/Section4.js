@@ -1,159 +1,55 @@
 "use client";
 import Image from 'next/image';
 import Link from 'next/link';
-import React, { useState } from 'react';
+import React from 'react';
+import "./section-4.scss";
 
 const Section4 = () => {
-  const [hoverIndex, setHoverIndex] = useState(null);
-  const [moveX, setMoveX] = useState(0);
-  const [moveY, setMoveY] = useState(0);
-
-  const leftLinks = [
-    { href: '#', text: 'KARİYER GELİŞİM KULÜBÜ', icon: "/img/home-page/section-4/icons/speech.svg", src: "/img/home-page/section-4/images/kariyer.jpg" },
-    { href: '#', text: 'SPOR ve SATRANÇ KULÜBÜ', icon: "/img/home-page/section-4/icons/chess.png", src: "/img/home-page/section-4/images/satranc.jpg" },
-    { href: '#', text: 'KÜLTÜR EDEBİYAT KULÜBÜ', icon: "/img/home-page/section-4/icons/edebiyat.svg", src: "/img/home-page/section-4/images/backgrounds.png" },
-    { href: '#', text: 'GÖRSEL SANATLAR VE MÜZİK KULÜBÜ', icon: "/img/home-page/section-4/icons/gorsel-muzik.svg", src: "/img/home-page/section-4/images/paint.png" }
+  const links = [
+    { href: '#', text: 'Kariyer Gelişim Kulübü', icon: "/img/home-page/section-4/icons/speech.svg", bgImage: "/img/home-page/section-4/images/kariyer.jpg", color: 'bg-gradient-to-r from-blue-900 to-blue-500', description: 'Kariyer fırsatlarını keşfedin.' },
+    { href: '#', text: 'Spor ve Satranç Kulübü', icon: "/img/home-page/section-4/icons/chess.png", bgImage: "/img/home-page/section-4/images/satranc.jpg", color: 'bg-gradient-to-r from-green-900 to-green-500', description: 'Zihin açıcı satranç oyunları.' },
+    { href: '#', text: 'Kültür Edebiyat Kulübü', icon: "/img/home-page/section-4/icons/edebiyat.svg", bgImage: "/img/home-page/section-4/images/backgrounds.png", color: 'bg-gradient-to-r from-yellow-900 to-yellow-500', description: 'Edebiyat dünyasında yolculuk.' },
+    { href: '#', text: 'Görsel Sanatlar Kulübü', icon: "/img/home-page/section-4/icons/gorsel-muzik.svg", bgImage: "/img/home-page/section-4/images/paint.png", color: 'bg-gradient-to-r from-purple-900 to-purple-500', description: 'Sanat eserlerinizi yaratın.' },
+    { href: '#', text: 'Diğer Etkinlikler', icon: "/img/home-page/section-4/icons/diger.svg", bgImage: "/img/home-page/section-4/images/diger.jpg", color: 'bg-gradient-to-r from-pink-900 to-pink-500', description: 'Çeşitli etkinliklerle tanışın.' },
+    { href: '#', text: 'Robotik Kodlama Kulübü', icon: "/img/home-page/section-4/icons/code.png", bgImage: "/img/home-page/section-4/images/kodlama.jpg", color: 'bg-gradient-to-r from-teal-900 to-teal-500', description: 'Kodlama ve robotik dünyasına adım atın.' },
+    { href: '#', text: 'Sosyal Etkinlikler Kulübü', icon: "/img/home-page/section-4/icons/sosyal.svg", bgImage: "/img/home-page/section-4/images/sosyal.jpg", color: 'bg-gradient-to-r from-orange-900 to-orange-500', description: 'Sosyal etkinlikler sizi bekliyor.' },
+    { href: '#', text: 'Bilim ve Teknoloji Kulübü', icon: "/img/home-page/section-4/icons/science.png", bgImage: "/img/home-page/section-4/images/fen.jpg", color: 'bg-gradient-to-r from-indigo-900 to-indigo-500', description: 'Bilimsel keşifler ve deneyler.' }
   ];
-
-  const rightLinks = [
-    { href: '#', text: 'DİĞER ETKİNLİKLER', icon: "/img/home-page/section-4/icons/diger.svg", src: "/img/home-page/section-4/images/diger.jpg" },
-    { href: '#', text: 'ROBOTİK KODLAMA KULÜBÜ', icon: "/img/home-page/section-4/icons/code.png", src: "/img/home-page/section-4/images/kodlama.jpg" },
-    { href: '#', text: 'SOSYAL ETKİNLİKLER', icon: "/img/home-page/section-4/icons/sosyal.svg", src: "/img/home-page/section-4/images/sosyal.jpg" },
-    { href: '#', text: 'BİLİM, FEN ve TEKNOLOJİ KULÜBÜ', icon: "/img/home-page/section-4/icons/science.png", src: "/img/home-page/section-4/images/fen.jpg" }
-  ];
-
-  const handleMouseEnter = (index) => {
-    setHoverIndex(index);
-  };
-
-  const handleMouseMove = (e) => {
-    const { clientX, clientY, currentTarget } = e;
-    const { left, top, width, height } = currentTarget.getBoundingClientRect();
-
-    const x = ((clientX - left) / width - 0.5) * 10; // -5 ile 5 arası kayma
-    const y = ((clientY - top) / height - 0.5) * 10; // -5 ile 5 arası kayma
-
-    setMoveX(x / 12);
-    setMoveY(y / 12);
-  };
-
-  const handleMouseLeave = () => {
-    setHoverIndex(null);
-    setMoveX(0);
-    setMoveY(0);
-  };
 
   return (
-    <div className="container mx-auto w-full h-auto grid grid-cols-1 md:grid-cols-9 gap-8 p-8">
-      {/* Sol tarafta kare linkler */}
-      <div className="md:col-span-3 grid grid-cols-2">
-        {leftLinks.map((link, index) => (
-          <div
-            key={index}
-            className="relative bg-black flex items-center justify-center group overflow-hidden shadow-xl aspect-square transition-all duration-500 cursor-pointer"
-            onMouseEnter={() => handleMouseEnter(index)}
-            onMouseMove={handleMouseMove}
-            onMouseLeave={handleMouseLeave}
-          >
-            {/* Arka plan resmi */}
-            <Image
-              fill
-              src={link.src}
-              alt={link.text}
-              className="object-cover"
-            />
+    <div className="relative bg-[url('/img/common/f.png')] bg-cover bg-center bg-no-repeat py-12  ">
 
-            {/* Koyu overlay */}
-            <div className="absolute inset-0 bg-[#1a1a2e] opacity-75"></div>
 
-            {/* Gezinme efekti için katman */}
-            <div
-              className={`absolute inset-0 bg-gradient-to-r from-[#007bff] to-[#5bc0de] transition-transform duration-800`} // Geçiş süresi artırıldı
+      <div className='container mx-auto w-3/4'>
+        <h1 className="text-3xl md:text-4xl font-extrabold text-white leading-tight text-center mb-8">
+         Akademik Koleji Öğrenci Kulüpleri  
+        </h1>              
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {links.map((link, index) => (
+            <Link
+              href={link.href}
+              key={index}
+              className={`relative overflow-hidden rounded-lg shadow-lg transition-transform duration-300 group`}
               style={{
-                transform: `translate(${moveX * 0.5}px, ${moveY * 0.5}px)`, // Daha az hareket
-                opacity: hoverIndex === index ? 0.5 : 0
+                backgroundImage: `url(${link.bgImage})`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
               }}
-            ></div>
-
-            {/* Icon */}
-            <div className="relative z-10 flex flex-col items-center text-white">
-              <Image
-                width={50}
-                height={50}
-                src={link.icon}
-                alt={link.text}
-                className="mb-2 transition-transform duration-500 group-hover:rotate-12"
-              />
-              <h2 className="text-md font-semibold text-center">{link.text}</h2>
-            </div>
-          </div>
-        ))}
-      </div>
-
-      {/* Ortadaki video */}
-      <div className="md:col-span-3 flex flex-col justify-center items-center">
-        {/* Üst logo */}
-        <div className='w-full h-full mb-2 flex justify-center items-center'>
-          <Image width={288} height={73} src="/img/logo/2.png" alt="Logo" className="transform "/>
+            >
+              <div className={`absolute inset-0 ${link.color} opacity-80`}></div>
+              <div className="absolute inset-0 bg-black opacity-20"></div>
+              <div className="relative flex flex-col items-center justify-center h-full p-4 text-center text-white">
+                <div className="mb-4 transition-transform duration-300 group-hover:scale-110">
+                  <Image src={link.icon} alt={link.text} width={64} height={64} className="object-contain" />
+                </div>
+                <h2 className="text-lg font-semibold mb-2">{link.text}</h2>
+                {/* Kısa cümle */}
+                <p className="text-sm opacity-90">{link.description}</p>
+              </div>
+              <span className={`absolute inset-0 rounded-lg border-4 border-transparent transition-opacity duration-300 border-opacity-0 group-hover:border-opacity-100 border-white`}></span>
+            </Link>
+          ))}
         </div>
-
-        {/* Video */}
-        <div className="relative w-full h-0 mb-2" style={{ paddingBottom: '56.25%' }}>
-          <iframe
-            className="absolute top-0 left-0 w-full h-full border-2 border-gray-400 shadow-lg hover:shadow-2xl transition-shadow duration-300"
-            src="https://www.youtube.com/embed/0aFJtpYco0E?si=WJwq3XH39dHs6zh_"
-            title="Video"
-            allowFullScreen
-          ></iframe>
-        </div>
-
-        {/* Alt logo */}
-        <Image width={309} height={77} src="/img/logo/1.png" alt="Logo" className=""/>
-      </div>
-
-      {/* Sağ tarafta kare linkler */}
-      <div className="md:col-span-3 grid grid-cols-2 ">
-        {rightLinks.map((link, index) => (
-          <div
-            key={index}
-            className="relative bg-black flex items-center justify-center group overflow-hidden shadow-xl aspect-square transition-all duration-500 cursor-pointer"
-            onMouseEnter={() => handleMouseEnter(index + leftLinks.length)}
-            onMouseMove={handleMouseMove}
-            onMouseLeave={handleMouseLeave}
-          >
-            {/* Arka plan resmi */}
-            <Image
-              fill
-              src={link.src}
-              alt={link.text}
-              className="object-cover"
-            />
-
-            {/* Koyu overlay */}
-            <div className="absolute inset-0 bg-[#1a1a2e] opacity-75"></div>
-
-            {/* Gezinme efekti için katman */}
-            <div
-              className={`absolute inset-0 bg-gradient-to-r from-[#007bff] to-[#5bc0de] transition-transform duration-800`} // Geçiş süresi artırıldı
-              style={{
-                transform: `translate(${moveX * 0.5}px, ${moveY * 0.5}px)`, // Daha az hareket
-                opacity: hoverIndex === (index + leftLinks.length) ? 0.5 : 0
-              }}
-            ></div>
-
-            {/* Icon */}
-            <div className="relative z-10 flex flex-col items-center text-white">
-              <Image
-                width={50}
-                height={50}
-                src={link.icon}
-                alt={link.text}
-                className="mb-2 transition-transform duration-500 group-hover:rotate-12"
-              />
-              <h2 className="text-md font-semibold text-center">{link.text}</h2>
-            </div>
-          </div>
-        ))}
       </div>
     </div>
   );

@@ -1,0 +1,31 @@
+
+.slide {
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+    &:hover {
+        opacity: 1;
+    }
+}
+
+// Navigation butonlarına özel stil
+.swiper-button-next,
+.swiper-button-prev {
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+        background-color: rgba(0, 0, 0, 0.7);
+    }
+}
+
+// Buton ikonlarına ekstra stil ekleyebilirsiniz
+.swiper-button-next::after,
+.swiper-button-prev::after {
+    font-size: 1.2rem; // İkon boyutu
+}

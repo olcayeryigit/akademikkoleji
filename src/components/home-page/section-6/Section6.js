@@ -48,11 +48,11 @@ const Section6 = () => {
   }, [currentAnnouncements.length]);
 
   return (
-    <div className="px-5 lg:px-24 py-24 bg-[#F4F5F6]">
-      <div className="announcement-container container mx-auto ">
+    <div className="px-5 lg:px-24 py-24 bg-[#F4F5F6] ">
+      <div className="announcement-container container mx-auto  ">
         <h2 className="text-3xl font-bold text-center text-gray-800 mb-8">Akademik Koleji Duyurular</h2>
         
-        <div className="flex flex-col grid grid-cols-1 lg:grid-cols-5 shadow-lg mx-auto rounded-lg overflow-hidden bg-white max-w-[1200px] ">
+        <div className="flex flex-col grid grid-cols-1 lg:grid-cols-5 shadow-lg mx-auto rounded-lg overflow-hidden bg-white max-w-[1200px]  ">
 
           <div className="lg:col-span-2 announcements-column flex flex-col p-6 text-gray-800 bg-[#85ABB8]">
             <div className="text-center mb-6 flex justify-center gap-2">

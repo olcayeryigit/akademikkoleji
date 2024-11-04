@@ -5,3 +5,37 @@
 @tailwind components;
 @tailwind utilities;
 
+.logo-button{
+    .logo2{
+    display: none;
+    }
+    
+        &:hover .logo1{
+            display: none !important;
+              }
+            
+              &:hover .logo2{
+                display: block !important;
+                  }
+    }
+    
+    
+    .logo-button2{
+      .logo1{
+      display: none;
+      }
+      
+          &:hover .logo2{
+              display: none !important;
+                }
+              
+                &:hover .logo1{
+                  display: block !important;
+                    }
+      }
+      
+      
+      /* styles.css */
+
+
+  

@@ -1,13 +1,13 @@
 "use client";
 import { useEffect, useState } from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination, Autoplay } from 'swiper/modules';
+import { Swiper, SwiperSlide, useSwiper } from 'swiper/react';
+import { Pagination, Autoplay,EffectFade  } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import './slider.scss';
 import Image from 'next/image';
-import { FaCircleDot, FaCircleH } from 'react-icons/fa6';
-import { FaCircle, FaRegCircle } from 'react-icons/fa';
+import 'swiper/css/effect-fade';
+
 
 const Slider = () => {
     const languages = [
@@ -60,6 +60,8 @@ const Slider = () => {
 
     return (
         <Swiper
+        effect="fade"
+        fadeEffect={{ crossFade: true }}
             spaceBetween={50}
             slidesPerView={1}
             pagination={{
@@ -74,7 +76,7 @@ const Slider = () => {
                 disableOnInteraction: false,
             }}
             loop={true}
-            modules={[Pagination, Autoplay]}
+            modules={[Pagination, Autoplay,EffectFade]}
             className='w-[370px] h-[500px] md:w-[55rem] md:h-[28rem]'
         >
             <SwiperSlide className='relative p-0 px-2 md:ps-16  md:pt-32'>
@@ -83,7 +85,7 @@ const Slider = () => {
    }} className='text-xl md:text-3xl font-extrabold text-white tracking-wide'>
  <span className="text-[#ED1F25]">5 DİLDE </span>Eğitim Veren <span className="text-[#FECC07]"> TEK ÖZEL OKULUZ!   </span>
 </h1>
-<h2 className='text-md md:text-xl text-white tracking-wide mb-6'>
+<h2 className='text-md md:text-xl text-gray-200 tracking-wide mb-6'>
     Kids ve Teens Yaş Gruplarına Özgü Nitelik Kazandıran Dil Eğitimi
 </h2>
 
@@ -106,51 +108,31 @@ const Slider = () => {
                     </div>
                 </div>
             </SwiperSlide>
-            <SwiperSlide className='relative p-0 px-4 md:ps-24 md:pt-4'>
+            <SwiperSlide className='relative p-0 md:ps-16  md:pt-28'>
     {/* Arka Plan Görseli */}
-    <div className='absolute inset-0 bg-[url("/path/to/background-image.jpg")] bg-cover bg-center opacity-90'></div>
-    
+
+
     {/* İçerik Katmanı */}
-    <div className='relative z-10 flex flex-col items-center'>
+    <div className='relative z-10 flex flex-col '>
         {/* Başlıklar */}
         <h1
             style={{ textShadow: "3px 3px 12px rgba(0, 0, 0, 0.8)" }} // Daha belirgin gölge
-            className='text-center text-lg md:text-3xl font-extrabold text-white tracking-wide mb-2'
+            className='text-lg md:text-3xl font-extrabold text-white tracking-wide mb-4'
         >
-            <span className="text-[#4585a8]" style={{ textShadow: "1px 1px 5px rgba(0, 0, 0, 1)" }}>BİLİŞİM</span> ve <span className="text-[#95b1b2]" style={{ textShadow: "1px 1px 5px rgba(0, 0, 0, 1)" }}>ROBOTİK</span> Programları
+            <span className="text-[#4585a8]" style={{ textShadow: "1px 1px 5px rgba(0, 0, 0, 1)" }}>BİLİŞİM</span> ve <span className="text-[#88d8c6]" style={{ textShadow: "1px 1px 5px rgba(0, 0, 0, 1)" }}>ROBOTİK</span> Programları
         </h1>
-        <h2 className='text-md md:text-xl text-white tracking-wide mb-6 text-center px-4'>
-            Bilişim, Yapay Zeka (AI), Robotik, Kodlama ve 3D Art
+        <h2 className='text-md md:text-lg text-gray-200 tracking-wide mb-6 '>
+            Öğrencilerimizi Yapay Zeka (AI), Robotik ve Kodlama Eğitimleri ile Geleceğe Hazırlıyoruz!
         </h2>
 
-        {/* 3-üst, 2-alt Resim Grid Yapısı */}
-        <div className='grid grid-cols-3 gap-6'>
-            {/* İlk Satırda 3 Resim */}
-            {informatics.slice(0, 3).map((inf, index) => (
-                <div key={index} className='relative flex justify-center items-center text-center'>
+        {/* Resimler için satır */}
+        <div className='flex gap-4'>
+            {informatics.map((inf, index) => (
+                <div key={index} className='relative flex justify-center items-center'>
                     <div 
-                        className='relative w-20 h-20 md:w-28 md:h-28 rounded-full border-8 border-[rgba(0,119,190,0.5)] shadow-2xl shadow-black ' // Kalın ve Saydam Turkuaz border
-                    >
-                        <Image 
-                            fill 
-                            className='object-cover rounded-full bg-blue-50' 
-                            src={inf.img} 
-                            alt={`${inf.name} image`} 
-                        />
-                    </div>
-                    <h1 className='absolute -bottom-8 text-sm md:text-lg font-semibold text-white whitespace-nowrap'>
-                        {inf.name}
-                    </h1>
-                </div>
-            ))}
-        </div>
-
-        {/* İkinci Satırda 2 Resim */}
-        <div className='grid grid-cols-2 gap-6 mt-10'>
-            {informatics.slice(3, 5).map((inf, index) => (
-                <div key={index} className='relative flex justify-center items-center text-center '>
-                    <div 
-                        className='relative w-20 h-20 md:w-28 md:h-28 rounded-full border-8 border-[rgba(113,206,204,0.4)] shadow-2xl shadow-black ' // Kalın ve Saydam Turkuaz border
+                        className={`relative w-20 h-20 md:w-28 md:h-28 rounded-full border-8 shadow-2xl shadow-black ${
+                            index % 2 === 0 ? 'border-[rgba(113,206,204,0.4)]' : 'border-[rgba(0,119,190,0.5)]'
+                        }`} // İndekse göre farklı border renkleri
                     >
                         <Image 
                             fill 
@@ -173,7 +155,7 @@ const Slider = () => {
 
             <SwiperSlide className='relative'>
                 <div className=''>
-                    {/* Diğer slayt içeriği buraya eklenebilir */}
+ththt
                 </div>
             </SwiperSlide>
         </Swiper>
