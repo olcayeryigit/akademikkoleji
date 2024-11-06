@@ -8,7 +8,7 @@ const Section8 = () => {
       title: "Basketbol Efsanesi Barış Güney'den Akademik International Kampüsüne Anlamlı Ziyaret",
       alt: 'Eğitim Görseli 1',
       text: "Eski profesyonel basketbolcu ve Bursa Uludağ Basketbol Baş Antrenörü Barış Güney, Akademik Koleji International School Space Kampüsü'nü ziyaret ederek, okulun spor çalışmaları hakkında bilgi aldı ve samimi bir sohbet gerçekleştirdi. Akademik Koleji ailesi olarak, spor alanındaki vizyonumuzu paylaşma fırsatı bulduğumuz ve değerli görüşleriyle bizleri onurlandıran Barış Güney'e teşekkür ederiz.",
-      date: "2024-11-01",
+      date: "02/12/2024",
       status: "Yeni",
       image: "/img/2-.jpg"
     },
@@ -16,7 +16,7 @@ const Section8 = () => {
       title: "Bursa Özel Okul Bursluluk Sınavları",
       alt: 'Eğitim Görseli 2',
       text: "Bursa Bursluluk Sınavı 2025, 1-2-3-4-5-6-7-8- 9-10-11. Sınıflar için 4-5 Ocak 2025 tarihinde Bursa Nilüfer Akademik Koleji'nde yapılacaktır.",
-      date: "2024-10-28",
+      date: "28/05/2024",
       status: "Devam Ediyor",
       image: "/img/2-.jpg"
     },
@@ -24,7 +24,7 @@ const Section8 = () => {
       title: "Akademik Koleji International School Nasa Campus Yeni Eğitim Yılına Başlıyor",
       alt: 'Eğitim Görseli 3',
       text: "Akademik Koleji International School Nasa Campus, yeni eğitim öğretim dönemine coşkuyla kapılarını açtı. Öğrencilerimizin parlak geleceğine ışık tutacak olan bu yeni dönemde, deneyimli öğretmen kadromuz ve özverili idari ekibimiz, eğitim yolculuğunda onlara rehberlik etmeye hazır.",
-      date: "2024-10-25",
+      date: "12/02/2024",
       status: "Tamamlandı",
       image: "/img/2-.jpg"
     },
@@ -32,14 +32,14 @@ const Section8 = () => {
       title: "Akademik Koleji International School Space Campus 2024-2025 Eğitim Öğretim Yılına Başladı",
       alt: 'Eğitim Görseli 4',
       text: "Akademik Koleji International School Space Campus, 2024-2025 eğitim öğretim yılına heyecanla kapılarını açtı! Deneyimli eğitim kadromuz ve sunduğumuz uluslararası standartlardaki eğitimle, her öğrencimizin yeteneklerini keşfetmesine olanak sağlayacağız.",
-      date: "2024-10-20",
+      date: "20/11/2024",
       status: "Yeni",
       image: "/img/2-.jpg"
     },   {
       title: "Akademik Koleji International School Space Campus 2024-2025 Eğitim Öğretim Yılına Başladı",
       alt: 'Eğitim Görseli 4',
       text: "Akademik Koleji International School Space Campus, 2024-2025 eğitim öğretim yılına heyecanla kapılarını açtı! Deneyimli eğitim kadromuz ve sunduğumuz uluslararası standartlardaki eğitimle, her öğrencimizin yeteneklerini keşfetmesine olanak sağlayacağız.",
-      date: "2024-10-20",
+      date: "20/10/2024",
       status: "Yeni",
       image: "/img/2-.jpg"
     },
@@ -65,28 +65,31 @@ const Section8 = () => {
                 className="object-cover rounded-lg"
               />
               <div className="absolute bottom-0 left-0 w-full p-4 bg-black bg-opacity-60 rounded-b-lg transition-opacity duration-300 group-hover:opacity-0 cursor-pointer">
-                <h2 className="text-sm font-bold text-white">{datas[0].title}</h2>
-                <p className="text-xs text-white font-normal line-clamp-2 overflow-hidden text-ellipsis" style={{ maxHeight: '2.5rem' }}>
+                <h2 className="text-md font-bold text-white">{datas[0].title}</h2>
+                <p className="text-sm text-white font-normal line-clamp-2 overflow-hidden text-ellipsis" style={{ maxHeight: '2.5rem' }}>
                   {datas[0].text}
                 </p>
-                <p className="text-xs text-gray-300">{datas[0].date}</p>
-                <p className="text-xs text-green-300">{datas[0].status}</p>
+                <div className='flex items-center gap-1'>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="1.1rem" height="1.1rem" viewBox="0 0 24 24"><path fill="#e5e7eb" d="M7 11h2v2H7zm0 4h2v2H7zm4-4h2v2h-2zm0 4h2v2h-2zm4-4h2v2h-2zm0 4h2v2h-2z"/><path fill="#e5e7eb" d="M5 22h14c1.103 0 2-.897 2-2V6c0-1.103-.897-2-2-2h-2V2h-2v2H9V2H7v2H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2M19 8l.001 12H5V8z"/></svg>
+                                <p className="text-sm text-gray-200">{datas[0].date}</p>
+                </div>
+                <p className="text-sm text-green-300">{datas[0].status}</p>
               </div>
 
               {/* Hover Durumu İçin Kutu */}
               <div className="absolute inset-0 flex flex-col justify-center items-center bg-black bg-opacity-60 rounded-lg opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                <div className="text-lg font-bold text-white flex flex-col items-center gap-2 px-4">
-                  <h2 className="text-sm font-bold text-white">{datas[0].title}</h2>
-                  <p className="text-xs text-white font-normal line-clamp-4 overflow-hidden text-ellipsis" style={{ maxHeight: '4rem' }}>
+                <div className="text-lg font-bold text-white flex flex-col items-center gap-2 px-5">
+                  <h2 className="text-md font-bold text-white line-clamp-4 overflow-hidden text-ellipsis">{datas[0].title}</h2>
+                  <p className="text-sm text-white font-normal line-clamp-4 overflow-hidden text-ellipsis" style={{ maxHeight: '4rem' }}>
                     {datas[0].text}
                   </p>
                   <div className="logo-button flex items-center gap-2 bg-black hover:bg-white hover:text-black cursor-pointer p-3 rounded-full border-white border-2 mt-4">
-                    <span className="text-xs">Haberin Devamına Git</span>
+                    <span className="text-sm">Haberin Devamına Git</span>
                     <div className="logo1 relative w-4 h-4">
-                      <Image src="/img/logo/ak-1.png" fill className="contain" />
+                      <Image src="/logos/ak-1.png" fill className="contain" />
                     </div>
                     <div className="logo2 relative w-4 h-4">
-                      <Image src="/img/logo/ak-2.png" fill className="contain" />
+                      <Image src="/logos/ak-2.png" fill className="contain" />
                     </div>
                   </div>
                 </div>
@@ -112,20 +115,25 @@ const Section8 = () => {
               </div>
 
               {/* Kart Başlığı, Açıklama ve Tarih */}
-              <div className="absolute bottom-0 left-0 w-full p-4 bg-black bg-opacity-60 rounded-b-lg transition-opacity duration-300 group-hover:opacity-0 cursor-pointer">
-                <h2 className="text-xs font-bold text-white">{data.title}</h2>
-                <p className="text-xs text-gray-300">{data.date}</p>
-                <p className="text-xs text-green-300">{data.status}</p>
+              <div className="absolute bottom-0 left-0 w-full p-4 bg-black bg-opacity-60 rounded-b-lg transition-opacity duration-300 group-hover:opacity-0 cursor-pointer h-24">
+                <h2 className="text-sm font-bold text-white line-clamp-2 overflow-hidden text-ellipsis">{data.title}</h2>
+                <div className='flex items-center gap-1'>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="1.1rem" height="1.1rem" viewBox="0 0 24 24"><path fill="#e5e7eb" d="M7 11h2v2H7zm0 4h2v2H7zm4-4h2v2h-2zm0 4h2v2h-2zm4-4h2v2h-2zm0 4h2v2h-2z"/><path fill="#e5e7eb" d="M5 22h14c1.103 0 2-.897 2-2V6c0-1.103-.897-2-2-2h-2V2h-2v2H9V2H7v2H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2M19 8l.001 12H5V8z"/></svg>
+                                <p className="text-sm text-gray-200">{data.date}</p>
+                </div>
+                
+                <p className="text-sm text-green-300">{data.status}</p>
               </div>
 
               {/* Hover Durumu İçin Kutu */}
-              <div className="bg-black bg-opacity-50 absolute inset-0 flex flex-col transition-transform duration-300 transform -translate-x-full group-hover:translate-x-0 px-4 pt-10 cursor-pointer">
-                <div className="text-lg font-bold text-white flex flex-col items-center gap-2">
-                  <h2 className="text-sm font-bold text-white">{data.title}</h2>
-                  <p className="text-xs text-white font-normal line-clamp-2 overflow-hidden text-ellipsis" style={{ maxHeight: '2.5rem' }}>
+              <div className="bg-black bg-opacity-50 absolute inset-0 flex flex-col transition-transform duration-300 transform -translate-x-full group-hover:translate-x-0 px-4 pt-5
+               cursor-pointer">
+                <div className="text-lg font-bold text-white flex flex-col gap-2">
+                  <h2 className="text-sm font-bold text-white line-clamp-4 overflow-hidden text-ellipsis">{data.title}</h2>
+                  <p className="text-sm text-white font-normal line-clamp-2 overflow-hidden text-ellipsis" style={{ maxHeight: '2.5rem' }}>
                     {data.text}
                   </p>
-                  <div className="logo-button flex items-center gap-2 bg-black hover:bg-white hover:text-black cursor-pointer p-3 rounded-full border-white border-2 mt-4">
+                  <div className="absolute bottom-5 logo-button flex justify-center  items-center gap-2 bg-black hover:bg-white hover:text-black cursor-pointer p-3 rounded-full border-white border-2 mt-4 self-center">
                     <span className="text-xs">Haberin Devamına Git</span>
                     <div className="logo1 relative w-4 h-4">
                       <Image src="/img/logo/ak-1.png" fill className="contain" />

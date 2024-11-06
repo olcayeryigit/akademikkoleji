@@ -107,16 +107,16 @@ const Section7 = () => {
 
 
 
-            <div className="mt-6 flex items-center justify-center">
+            <div className="mt-4 flex items-center justify-center">
             <div className='w-60 h-12 logo-button2 flex items-center justify-center gap-2  hover:bg-black hover:text-white hover:cursor-pointer p-3 rounded-lg border-black border-2 mt-4 hover:border-white'>
   <span className='text-md'>Tüm Galeriyi Görüntüle</span>
   
   <div className='logo1 relative w-4 h-4 '>
-    <Image src="/img/logo/ak-1.png" fill className='contain ' />
+    <Image src="/logos/ak-1.png" fill className='contain ' />
   </div>
 
   <div className='logo2 relative w-4 h-4 '>
-    <Image src="/img/logo/ak-2.png" fill className='contain' />
+    <Image src="/logos/ak-2.png" fill className='contain' />
   </div>
 </div>
             </div>

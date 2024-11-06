@@ -15,7 +15,8 @@
     &__label {
       font-size: 2rem;
       font-weight: bold;
-      color: #1F2937;
+      color: #000000;
+      margin-top: 0.5rem;
       &:hover{
         background-color:rgb(245, 222, 179,0) !important;
       }
@@ -25,22 +26,23 @@
     .react-calendar__navigation__next-button,
     .react-calendar__navigation__prev2-button,
     .react-calendar__navigation__next2-button {
-      font-size: 1.6rem;
-      color: #63B6CC;
+      font-size: 3rem;
+      color: #747474;
       &:hover,
       &:focus {
-        color: #63B6CC;
+        color: #97E981;
         background-color: transparent;
       }
     }
   }
 
   .react-calendar__month-view__weekdays__weekday {
+    border-bottom:1px solid rgb(221, 221, 221) !important ;
     font-weight: bold;
     font-size: 1.3rem;
-    color: #85ABB8;
+    color: #505050;
     padding: 1rem 0;
-    margin-top: 1rem !important;
+    margin: 1rem 0!important;
   }
 
   .react-calendar__tile {
@@ -48,22 +50,23 @@
     color: #696969;
     padding: 1.4rem 0 !important;
     font-weight: bold;
-    font-size: 1rem;
+    font-size: 1.2rem;
+    border-radius: 5px;
     transition: all 0.3s ease;
     &:hover {
-      background-color: #B7D8F6;
+      background-color: #d4ffc9;
       color: #333;
     }
 
     &--active {
-      background-color: #85abb8 !important;
+      background-color: #97E981 !important;
       color: #000000 !important;
     }
   }
 
   .react-calendar__tile--now {
     background-color: #D9EAFB;
-    color: #48879c;
+    color: #97E981;
   }
 
   .react-calendar__month-view__days__day--neighboringMonth {
@@ -71,8 +74,8 @@
   }
 
   .highlight {
-    background-color: #48879c !important;
-    color: #fff !important;
+    background-color: #ffa55b !important;
+    color: #000000 !important;
   }
 }
 

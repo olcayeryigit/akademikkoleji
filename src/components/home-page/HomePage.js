@@ -25,7 +25,7 @@ const HomePage = () => {
    >
 {/* Arka Plan Resmi */}
 <div 
-        className="absolute inset-0 bg-[url('/img/2-.jpg')] bg-cover bg-top bg-no-repeat  "
+        className="absolute inset-0 bg-[url('/images/main.jpg')] bg-cover bg-top bg-no-repeat  "
         // Resmin dosya yolu
       />
       
@@ -35,9 +35,9 @@ const HomePage = () => {
   </div>
 
 <Section1/>
-<Spacer height='h-16'/>
+<Spacer height='h-10'/>
 <Section2/>
-<Spacer height='h-16'/>
+<Spacer height='h-12'/>
 <Section3/>
 <Spacer height='h-12'/>
 <Section4/>
@@ -51,10 +51,17 @@ const HomePage = () => {
 <Spacer height='h-16'/>
 
 <InfoSection/>
-<Spacer height='h-12'/>
 <ExamCountdown/>
 </div>
   )
 }
 
 export default HomePage
+
+/**
+ *   <div className="video-container">
+      <video width="50%" height="auto" controls>
+        <source src="/logos/main-2.mp4" type="video/mp4" />
+      </video>
+    </div>
+ */

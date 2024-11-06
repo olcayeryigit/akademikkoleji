@@ -36,6 +36,33 @@
       
       
       /* styles.css */
+      .animated-border {
+        position: relative;
+       
+        border: 4px solid transparent; /* Başlangıçta şeffaf kenarlık */
+        background-image: linear-gradient(white, white), linear-gradient(90deg,  rgb(134, 255, 134),rgb(255, 98, 98), rgb(113, 113, 255), rgb(255, 177, 104),rgb(255, 255, 116),rgb(244, 123, 255));
+        background-clip: padding-box, border-box; /* Kenarlık ve içerik */
+        background-size: 100%, 200% 100%; /* Arka plan boyutu */
+        animation: borderMove 3s linear infinite; /* Animasyon */
+      }
+      
+      @keyframes borderMove {
+        0% {
+          background-position: 0% 0%;
+        }
+        100% {
+          background-position: 100% 0%; /* Renklerin kenar boyunca ilerlemesi */
+        }
+      }
+      
 
+      //
+      // StyledDiv.module.scss
+
+.corner-shadow {
+ 
+  background: linear-gradient(180deg, #FFF 0%, rgba(255, 255, 255, 0.00) 100%);
+  filter: drop-shadow(5px -5px 35px rgba(0, 0, 0, 0.18));
 
   
+}

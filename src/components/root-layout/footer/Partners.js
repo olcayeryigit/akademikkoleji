@@ -6,17 +6,17 @@ const Partners = () => {
   // Partner verisini bileşen içinde tanımlıyoruz
   const partnersData = {
     top: [
-      { src: "/img/logo/partners/top/1.webp", alt: "Partner 1" },
-      { src: "/img/logo/partners/top/2.webp", alt: "Partner 2" },
-      { src: "/img/logo/partners/top/3.webp", alt: "Partner 3" }
+      { src: "/logos/partners/top/1.webp", alt: "Partner 1" },
+      { src: "/logos/partners/top/2.webp", alt: "Partner 2" },
+      { src: "/logos/partners/top/3.webp", alt: "Partner 3" }
     ],
     bottom: [
-      { src: "/img/logo/partners/bottom/1.svg", alt: "Partner 4" },
-      { src: "/img/logo/partners/bottom/6.svg", alt: "Partner 5" },
-      { src: "/img/logo/partners/bottom/2.webp", alt: "Partner 6" },
-      { src: "/img/logo/partners/bottom/3.webp", alt: "Partner 7" },
-      { src: "/img/logo/partners/bottom/4.webp", alt: "Partner 8" },
-      { src: "/img/logo/partners/bottom/5.svg", alt: "Partner 9" }
+      { src: "/logos/partners/bottom/1.svg", alt: "Partner 4" },
+      { src: "/logos/partners/bottom/6.svg", alt: "Partner 5" },
+      { src: "/logos/partners/bottom/2.webp", alt: "Partner 6" },
+      { src: "/logos/partners/bottom/3.webp", alt: "Partner 7" },
+      { src: "/logos/partners/bottom/4.webp", alt: "Partner 8" },
+      { src: "/logos/partners/bottom/5.svg", alt: "Partner 9" }
     ]
   };
 

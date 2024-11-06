@@ -54,7 +54,7 @@ const Section6 = () => {
         
         <div className="flex flex-col grid grid-cols-1 lg:grid-cols-5 shadow-lg mx-auto rounded-lg overflow-hidden bg-white max-w-[1200px]  ">
 
-          <div className="lg:col-span-2 announcements-column flex flex-col p-6 text-gray-800 bg-[#85ABB8]">
+          <div className="lg:col-span-2 announcements-column flex flex-col p-6 text-gray-800 bg-[#97E981]">
             <div className="text-center mb-6 flex justify-center gap-2">
          
           
@@ -109,7 +109,7 @@ const Section6 = () => {
               }}
               onChange={setValue} 
               value={value} 
-              className="border-l w-full h-full px-20 flex flex-col mt-10"
+              className="border-l w-full h-full px-20 flex flex-col mt-8"
             />
           </div>
         </div>

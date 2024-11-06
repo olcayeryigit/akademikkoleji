@@ -9,7 +9,7 @@ const SubscriptionSection = ({ info }) => {
         <input
           type="email"
           placeholder={info.placeholder}
-          className="bg-white bg-opacity-0 rounded px-3 placeholder-gray-100 w-[375px] p-1 focus:outline-none focus:ring-0"
+          className="bg-white bg-opacity-0 rounded px-3 placeholder-gray-100 w-[200px] md:w-[375px] p-1 focus:outline-none focus:ring-0"
         />
         <button className="bg-gray-100 text-black rounded px-4 py-1 text-sm">
           {info.submitButtonText}

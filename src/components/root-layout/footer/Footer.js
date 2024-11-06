@@ -62,7 +62,7 @@ const Footer = () => {
   return (
     <div className="footer text-white relative pt-8">
       {/* Background Image */}
-      <div className="absolute inset-0 bg-[url('/img/2-.jpg')] bg-cover bg-top bg-no-repeat z-0" />
+      <div className="absolute inset-0 bg-[url('/images/main.jpg')] bg-cover bg-top bg-no-repeat z-0" />
 
       {/* Black Overlay with Opacity */}
       <div className="absolute inset-0 bg-gradient-to-b from-[#080D16]/60 to-[#080D16]/100 z-10"></div>
@@ -90,7 +90,7 @@ const Footer = () => {
       <div className='relative flex justify-center pb-20'>
         <div className="absolute inset-0 bg-[#080D16] opacity-80 z-0 " />
         <div className='relative w-44 h-24 z-50'>
-          <Image src="/img/logo/partners/1.gif" fill className="object-contain" />
+          <Image src="/logos/partners/1.gif" fill className="object-contain" />
         </div>
         <div className='absolute bottom-[60px] text-sm  text-white  text-center z-50'>Design & Development By <strong>The Fabrica</strong></div>
       </div>

@@ -36,7 +36,7 @@ const Section10 = () => {
         alt="Eğitim"
         className="object-cover w-full  max-h-[450px]  rounded-xl" // Resmin genişliği ve yüksekliği %100
       />
-      <div className="absolute inset-0 left-0 w-1/2 bg-[#eaf6ff] bg-opacity-95 p-6 flex flex-col justify-center text-white">
+      <div className="absolute inset-0 left-0 w-1/2 bg-[#EEE9E8] bg-opacity-90 p-6 flex flex-col justify-center text-white">
         <div className="flex flex-col gap-4">
           {data.map((item, index) => (
             <div key={index} className="flex flex-col">
