@@ -1,11 +1,9 @@
 "use client";
-
 import Footer from "@/components/root-layout/footer/Footer";
 import Header from "@/components/root-layout/header/Header";
 import "@/styles/index.scss";
 import { useState, useEffect } from "react";
 import { Open_Sans } from "next/font/google"; 
-import Image from "next/image";
 import LoadingSpinner from "@/components/common/LoadingSpinner";
 
 const openSans = Open_Sans({
@@ -17,7 +15,7 @@ export default function RootLayout({ children }) {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 7000);
+    const timer = setTimeout(() => setLoading(false), 5000);
     return () => clearTimeout(timer);
   }, []);
 

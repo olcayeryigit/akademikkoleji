@@ -32,7 +32,8 @@ const Section4 = () => {
               className={`relative overflow-hidden rounded-lg shadow-lg transition-transform duration-300 group`}
             >
               <div className={`absolute inset-0 ${link.color} opacity-80`}></div>
-              <div className="absolute inset-0 bg-black opacity-20"></div>
+              <div className="absolute inset-0 bg-black opacity-30"></div>
+              <img src="/bg-9.png" className="absolute w-full h-full object-cover opacity-50" alt="Your Image"/>
               <div className="relative flex flex-col items-center justify-center h-full p-4 text-center ">
                 <div className="transition-transform duration-300 group-hover:scale-110">
                   <Image src={link.icon} alt={link.text} width={170} height={170} className="object-contain" />
@@ -43,7 +44,7 @@ const Section4 = () => {
                   <FaArrowRight className="text-white text-xl" />
                 </div>
               </div>
-              <span className={`absolute inset-0 rounded-lg border-2 border-transparent transition-transform duration-300 border-2 group-hover:border-white`}></span>
+              <span className={`absolute inset-0 rounded-lg border-2 border-transparent transition-transform duration-300 border-4 group-hover:border-white`}></span>
             </Link>
           ))}
         </div>

@@ -11,10 +11,10 @@ import "./home-page.scss"
 import Section6 from './section-6/section6'
 import Section7 from './section-7/Section7'
 import Section8 from './section-8/Section8'
-import Section9 from './info-section/section-9/Section9'
 import ExamCountdown from './counter/ExamCountdown'
 import InfoSection from './info-section/InfoSection'
-import Section10 from './info-section/section-10/Section10'
+import Section11 from './section-11/Section11'
+
 const HomePage = () => {
 
 
@@ -49,8 +49,8 @@ const HomePage = () => {
 <Spacer height='h-24'/>
 <Section8/>
 <Spacer height='h-16'/>
-
 <InfoSection/>
+<Section11/>
 <ExamCountdown/>
 </div>
   )
@@ -58,10 +58,3 @@ const HomePage = () => {
 
 export default HomePage
 
-/**
- *   <div className="video-container">
-      <video width="50%" height="auto" controls>
-        <source src="/logos/main-2.mp4" type="video/mp4" />
-      </video>
-    </div>
- */

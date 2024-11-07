@@ -45,7 +45,7 @@ const Section2 = () => {
   return (
     <div className="container mx-auto p-4 md:px-0">
       {/* Kartlar */}
-      <div className=" flex  justify-center gap-10  ">
+      <div className=" flex flex-col md:flex-row justify-center gap-10  ">
         {data.map((item) => (
           <div  key={item.id} onClick={() => setSelectedId(item.id)}
             className={`w-full  border rounded-lg transition-all duration-300 cursor-pointer  p-4   ${

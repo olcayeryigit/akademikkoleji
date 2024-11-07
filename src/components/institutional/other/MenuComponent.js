@@ -6,7 +6,7 @@ const MenuComponent = () => {
   const menus = {
     kahvaltı: [
       {
-        week: "1. Hafta",
+        week: "1. Hafta (1-7 Ekim)",
         menu: [
           { date: "1 Ekim 2024", dishes: ["Haşlanmış Yumurta", "Karışık Zeytin", "Salatalık", "Tahin Helva", "Meyve Çayı/Bitki Çayı"] },
           { date: "2 Ekim 2024", dishes: ["Kaşarlı Ekmek", "Peynir", "Domates", "Reçel", "Meyve Çayı/Bitki Çayı"] },
@@ -14,7 +14,7 @@ const MenuComponent = () => {
         ],
       },
       {
-        week: "2. Hafta",
+        week: "2. Hafta (8-14 Ekim)",
         menu: [
           { date: "8 Ekim 2024", dishes: ["Zeytin, Beyaz Peynir, Domates, Salatalık", "Sıcak Çikolata", "Kuruyemiş"] },
           { date: "9 Ekim 2024", dishes: ["Menemen", "Taze Ekmek", "Taze Meyve"] },
@@ -61,48 +61,53 @@ const MenuComponent = () => {
 
   return (
     <div className="p-5">
-      {/* Butonlar en üstte yer alacak */}
-      <div className="grid grid-cols-3 gap-4 mb-4">
-        {Object.keys(menus).map((meal, index) => (
-          <button
-            key={index}
-            onClick={() => handleMealChange(meal)}
-            className={`w-full px-4 py-2 text-white rounded ${activeMeal === meal ? 'bg-blue-600 font-bold' : 'bg-blue-500 hover:bg-blue-400'}`}
-          >
-            {meal.charAt(0).toUpperCase() + meal.slice(1)} {/* İlk harfi büyük yap */}
-          </button>
-        ))}
+      {/* Tab Menüsü */}
+      <div className="border-b">
+        <nav className="flex justify-center">
+          {Object.keys(menus).map((meal, index) => (
+            <div
+              key={index}
+              onClick={() => handleMealChange(meal)}
+              className={`px-6 py-2 cursor-pointer text-lg font-medium ${activeMeal === meal ? 'border-b-2 border-blue-600 text-blue-600' : 'text-gray-600 hover:text-blue-600'}`}
+            >
+              {meal.charAt(0).toUpperCase() + meal.slice(1)} {/* İlk harfi büyük yap */}
+            </div>
+          ))}
+        </nav>
       </div>
 
-      <h1 className="text-xl font-bold mb-4">{activeMeal.charAt(0).toUpperCase() + activeMeal.slice(1)} Menüsü</h1>
-      
-      {/* Tablo yapısı */}
-      <table className="min-w-full border-collapse border border-gray-200">
-        <thead>
-          <tr>
-            <th className="border border-gray-300 p-2 text-left bg-gray-100">Hafta</th>
-            <th className="border border-gray-300 p-2 text-left bg-gray-100">Tarih</th>
-            <th className="border border-gray-300 p-2 text-left bg-gray-100">Menü</th>
-          </tr>
-        </thead>
-        <tbody>
-          {menus[activeMeal].map((week, index) => (
-            week.menu.map((day, idx) => (
-              <tr key={`${index}-${idx}`} className={idx % 2 === 0 ? "bg-gray-50" : "bg-white"}>
-                {idx === 0 && <td rowSpan={week.menu.length} className="border border-gray-300 p-2">{week.week}</td>}
-                <td className="border border-gray-300 p-2">{day.date}</td>
-                <td className="border border-gray-300 p-2">
-                  <ul className="list-disc list-inside">
-                    {day.dishes.map((dish, dIndex) => (
-                      <li key={dIndex}>{dish}</li>
-                    ))}
-                  </ul>
-                </td>
-              </tr>
-            ))
-          ))}
-        </tbody>
-      </table>
+      {/* Haftalık Menü Başlıkları */}
+      <div className="mt-4">
+        <h1 className="text-xl font-bold mb-2">{activeMeal.charAt(0).toUpperCase() + activeMeal.slice(1)} Menüsü</h1>
+
+        {menus[activeMeal].map((week, weekIndex) => (
+          <div key={weekIndex} className="mb-4">
+            <h2 className="text-lg font-semibold mb-2">{week.week}</h2>
+            <table className="min-w-full border-collapse border border-gray-200">
+              <thead>
+                <tr>
+                  <th className="border border-gray-300 p-2 text-left bg-gray-100">Tarih</th>
+                  <th className="border border-gray-300 p-2 text-left bg-gray-100">Menü</th>
+                </tr>
+              </thead>
+              <tbody>
+                {week.menu.map((day, dayIndex) => (
+                  <tr key={dayIndex} className={dayIndex % 2 === 0 ? "bg-gray-50" : "bg-white"}>
+                    <td className="border border-gray-300 p-2">{day.date}</td>
+                    <td className="border border-gray-300 p-2">
+                      <ul className="list-disc list-inside">
+                        {day.dishes.map((dish, dishIndex) => (
+                          <li key={dishIndex}>{dish}</li>
+                        ))}
+                      </ul>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
