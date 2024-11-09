@@ -14,6 +14,8 @@ import Section8 from './section-8/Section8'
 import ExamCountdown from './counter/ExamCountdown'
 import InfoSection from './info-section/InfoSection'
 import Section11 from './section-11/Section11'
+import Section12 from './section-12/Section12'
+import Image from 'next/image'
 
 const HomePage = () => {
 
@@ -28,9 +30,18 @@ const HomePage = () => {
         className="absolute inset-0 bg-[url('/images/main.jpg')] bg-cover bg-top bg-no-repeat  "
         // Resmin dosya yolu
       />
-      
+           <div className="absolute bottom-0 w-full ">
+           <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2  w-0  h-0 border-l-[60px] border-r-[60px] border-b-[60px] border-l-transparent border-r-transparent z-50 " style={{borderBottomColor:"rgba(255,255,255,0.3)"}}>
+           <div className='absolute left-1/2 transform -translate-x-1/2 mt-6 '>
+           <svg xmlns="http://www.w3.org/2000/svg" width="2rem" height="2rem" viewBox="0 0 8 8"><path fill="black" d="M1.5 1L0 2.5l4 4l4-4L6.5 1L4 3.5z"/></svg>
+           </div>
+          
+                   </div>
+
+            </div> {/* Opaklık ayarı, siyah overlay 
+  </div>
       {/* Overlay */}
-      <div className="absolute inset-0 bg-black opacity-50" /> {/* Opaklık ayarı, siyah overlay */}
+      <div className="absolute inset-0 bg-black opacity-60" /> {/* Opaklık ayarı, siyah overlay */}
 <MainContent/>
   </div>
 
@@ -52,6 +63,10 @@ const HomePage = () => {
 <InfoSection/>
 <Section11/>
 <ExamCountdown/>
+<Spacer height='h-10'/>
+<Section12/>
+<Spacer height='h-10'/>
+
 </div>
   )
 }

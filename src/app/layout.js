@@ -28,6 +28,7 @@ export default function RootLayout({ children }) {
           </div>
         ) : (
           <div className="others">
+            
             <Header />
             {children}
             <Footer />

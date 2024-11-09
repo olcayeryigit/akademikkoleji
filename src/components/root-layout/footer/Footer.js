@@ -60,14 +60,27 @@ const policies = [
 
 const Footer = () => {
   return (
-    <div className="footer text-white relative pt-8">
+    <div className="footer relative  text-white relative bg-[url('/images/main.jpg')] bg-cover bg-top bg-no-repeat ">
+        <div className="absolute top-0 right-0 w-1/2 h-20 bg-white rounded-br-[130%] transform scale-x-[-1] z-40"></div>
+
+    <div className="absolute top-0 left-0 w-1/2 h-20 bg-white rounded-br-[130%] z-40 "></div>
+
+
+
+        <div className='absolute -top-10 left-1/2 transform -translate-x-1/2 w-1/2 w-24 h-36 z-50'>
+<Image src="/logos/main-1.png" fill className='object-cover'/>
+</div>
+
+
       {/* Background Image */}
-      <div className="absolute inset-0 bg-[url('/images/main.jpg')] bg-cover bg-top bg-no-repeat z-0" />
 
       {/* Black Overlay with Opacity */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#080D16]/60 to-[#080D16]/100 z-10"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-[#080D16]/60 to-[#080D16]/100 z-30"></div>
 
-      <div className="container mx-auto relative z-10 px-4">
+
+  
+
+      <div className="container mx-auto relative pt-28 z-50 px-4">
         {/* Footer Menü */}
         <FooterMenu />
 
@@ -99,3 +112,7 @@ const Footer = () => {
 };
 
 export default Footer;
+/**
+ *     <div className="absolute top-0 left-0 w-1/2 h-20 bg-white rounded-bl-[100%] z-40 "></div>
+    <div className="absolute top-0 right-0 w-1/2 h-20 bg-white rounded-bl-[100%] transform scale-x-[-1] z-40"></div>
+ */

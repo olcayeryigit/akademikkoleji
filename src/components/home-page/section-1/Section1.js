@@ -47,12 +47,12 @@ const Section1 = () => {
   ];
 
   return (
-    <div className="py-12 relative  ">
+    <div className="py-12 relative bg-gradient-to-l from-gray-300 to-gray-100 ">
       <div className="section-1-wrapper container mx-auto">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 ">
           {datas.map((data, index) => (
             <div
-              className="section-1-content relative overflow-hidden group rounded-lg shadow-2xl transition-all duration-300 ease-in-out border border-2 border-black  "
+              className="section-1-content relative overflow-hidden group rounded-lg shadow-2xl transition-all duration-300 ease-in-out border-4 border-white  "
               key={index}
             >
               <Image
@@ -91,9 +91,11 @@ const Section1 = () => {
                   <Link
                     key={linkIndex}
                     href={link.href}
-                    className="block mt-2 text-white text-md hover:text-gray-200 transition-colors duration-200"
+                    className="relative block mt-2 text-white text-md hover:text-gray-200 transition-colors duration-200"
                   >
+                  
                     {link.label}
+                    
                   </Link>
                 ))}
               </div>

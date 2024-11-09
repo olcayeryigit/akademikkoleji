@@ -55,12 +55,12 @@ const Section2 = () => {
             } hover:shadow-lg hover:border-gray-600`}
           > 
 <div className="flex flex-row md:flex-col  items-center gap-0">
-          <div className="relative w-28 h-28">
+          <div className="relative w-28 h-28 mb-2">
                 <Image fill src={item.icon} className="object-contain"
                 />
               </div>
      <div>
-              <h2 className="text-xl font-semibold text-gray-800 text-center ">
+              <h2 className="text-xl font-semibold text-gray-800 text-center mb-2">
                 {item.title}
               </h2>  
               <h2 className="text-base text-gray-600 text-center">

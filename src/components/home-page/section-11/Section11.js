@@ -37,21 +37,21 @@ const Section11 = () => {
         
         <div className="static xl:relative  rounded-3xl shadow-2xl bg-gradient-to-l from-gray-300  to-[#87ACBD] w-full xl:w-2/3">
         
-        <div className='p-8 xl:w-[40rem] '>
+        <div className='p-8 xl:w-[42rem] '>
           
-            <h2 className='text-2xl font-bold  mt-1'> 
+            <h2 className='text-3xl md:text-3xl font-extrabold text-gray-800 leading-tight mb-3 '> 
               İş Dünyasında Değer Gören Sertifikalar
             </h2>
 
-            <h3 className='text-xl mt-3 font-semibold underline'>Akreditasyonlar</h3>
+            <h3 className='text-2xl md-text-4xl font-bold text-gray-700'>Akreditasyonlar</h3>
        
           <div className='flex items-center gap-5 mt-3'>
             <div>
               <Image src="/images/iso1.png" width={500} height={500} />
             </div>
             <div>
-              <h3 className='text-xl font-semibold '>İSO 9001</h3>
-              <p className='text-md mt-1 '>
+              <h3 className='text-2xl md-text-4xl font-bold text-gray-700 '>İSO 9001</h3>
+              <p className='text-base text-gray-700'>
                 ISO 9001, dünya çapında tanınan bir kalite yönetim standardıdır. Bu sertifika, eğitim modelimizin uluslararası kalite gereksinimlerine uygun olduğunu ve öğrencilerimize yüksek standartlarda eğitim sunduğumuzu gösterir. Bu sayede, öğrencilerimizin başarıları ve gelişimleri güvence altına alınmaktadır.
               </p>
             </div>
@@ -62,8 +62,8 @@ const Section11 = () => {
               <Image src="/images/iso1.png" width={500} height={500} />
             </div>
             <div>
-              <h3 className='text-xl font-semibold '>İSO 9002</h3>
-              <p className='text-md mt-1 '>
+              <h3 className='text-2xl md-text-4xl font-bold text-gray-700'>İSO 9002</h3>
+              <p className='text-base text-gray-700'>
                 ISO 9002, eğitimde kalite yönetim sisteminin gerekliliklerini yerine getirdiğimizi belgeleyen bir uluslararası sertifikadır. Ulusal ve uluslararası standartlar doğrultusunda, bilimsel ve teknolojik temellere dayalı bir eğitim ortamı sunarak öğrencilerimizin kaliteli bir eğitim almasını sağlıyoruz.
               </p>
             </div>

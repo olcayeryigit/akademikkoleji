@@ -2,13 +2,13 @@
 import Slider from '@/components/home-page/main-content/slider/Slider';
 import React from 'react';
 import PreRegistrationForm from './pre-registration-form/PreRegistrationForm;';
-import CountdownTimer from '../counter/ExamCountdown';
+
 
 const MainContent = () => {
  
   return (
-    <div className='mt-18 pt-36 pb-8 '>
-      <div className='container mx-auto grid  lg:grid-cols-6'> {/* Create a grid with 1 column on small screens and 2 on medium and larger */}
+    <div className='pt-32 pb-8 '>
+      <div className='container mx-auto grid  lg:grid-cols-6 '> {/* Create a grid with 1 column on small screens and 2 on medium and larger */}
         <div className='lg:col-span-4 flex justify-center'> {/* Center the Slider component */}
           <Slider />
         </div>
@@ -18,7 +18,6 @@ const MainContent = () => {
         </div>
       </div>
      
-
     </div>
   );
 }

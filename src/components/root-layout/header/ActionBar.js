@@ -22,7 +22,7 @@ const socialLinks = [
 
 const ActionBar = () => {
   return (
-    <div className="hidden md:block bg-gray-800">
+    <div className="hidden md:block bg-[#080D16]">
       <div className="container   mx-auto flex  justify-between items-center py-4 text-white ">
         {/* Sol Taraf - Sosyal Medya İkonları */}
         <div className="flex gap-4 items-center">
