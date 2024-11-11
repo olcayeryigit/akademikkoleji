@@ -1,6 +1,7 @@
 import React from 'react';
-import Section9 from './section-9/Section9';
-import Section10 from './section-10/Section10';
+import School from './school/School';
+import Students from './students/Students';
+
 
 const InfoSection = () => {
   return (
@@ -8,10 +9,10 @@ const InfoSection = () => {
     <div className='container mx-auto'>
       <div className='grid grid-cols-3 gap-10 lg:gap-6'>
         <div className='col-span-3 lg:col-span-2 lg:mt-3'>
-          <Section10 />
+          <School />
         </div>
         <div className='col-span-3 lg:col-span-1'>
-          <Section9 />
+          <Students />
         </div>
   
       </div>

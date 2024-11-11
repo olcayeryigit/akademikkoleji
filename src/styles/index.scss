@@ -64,16 +64,14 @@
   background: linear-gradient(180deg, #FFF 0%, rgba(255, 255, 255, 0.00) 100%);
   filter: drop-shadow(5px -5px 35px rgba(0, 0, 0, 0.18));
 
-  
 }
 
-//
-/* index.css veya App.css */
-
-/* index.css veya App.css */
-
+.clear-text-shadow {
+  text-shadow: 0.5px 0.5px 0.5px rgb(255, 200, 200);  /* Yatay, dikey, bulanıklık, renk */
+}
 
 
 
-
-/* index.css veya App.css */
+.dark-text-shadow {
+  text-shadow: 0.5px 0.5px 0.5px rgb(0, 0, 0);  /* Yatay, dikey, bulanıklık, renk */
+}

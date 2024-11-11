@@ -1,3 +1,4 @@
+import ImageBanner from '@/components/common/image-banner/ImageBanner';
 import React, { useState } from 'react';
 
 const MenuComponent = () => {
@@ -60,7 +61,13 @@ const MenuComponent = () => {
   };
 
   return (
-    <div className="p-5">
+    <div className="">
+           <ImageBanner 
+  src="/50.png"
+  title="Kurumsal"
+  subTitle="Yemek Menüsü" 
+  object="object-center"
+/>
       {/* Tab Menüsü */}
       <div className="border-b">
         <nav className="flex justify-center">

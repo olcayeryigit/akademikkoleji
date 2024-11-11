@@ -68,7 +68,7 @@ const Footer = () => {
 
 
         <div className='absolute -top-10 left-1/2 transform -translate-x-1/2 w-1/2 w-24 h-36 z-50'>
-<Image src="/logos/main-1.png" fill className='object-cover'/>
+<Image src="/logos/main-1.svg" fill className='object-cover'/>
 </div>
 
 

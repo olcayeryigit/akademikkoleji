@@ -10,10 +10,9 @@ const Ilkokul = () => {
   const developmentAreas = [
     {
       "slug": "etkilesimli-ogrenme",
-      "title": "İlkokulda Etkileşimli Öğrenme",
-      "img": "/img/2-.jpg", // Resim yolu veya URL
+      "subTitle": "İlkokulda Etkileşimli Öğrenme",
+      "src": "/images/main.jpg", // Resim yolu veya URL
       "description": "Çocukların fiziksel ve duygusal gelişimini destekleyici etkinlikler ve bilgiler.",
-      "iconSrc":"/img/v.png" ,
       "content": [
         {
           "heading": "Fiziksel ve Duygusal Gelişim Eğitiminin Önemi",
@@ -47,12 +46,13 @@ const Ilkokul = () => {
       {area ? (
         <div>
           <ImageBanner 
-  src="/img/common/r.png" 
-  title={area.title} 
+  src={area.src} 
+  subTitle={area.subTitle} 
+  title="İlkokul Eğitimleri"
   iconSrc={area.iconSrc} 
 />
 <div className='container mx-auto py-12'>
-          <h1 className="text-3xl font-bold text-[#1F2937] mb-6">{area.title}</h1>
+          <h1 className="text-3xl font-bold text-[#1F2937] mb-6">{area.subTitle}</h1>
           <p className="text-gray-700 text-lg mb-8 ">{area.description}</p>
           {area.content.map((section, index) => (
             <div key={index} className="mb-6">

@@ -10,10 +10,9 @@ const Ortaokul = () => {
   const developmentAreas = [
     {
       "slug": "kultur-ve-edebiyat-kulubu",
-      "title": "Kültür ve Edebiyat Kulübü",
-      "img": "/img/2-.jpg",
+      "subTitle": "Kültür ve Edebiyat Kulübü",
+      "src": "/images/main.jpg", // Resim yolu veya URL
       "description": "Çocukların öğrenme süreçlerini destekleyici etkinlikler ve bilgiler.",
-      "iconSrc": "/img/v.png",
       "content": [
         {
           "heading": "Kültür ve Edebiyatın Önemi",
@@ -39,10 +38,9 @@ const Ortaokul = () => {
     },
     {
       "slug": "sivil-savunma-kulubu",
-      "title": "Sivil Savunma Kulübü",
-      "img": "/img/2-.jpg",
+      "subTitle": "Sivil Savunma Kulübü",
+      "src": "/images/main.jpg", // Resim yolu veya URL
       "description": "Çocukların zeka gelişimini destekleyici etkinlikler ve bilgiler.",
-      "iconSrc": "/img/o.png",
       "content": [
         {
           "heading": "Sivil Savunma Eğitiminin Önemi",
@@ -68,10 +66,9 @@ const Ortaokul = () => {
     },
     {
       "slug": "satranc-kulubu",
-      "title": "Satranç Kulübü",
-      "img": "/img/2-.jpg",
+      "subTitle": "Satranç Kulübü",
+      "src": "/images/main.jpg", // Resim yolu veya URL
       "description": "Çocukların zeka gelişimini destekleyici etkinlikler ve bilgiler.",
-      "iconSrc": "/img/o.png",
       "content": [
         {
           "heading": "Satranç Oynamanın Faydaları",
@@ -97,10 +94,9 @@ const Ortaokul = () => {
     },
     {
       "slug": "bilim-fen-ve-teknoloji-kulubu",
-      "title": "Bilim Fen ve Teknoloji Kulübü",
-      "img": "/img/2-.jpg",
+      "subTitle": "Bilim Fen ve Teknoloji Kulübü",
+      "src": "/images/main.jpg", // Resim yolu veya URL
       "description": "Çocukların bilimsel düşünme ve teknoloji kullanma becerilerini geliştiren etkinlikler ve bilgiler.",
-      "iconSrc": "/img/o.png",
       "content": [
         {
           "heading": "Bilimsel Düşünmenin Önemi",
@@ -126,10 +122,9 @@ const Ortaokul = () => {
     },
     {
       "slug": "gorsel-sanatlar-kulubu",
-      "title": "Görsel Sanatlar Kulübü",
-      "img": "/img/2-.jpg",
+      "subTitle": "Görsel Sanatlar Kulübü",
+      "src": "/images/main.jpg", // Resim yolu veya URL
       "description": "Çocukların görsel ifade becerilerini geliştiren etkinlikler ve bilgiler.",
-      "iconSrc": "/img/156.png",
       "content": [
         {
           "heading": "Görsel Sanatların Önemi",
@@ -155,10 +150,9 @@ const Ortaokul = () => {
     },
     {
       "slug": "muzik-kulubu",
-      "title": "Müzik Kulübü",
-      "img": "/img/2-.jpg",
+      "subTitle": "Müzik Kulübü",
+      "src": "/images/main.jpg", // Resim yolu veya URL
       "description": "Çocukların müzik becerilerini geliştiren etkinlikler ve bilgiler.",
-      "iconSrc": "/img/156.png",
       "content": [
         {
           "heading": "Müziğin Önemi",
@@ -184,10 +178,9 @@ const Ortaokul = () => {
     },
     {
       "slug": "gezi-tanitim-ve-turizm-kulubu",
-      "title": "Gezi Tanıtım ve Turizm Kulübü",
-      "img": "/img/2-.jpg",
+      "subTitle": "Gezi Tanıtım ve Turizm Kulübü",
+      "src": "/images/main.jpg", // Resim yolu veya URL
       "description": "Çocukların gezip görme ve keşfetme becerilerini geliştiren etkinlikler ve bilgiler.",
-      "iconSrc": "/img/156.png",
       "content": [
         {
           "heading": "Keşfetmenin Önemi",
@@ -213,10 +206,9 @@ const Ortaokul = () => {
     },
     {
       "slug": "bilim-kulubu",
-      "title": "Bilim Kulübü",
-      "img": "/img/2-.jpg",
+      "subTitle": "Bilim Kulübü",
+      "src": "/images/main.jpg", // Resim yolu veya URL
       "description": "Çocukların bilimsel düşünme ve keşfetme becerilerini geliştiren etkinlikler ve bilgiler.",
-      "iconSrc": "/img/156.png",
       "content": [
         {
           "heading": "Bilimsel Düşüncenin Gelişimi",
@@ -250,10 +242,11 @@ const Ortaokul = () => {
     <div className="">
       {area ? (
         <div>
-          <ImageBanner 
-  src="/img/common/r.png" 
-  title={area.title} 
-  iconSrc={area.iconSrc} 
+            <ImageBanner 
+  src={area.src} 
+  title="Ortaokul Kulüpleri" 
+
+  subTitle={area.subTitle} 
 />
 <div className='container mx-auto py-12'>
           <h1 className="text-3xl font-bold text-[#1F2937] mb-6">{area.title}</h1>

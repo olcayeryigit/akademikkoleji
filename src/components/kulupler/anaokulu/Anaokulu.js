@@ -11,10 +11,9 @@ const Anaokulu = () => {
   const developmentAreas = [
     {
       "slug": "darama-kulubu",
-      "title": "Darama Kulübü",
-      "img": "/img/2-.jpg", // Resim yolu veya URL
+      "subTitle": "Darama Kulübü",
+      "src": "/images/main.jpg", // Resim yolu veya URL
       "description": "Çocukların fiziksel ve duygusal gelişimini destekleyici etkinlikler ve bilgiler.",
-      "iconSrc":"/img/v.png" ,
       "content": [
         {
           "heading": "Fiziksel ve Duygusal Gelişim Eğitiminin Önemi",
@@ -40,10 +39,9 @@ const Anaokulu = () => {
     },
     {
       "slug": "robotik-kodlama-kulubu",
-      "title": "Robotik Kodlama Kulübü",
-      "img": "/img/2-.jpg", // Resim yolu veya URL
+      "subTitle": "Robotik Kodlama Kulübü",
+      "src": "/images/main.jpg", // Resim yolu veya URL
       "description": "Çocukların zeka gelişimini destekleyici etkinlikler ve bilgiler.",
-      "iconSrc":"/img/o.png" ,
       "content": [
         {
           "heading": "Anaokulunda Zeka Gelişiminin Önemi",
@@ -78,12 +76,13 @@ const Anaokulu = () => {
       {area ? (
         <div>
           <ImageBanner 
-  src="/img/common/r.png" 
-  title={area.title} 
-  iconSrc={area.iconSrc} 
+  src={area.src} 
+  title="Anaokulu Kulüpleri" 
+
+  subTitle={area.subTitle} 
 />
 <div className='container mx-auto py-12'>
-          <h1 className="text-3xl font-bold text-[#1F2937] mb-6">{area.title}</h1>
+          <h1 className="text-3xl font-bold text-[#1F2937] mb-6">{area.subTitle}</h1>
           <p className="text-gray-700 text-lg mb-8 ">{area.description}</p>
           {area.content.map((section, index) => (
             <div key={index} className="mb-6">

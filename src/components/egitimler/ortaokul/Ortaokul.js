@@ -10,8 +10,8 @@ const Ortaokul = () => {
   const developmentAreas = [
     {
       "slug": "ogrenci-merkezli-egitim",
-      "title": "Öğrenci Merkezli Eğitim",
-      "img": "/img/2-.jpg", // Resim yolu veya URL
+      "subTitle": "Öğrenci Merkezli Eğitim",
+      "src": "/img/2-.jpg", // Resim yolu veya URL
       "description": "Çocukların öğrenme süreçlerini destekleyici etkinlikler ve bilgiler.",
       "iconSrc": "/img/v.png",
       "content": [
@@ -39,8 +39,8 @@ const Ortaokul = () => {
     },
     {
       "slug": "psikolojik-danisma",
-      "title": "Psikolojik Danışma",
-      "img": "/img/2-.jpg", // Resim yolu veya URL
+      "subTitle": "Psikolojik Danışma",
+      "src": "/img/2-.jpg", // Resim yolu veya URL
       "description": "Çocukların zeka gelişimini destekleyici etkinlikler ve bilgiler.",
       "iconSrc": "/img/o.png",
       "content": [
@@ -68,8 +68,8 @@ const Ortaokul = () => {
     },
     {
       "slug": "stem-egitimi",
-      "img": "/img/2-.jpg", // Resim yolu veya URL
-      "title": "STEM Eğitimi",
+      "src": "/img/2-.jpg", // Resim yolu veya URL
+      "subTitle": "STEM Eğitimi",
       "description": "Çocukların STEM (Bilim, Teknoloji, Mühendislik, Matematik) alanındaki becerilerini geliştiren etkinlikler ve bilgiler.",
       "iconSrc": "/img/156.png",
       "content": [
@@ -97,8 +97,8 @@ const Ortaokul = () => {
     },
     {
       "slug": "dijital-vatandaslik-egitimi",
-      "img": "/img/2-.jpg", // Resim yolu veya URL
-      "title": "Dijital Vatandaşlık Eğitimi",
+      "src": "/img/2-.jpg", // Resim yolu veya URL
+      "subTitle": "Dijital Vatandaşlık Eğitimi",
       "description": "Çocukların dijital dünyada güvenli ve sorumlu bir şekilde hareket etmelerini sağlayan etkinlikler ve bilgiler.",
       "iconSrc": "/img/156.png",
       "content": [
@@ -126,8 +126,8 @@ const Ortaokul = () => {
     },
     {
       "slug": "okuma-becerileri",
-      "img": "/img/2-.jpg", // Resim yolu veya URL
-      "title": "Okuma Becerileri",
+      "src": "/img/2-.jpg", // Resim yolu veya URL
+      "subTitle": "Okuma Becerileri",
       "description": "Çocukların okuma becerilerini geliştiren etkinlikler ve bilgiler.",
       "iconSrc": "/img/156.png",
       "content": [
@@ -164,12 +164,13 @@ const Ortaokul = () => {
       {area ? (
         <div>
           <ImageBanner 
-  src="/img/common/r.png" 
-  title={area.title} 
+  src={area.src} 
+  subTitle={area.subTitle} 
   iconSrc={area.iconSrc} 
+  title="Ortaokul Eğitimleri"
 />
 <div className='container mx-auto py-12'>
-          <h1 className="text-3xl font-bold text-[#1F2937] mb-6">{area.title}</h1>
+          <h1 className="text-3xl font-bold text-[#1F2937] mb-6">{area.subTitle}</h1>
           <p className="text-gray-700 text-lg mb-8 ">{area.description}</p>
           {area.content.map((section, index) => (
             <div key={index} className="mb-6">

@@ -10,8 +10,8 @@ const Lise = () => {
   const developmentAreas = [
     {
         "slug": "kisilik-gelisimi",
-        "title": "Kişilik Gelişimi",
-        "img": "/img/2-.jpg",
+        "subTitle": "Kişilik Gelişimi",
+        "src": "/images/main.jpg", // Resim yolu veya URL
         "description": "Çocukların öğrenme süreçlerini destekleyici etkinlikler ve bilgiler.",
         "iconSrc": "/img/v.png",
         "content": [
@@ -39,8 +39,8 @@ const Lise = () => {
     },
     {
         "slug": "bilisimsel-dusunme",
-        "title": "Bilişimsel Düşünme",
-        "img": "/img/2-.jpg",
+        "subTitle": "Bilişimsel Düşünme",
+        "src": "/images/main.jpg", // Resim yolu veya URL
         "description": "Çocukların zeka gelişimini destekleyici etkinlikler ve bilgiler.",
         "iconSrc": "/img/o.png",
         "content": [
@@ -68,8 +68,8 @@ const Lise = () => {
     },
     {
         "slug": "multilingual-egitim",
-        "img": "/img/2-.jpg",
-        "title": "Multilingual Eğitim",
+        "src": "/images/main.jpg", // Resim yolu veya URL
+        "subTitle": "Multilingual Eğitim",
         "description": "Çocukların STEM (Bilim, Teknoloji, Mühendislik, Matematik) alanındaki becerilerini geliştiren etkinlikler ve bilgiler.",
         "iconSrc": "/img/156.png",
         "content": [
@@ -97,8 +97,8 @@ const Lise = () => {
     },
     {
         "slug": "dijital-vatandaslik-egitimi",
-        "img": "/img/2-.jpg",
-        "title": "Dijital Vatandaşlık Eğitimi",
+        "src": "/images/main.jpg", // Resim yolu veya URL
+        "subTitle": "Dijital Vatandaşlık Eğitimi",
         "description": "Çocukların dijital dünyada güvenli ve sorumlu bir şekilde hareket etmelerini sağlayan etkinlikler ve bilgiler.",
         "iconSrc": "/img/156.png",
         "content": [
@@ -126,10 +126,9 @@ const Lise = () => {
     },
     {
         "slug": "akademik-egitim",
-        "img": "/img/2-.jpg",
-        "title": "Akademik Eğitim",
+        "src": "/images/main.jpg", // Resim yolu veya URL
+        "subTitle": "Akademik Eğitim",
         "description": "Çocukların okuma becerilerini geliştiren etkinlikler ve bilgiler.",
-        "iconSrc": "/img/156.png",
         "content": [
             {
                 "heading": "Okuma Becerilerinin Önemi",
@@ -165,12 +164,13 @@ const Lise = () => {
       {area ? (
         <div>
           <ImageBanner 
-  src="/img/common/r.png" 
-  title={area.title} 
+  src={area.src} 
+  title="Lise Eğitimleri"
+  subTitle={area.subTitle} 
   iconSrc={area.iconSrc} 
 />
 <div className='container mx-auto py-12'>
-          <h1 className="text-3xl font-bold text-[#1F2937] mb-6">{area.title}</h1>
+          <h1 className="text-3xl font-bold text-[#1F2937] mb-6">{area.subTitle}</h1>
           <p className="text-gray-700 text-lg mb-8 ">{area.description}</p>
           {area.content.map((section, index) => (
             <div key={index} className="mb-6">

@@ -10,10 +10,9 @@ const Lise = () => {
   const developmentAreas = [
     {
       "slug": "kutuphanecilik-kulubu",
-      "title": "Kütüphanecilik Kulübü",
-      "img": "/img/kutuphane.jpg",
+      "subTitle": "Kütüphanecilik Kulübü",
+      "src": "/images/main.jpg", // Resim yolu veya URL
       "description": "Çocukların okuma alışkanlığını geliştiren etkinlikler ve bilgiler.",
-      "iconSrc": "/img/book.png",
       "content": [
         {
           "heading": "Kütüphanelerin Önemi",
@@ -39,10 +38,9 @@ const Lise = () => {
     },
     {
       "slug": "cevre-koruma-kulubu",
-      "title": "Çevre Koruma Kulübü",
-      "img": "/img/cevre.jpg",
+      "subTitle": "Çevre Koruma Kulübü",
+      "src": "/images/main.jpg", // Resim yolu veya URL
       "description": "Çocukların çevre bilincini artıran etkinlikler ve bilgiler.",
-      "iconSrc": "/img/leaf.png",
       "content": [
         {
           "heading": "Çevre Korumanın Önemi",
@@ -68,10 +66,9 @@ const Lise = () => {
     },
     {
       "slug": "kultur-ve-edebiyat-kulubu",
-      "title": "Kültür ve Edebiyat Kulübü",
-      "img": "/img/kultur.jpg",
+      "subTitle": "Kültür ve Edebiyat Kulübü",
+      "src": "/images/main.jpg", // Resim yolu veya URL
       "description": "Çocukların kültürel ve edebi becerilerini geliştiren etkinlikler.",
-      "iconSrc": "/img/book.png",
       "content": [
         {
           "heading": "Kültürel Farkındalık",
@@ -97,10 +94,9 @@ const Lise = () => {
     },
     {
       "slug": "sivil-savunma-kulubu",
-      "title": "Sivil Savunma Kulübü",
-      "img": "/img/sivil-savunma.jpg",
+      "subTitle": "Sivil Savunma Kulübü",
+      "src": "/images/main.jpg", // Resim yolu veya URL
       "description": "Çocukların güvenlik bilgilerini artıran etkinlikler.",
-      "iconSrc": "/img/shield.png",
       "content": [
         {
           "heading": "Acil Durum Eğitimi",
@@ -126,10 +122,9 @@ const Lise = () => {
     },
     {
       "slug": "gezi-tanitim-ve-turizm-kulubu",
-      "title": "Gezi Tanıtım ve Turizm Kulübü",
-      "img": "/img/gezi.jpg",
+      "subTitle": "Gezi Tanıtım ve Turizm Kulübü",
+      "src": "/images/main.jpg", // Resim yolu veya URL
       "description": "Çocukların keşfetme ve gezme becerilerini geliştiren etkinlikler.",
-      "iconSrc": "/img/map.png",
       "content": [
         {
           "heading": "Yeni Yerler Keşfetmek",
@@ -155,10 +150,9 @@ const Lise = () => {
     },
     {
       "slug": "satranc-kulubu",
-      "title": "Satranç Kulübü",
-      "img": "/img/satranc.jpg",
+      "subTitle": "Satranç Kulübü",
+      "src": "/images/main.jpg", // Resim yolu veya URL
       "description": "Çocukların zeka gelişimini destekleyen etkinlikler.",
-      "iconSrc": "/img/chess.png",
       "content": [
         {
           "heading": "Stratejik Düşünme",
@@ -184,10 +178,9 @@ const Lise = () => {
     },
     {
       "slug": "bilim-fen-ve-teknoloji-kulubu",
-      "title": "Bilim Fen ve Teknoloji Kulübü",
-      "img": "/img/bilim.jpg",
+      "subTitle": "Bilim Fen ve Teknoloji Kulübü",
+      "src": "/images/main.jpg", // Resim yolu veya URL
       "description": "Çocukların bilimsel düşünme ve teknoloji becerilerini geliştiren etkinlikler.",
-      "iconSrc": "/img/science.png",
       "content": [
         {
           "heading": "Bilimsel Düşünme",
@@ -213,10 +206,9 @@ const Lise = () => {
     },
     {
       "slug": "gorsel-sanatlar-kulubu",
-      "title": "Görsel Sanatlar Kulübü",
-      "img": "/img/sanatlar.jpg",
+      "subTitle": "Görsel Sanatlar Kulübü",
+      "src": "/images/main.jpg", // Resim yolu veya URL
       "description": "Çocukların sanatsal yeteneklerini geliştiren etkinlikler.",
-      "iconSrc": "/img/art.png",
       "content": [
         {
           "heading": "Sanatın Önemi",
@@ -252,13 +244,14 @@ const Lise = () => {
     <div className="">
       {area ? (
         <div>
-          <ImageBanner 
-  src="/img/common/r.png" 
-  title={area.title} 
-  iconSrc={area.iconSrc} 
+    <ImageBanner 
+  src={area.src} 
+  title="Lise Kulüpleri" 
+
+  subTitle={area.subTitle} 
 />
 <div className='container mx-auto py-12'>
-          <h1 className="text-3xl font-bold text-[#1F2937] mb-6">{area.title}</h1>
+          <h1 className="text-3xl font-bold text-[#1F2937] mb-6">{area.subTitle}</h1>
           <p className="text-gray-700 text-lg mb-8 ">{area.description}</p>
           {area.content.map((section, index) => (
             <div key={index} className="mb-6">

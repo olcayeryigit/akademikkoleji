@@ -5,12 +5,12 @@ import React from 'react'
 
 const Logo = () => {
   return (
-    <div className="relative" style={{height:"4.4rem",width:"14rem"}}>
+    <div className="relative" style={{height:"4.3rem",width:"19rem"}}>
     <Image 
-      src="/logos/header-logo.svg" 
+      src="/logos/main.svg" 
       alt="Phone Top Navigation" 
       fill 
-      className="object-contain"  
+      className="object-cover"  
     />
   </div>
   

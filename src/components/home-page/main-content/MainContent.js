@@ -8,11 +8,11 @@ const MainContent = () => {
  
   return (
     <div className='pt-32 pb-8 '>
-      <div className='container mx-auto grid  lg:grid-cols-6 '> {/* Create a grid with 1 column on small screens and 2 on medium and larger */}
-        <div className='lg:col-span-4 flex justify-center'> {/* Center the Slider component */}
+      <div className='container mx-auto grid  xl:grid-cols-6 '> {/* Create a grid with 1 column on small screens and 2 on medium and larger */}
+        <div className='xl:col-span-4 flex justify-center'> {/* Center the Slider component */}
           <Slider />
         </div>
-        <div className='lg:col-span-2 z-50 flex justify-center md:block mt-28 md:mt-0 ' > {/* Center the PreRegistrationForm component */}
+        <div className='xl:col-span-2 z-50 flex justify-center xl:block mt-28 xl:mt-0 ' > {/* Center the PreRegistrationForm component */}
           <PreRegistrationForm />
 
         </div>

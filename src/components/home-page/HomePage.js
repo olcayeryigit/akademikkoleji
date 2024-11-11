@@ -5,17 +5,18 @@ import Section1 from './section-1/Section1'
 import Section2 from './section-2/Section2'
 import Spacer from '../common/spacer/Spacer'
 import Section3 from './section-3/Section3'
-import Section4 from './section-4/Section4'
-import Section5 from './section-5/Section5'
 import "./home-page.scss"
-import Section6 from './section-6/section6'
-import Section7 from './section-7/Section7'
-import Section8 from './section-8/Section8'
 import ExamCountdown from './counter/ExamCountdown'
 import InfoSection from './info-section/InfoSection'
-import Section11 from './section-11/Section11'
-import Section12 from './section-12/Section12'
+import Clubs from './clubs/Clubs'
+import ForeignLanguage from './foreign-language/ForeignLanguage'
+import Announcements from './announcements/Announcements'
+import Gallery from './gallery/Gallery'
+import News from './news/News'
+import Reviews from './reviews/Reviews'
+import Accreditation from './accreditation/Accreditation'
 import Image from 'next/image'
+import { Link } from 'react-scroll'
 
 const HomePage = () => {
 
@@ -32,39 +33,49 @@ const HomePage = () => {
       />
            <div className="absolute bottom-0 w-full ">
            <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2  w-0  h-0 border-l-[60px] border-r-[60px] border-b-[60px] border-l-transparent border-r-transparent z-50 " style={{borderBottomColor:"rgba(255,255,255,0.3)"}}>
-           <div className='absolute left-1/2 transform -translate-x-1/2 mt-6 '>
+           <Link className='absolute left-1/2 transform -translate-x-1/2 mt-6 cursor-pointer'
+            to="section-1"           
+            smooth={true}              
+            duration={500}              
+            offset={-70}    
+           >
            <svg xmlns="http://www.w3.org/2000/svg" width="2rem" height="2rem" viewBox="0 0 8 8"><path fill="black" d="M1.5 1L0 2.5l4 4l4-4L6.5 1L4 3.5z"/></svg>
-           </div>
+           </Link>
           
                    </div>
 
-            </div> {/* Opaklık ayarı, siyah overlay 
-  </div>
+            </div> 
+        
       {/* Overlay */}
-      <div className="absolute inset-0 bg-black opacity-60" /> {/* Opaklık ayarı, siyah overlay */}
+   <div className="absolute inset-0 bg-black opacity-50" /> 
+
+   { /*  <div className="absolute inset-0 bg-gradient-to-br from-black to-gray-800  opacity-80"></div>
+*/}
 <MainContent/>
   </div>
-
+  
+  <div id="section-1">
 <Section1/>
+  </div>
+
 <Spacer height='h-10'/>
 <Section2/>
 <Spacer height='h-12'/>
 <Section3/>
-<Spacer height='h-12'/>
-<Section4/>
+<Clubs/>
 <Spacer height='h-20'/>
-<Section5/>
-<Section6/>
-<Spacer height='h-12'/>
-<Section7 />
-<Spacer height='h-24'/>
-<Section8/>
-<Spacer height='h-16'/>
+<ForeignLanguage/>
+<Announcements/>
+<div className="relative">
+<img src="/other/3.png" className="absolute w-full h-full object-no-repeat object-cover object-center opacity-50" alt="Your Image"/>
+<Gallery/>
+<News/>
+</div>
 <InfoSection/>
-<Section11/>
+<Accreditation/>
 <ExamCountdown/>
 <Spacer height='h-10'/>
-<Section12/>
+<Reviews/>
 <Spacer height='h-10'/>
 
 </div>
@@ -73,3 +84,10 @@ const HomePage = () => {
 
 export default HomePage
 
+
+
+/**
+ * <div className='relative h-64 w-64'>
+  <Image src="/kolej-gif.gif" fill className='object-cover'/>
+</div>
+ */

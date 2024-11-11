@@ -10,10 +10,9 @@ const DilOkulu = () => {
   const developmentAreas = [
     {
       "slug": "ingilizce-drama-kulubu",
-      "title": "İngilizce Drama Kulübü",
-      "img": "/img/drama.jpg",
+      "subTitle": "İngilizce Drama Kulübü",
+      "src": "/images/main.jpg", // Resim yolu veya URL
       "description": "Çocukların İngilizce dil becerilerini geliştiren eğlenceli drama etkinlikleri.",
-      "iconSrc": "/img/drama-mask.png",
       "content": [
         {
           "heading": "Drama ile Öğrenme",
@@ -39,10 +38,9 @@ const DilOkulu = () => {
     },
     {
       "slug": "ingilizce-karaoke-kulubu",
-      "title": "İngilizce Karaoke Kulübü",
-      "img": "/img/karaoke.jpg",
+      "subTitle": "İngilizce Karaoke Kulübü",
+      "src": "/images/main.jpg", // Resim yolu veya URL
       "description": "Çocukların İngilizce şarkılarla dil becerilerini geliştirdiği eğlenceli bir kulüp.",
-      "iconSrc": "/img/microphone.png",
       "content": [
         {
           "heading": "Şarkı Söyleyerek Öğrenme",
@@ -68,10 +66,9 @@ const DilOkulu = () => {
     },
     {
       "slug": "ingilizce-scrabble-kulubu",
-      "title": "İngilizce Scrabble Kulübü",
-      "img": "/img/scrabble.jpg",
+      "subTitle": "İngilizce Scrabble Kulübü",
+      "src": "/images/main.jpg", // Resim yolu veya URL
       "description": "Çocukların İngilizce kelime dağarcığını geliştirirken eğlendiği bir kulüp.",
-      "iconSrc": "/img/scrabble-tile.png",
       "content": [
         {
           "heading": "Kelime Dağarcığı Geliştirme",
@@ -97,10 +94,9 @@ const DilOkulu = () => {
     },
     {
       "slug": "almanca-kulubu",
-      "title": "Almanca Kulübü",
-      "img": "/img/almanca.jpg",
+      "subTitle": "Almanca Kulübü",
+      "src": "/images/main.jpg", // Resim yolu veya URL
       "description": "Çocukların Almanca dil becerilerini geliştiren etkinlikler.",
-      "iconSrc": "/img/germany.png",
       "content": [
         {
           "heading": "Dil Öğreniminin Temelleri",
@@ -134,12 +130,13 @@ const DilOkulu = () => {
       {area ? (
         <div>
           <ImageBanner 
-  src="/img/common/r.png" 
-  title={area.title} 
-  iconSrc={area.iconSrc} 
+  src={area.src} 
+  title="Dilokulu Kulüpleri" 
+
+  subTitle={area.subTitle} 
 />
 <div className='container mx-auto py-12'>
-          <h1 className="text-3xl font-bold text-[#1F2937] mb-6">{area.title}</h1>
+          <h1 className="text-3xl font-bold text-[#1F2937] mb-6">{area.subTitle}</h1>
           <p className="text-gray-700 text-lg mb-8 ">{area.description}</p>
           {area.content.map((section, index) => (
             <div key={index} className="mb-6">
