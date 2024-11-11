@@ -1,18 +1,24 @@
-// ReviewCard.js
+import Image from 'next/image';
 
 const ReviewCard = ({ comment, name, title }) => {
     return (
-      <div className="reltive h-52 m-3 flex flex-col justify-center gap-2  px-5 rounded-xl bg-[#F6F8F7]">
-          <img className="absolute top-0 right-10 opacity-50" src="/mark.svg" alt="Star Icon" width="72" height="72" />
+      <div className="relative h-52 m-3 flex flex-col justify-center gap-2 px-5 rounded-xl bg-[#F6F8F7]">
+          <Image
+            className="absolute top-0 right-10 opacity-50"
+            src="/mark.svg"
+            alt="Star Icon"
+            width={72}
+            height={72}
+          />
 
-        <div className="flex items-center gap-2 border-b pb-1 ">
-       <div className="h-8 w-8 rounded-full bg-gray-300"></div>
+        <div className="flex items-center gap-2 border-b pb-1">
+          <div className="h-8 w-8 rounded-full bg-gray-300"></div>
           <div className="flex flex-col">
             <div className="font-bold text-sm">{name}</div>
             <div className="text-sm opacity-80">{title}</div>
           </div>
         </div>
-        <p className="text-sm text-gray-500">"{comment}"</p>
+        <p className="text-sm text-gray-500">&quot;{comment}&quot;</p>
         <div className="flex gap-2">
           {[...Array(5)].map((_, index) => (
             <svg
@@ -38,4 +44,3 @@ const ReviewCard = ({ comment, name, title }) => {
   };
   
   export default ReviewCard;
-  

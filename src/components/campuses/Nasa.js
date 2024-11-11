@@ -28,7 +28,7 @@ const Nasa = () => {
           Geniş bir müfredat sunarak öğrencilerin akademik başarılarını artırmayı hedefliyoruz. STEAM odaklı dersler, sanat ve spor aktiviteleri, dil eğitimi ve kişisel gelişim programları ile öğrencilerin potansiyellerini ortaya çıkarmalarına destek vermekteyiz.
         </p>
         <p>
-          Öğrencilere geniş ders içeriği seçenekleri sunarak hem akademik becerilerini hem de ilgi alanlarını keşfetmeleri teşvik edilmektedir. Düzenli yapılan değerlendirme sınavları ile LGS'ye hazırlık sürecindeki zayıf noktaları belirlenmekte ve destek programları düzenlenmektedir.
+          Öğrencilere geniş ders içeriği seçenekleri sunarak hem akademik becerilerini hem de ilgi alanlarını keşfetmeleri teşvik edilmektedir. Düzenli yapılan değerlendirme sınavları ile LGS&apos;ye hazırlık sürecindeki zayıf noktaları belirlenmekte ve destek programları düzenlenmektedir.
         </p>
       </section>
 

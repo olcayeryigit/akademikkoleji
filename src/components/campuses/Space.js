@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 const Space = () => {
@@ -16,10 +15,10 @@ const Space = () => {
       <section className="mb-6">
         <h2 className="text-xl font-semibold mb-2">Üniversite Sınavlarına Hazırlık</h2>
         <p>
-          Üniversite sınavlarına hazırlık programları sunan okulumuz, öğrencileri Yükseköğretim Kurumları Sınavı'na (YKS) yönlendirirken destekleyici bir rol üstlenir ve öğrencilerin potansiyellerini en üst düzeye çıkarabilmeleri için fırsatlar yaratır.
+          Üniversite sınavlarına hazırlık programları sunan okulumuz, öğrencileri Yükseköğretim Kurumları Sınavı&apos;na (YKS) yönlendirirken destekleyici bir rol üstlenir ve öğrencilerin potansiyellerini en üst düzeye çıkarabilmeleri için fırsatlar yaratır.
         </p>
         <p>
-          Düzenli olarak yapılan ölçme ve değerlendirme sınavları, öğrencilerin sınav stratejilerini geliştirmelerine ve sınav ortamına alışmalarına yardımcı olur. YKS'ye hazırlık sürecindeki eksiklikler belirlenir ve bu eksikliklerin giderilmesi için ek dersler ve etütler düzenlenir.
+          Düzenli olarak yapılan ölçme ve değerlendirme sınavları, öğrencilerin sınav stratejilerini geliştirmelerine ve sınav ortamına alışmalarına yardımcı olur. YKS&apos;ye hazırlık sürecindeki eksiklikler belirlenir ve bu eksikliklerin giderilmesi için ek dersler ve etütler düzenlenir.
         </p>
       </section>
 
