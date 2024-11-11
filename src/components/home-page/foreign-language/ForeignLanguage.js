@@ -16,20 +16,20 @@ p3:"Yabancı Dil eğitiminde çeyrek asra yakın tecrübesiyle, bugüne dek binl
   return (
     <div className='bg-gradient-to-b from-white to-gray-100 py-12'>
     <div className='container mx-auto '>
-        <h1 className='text-3xl md:text-5xl font-extrabold text-gray-800 leading-tight text-center mb-3'>
+        <h1 className='text-2xl md:text-5xl font-extrabold text-gray-800 leading-tight text-center mb-3'>
             {content.title}</h1>
-<h1 className='text-center text-2xl md-text-4xl font-bold text-gray-700'>{content.subtitle}</h1>
+<h1 className='text-center text-xl md-text-4xl font-bold text-gray-700'>{content.subtitle}</h1>
 
-      <div className='flex justify-center items-center mt-5 gap-8'>
+      <div className='flex flex-col md:flex-row justify-center items-center mt-2  md:mt-5 gap-4 md:gap-8'>
     
-<div className='w-1/2 space-y-6 mt-5'>
+<div className='w-full md:w-1/2 p-3 md:p-0 space-y-3 md:space-y-6 mt-1 md:mt-5'>
 
 <p className='text-base text-gray-700'>{content.p1}</p>
 <p className='text-base text-gray-600'>{content.p2}</p>
 <p className='text-base text-gray-600'>{content.p3}</p>
 
 </div>
-  <div className='relative w-1/4'>
+  <div className='relative w-full md:w-1/4 p-2 md:p-0'>
           <Player
             autoplay
             loop

@@ -32,7 +32,7 @@ const CountdownTimer = ({ targetDate }) => {
 
     return (
       <div className="flex flex-col items-center font-bold">
-        <svg width="100" height="100" viewBox="0 0 100 100">
+        <svg width="100" height="100" viewBox="0 0 100 100" className="w-[80px] md:w-[100px]">
           <circle
             stroke="#fff"
             fill="transparent"
@@ -62,22 +62,22 @@ const CountdownTimer = ({ targetDate }) => {
             {value}
           </text>
         </svg>
-        <h3 className="text-lg font-semibold mt-2 text-gray-800">
-          {unit}
-        </h3>
+        <h3 className="text-lg font-semibold mt-2 text-gray-800">{unit}</h3>
       </div>
     );
   };
 
   return (
     <div className="flex justify-center items-center gap-6 flex-wrap">
-      {renderCircle(timeRemaining.days, 365, '#FF5733', 'Gün')} {/* Gün sayısını 365'e ayarladık - canlı turuncu */}
-      {renderCircle(timeRemaining.hours, 24, '#33FF57', 'Saat')} {/* Canlı yeşil */}
-      {renderCircle(timeRemaining.minutes, 60, '#3357FF', timeRemaining.seconds < 60 ? 'Dakika' : 'Saniye')} {/* Dakika veya Saniye */}
-      {renderCircle(timeRemaining.seconds, 60, '#FF33A1', 'Saniye')} {/* Canlı pembe */}
+      {/* Responsively display the circles in two columns on small screens */}
+      <div className="grid grid-cols-2 sm:grid-cols-4 gap-6">
+        {renderCircle(timeRemaining.days, 365, '#FF5733', 'Gün')}
+        {renderCircle(timeRemaining.hours, 24, '#33FF57', 'Saat')}
+        {renderCircle(timeRemaining.minutes, 60, '#3357FF', timeRemaining.seconds < 60 ? 'Dakika' : 'Saniye')}
+        {renderCircle(timeRemaining.seconds, 60, '#FF33A1', 'Saniye')}
+      </div>
     </div>
   );
 };
 
 export default CountdownTimer;
-

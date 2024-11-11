@@ -12,7 +12,7 @@ const MainContent = () => {
         <div className='xl:col-span-4 flex justify-center'> {/* Center the Slider component */}
           <Slider />
         </div>
-        <div className='xl:col-span-2 z-50 flex justify-center xl:block mt-28 xl:mt-0 ' > {/* Center the PreRegistrationForm component */}
+        <div className='mt-14 xl:col-span-2 z-50 flex justify-center xl:block md:mt-28 xl:mt-0 ' > {/* Center the PreRegistrationForm component */}
           <PreRegistrationForm />
 
         </div>

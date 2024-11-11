@@ -11,7 +11,7 @@ const InfoSection = () => {
         <div className='col-span-3 lg:col-span-2 lg:mt-3'>
           <School />
         </div>
-        <div className='col-span-3 lg:col-span-1'>
+        <div className='col-span-3 lg:col-span-1 px-2 md:px-0'>
           <Students />
         </div>
   

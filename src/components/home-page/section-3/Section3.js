@@ -93,11 +93,11 @@ const Section3 = () => {
                   />
                 </div>
               </div>
-              <div className="mt-10 p-4">
-                <h4 className="font-semibold text-xl mb-2">
-                  <span className="font-bold">{item.order}</span> {item.title}
+              <div className="mt-10 p-1 md:p-4">
+                <h4 className="font-semibold text-lg  md:text-xl mb-2">
+                  <span className=" font-bold">{item.order}</span> {item.title}
                 </h4>
-                <p className="text-base text-gray-800">{item.text}</p>
+                <p className="text-md md:text-base text-gray-800 pb-6 md:pb-0">{item.text}</p>
               </div>
             </div>
           ))}

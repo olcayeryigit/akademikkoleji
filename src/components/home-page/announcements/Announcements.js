@@ -109,7 +109,7 @@ const Announcements = () => {
               }}
               onChange={setValue} 
               value={value} 
-              className="border-l w-full h-full px-20 flex flex-col mt-8"
+              className="border-l w-full h-full p-8 pt-0  md:px-20 flex flex-col mt-0 md:mt-8"
             />
           </div>
         </div>

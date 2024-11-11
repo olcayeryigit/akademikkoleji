@@ -2,9 +2,9 @@ import Image from 'next/image';
 
 const ReviewCard = ({ comment, name, title }) => {
     return (
-      <div className="relative h-52 m-3 flex flex-col justify-center gap-2 px-5 rounded-xl bg-[#F6F8F7]">
+      <div className="relative  h-52 flex flex-col justify-center gap-2 px-6 rounded-xl bg-[#F6F8F7]">
           <Image
-            className="absolute top-0 right-10 opacity-50"
+            className="absolute -top-4 right-10 opacity-50"
             src="/mark.svg"
             alt="Star Icon"
             width={72}

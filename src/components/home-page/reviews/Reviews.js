@@ -44,7 +44,7 @@ const Reviews= () => {
     <div className="container mx-auto p-12">
       <Swiper
         spaceBetween={30}
-        slidesPerView={3}
+        slidesPerView={1}
         loop={true}
         autoplay={{
           delay: 5000,
@@ -62,10 +62,10 @@ const Reviews= () => {
           },
         }}
         modules={[Autoplay]}
-        className="swiper-container flex gap-8"
+        className="swiper-container w-full "
       >
         {reviews.map((review) => (
-          <SwiperSlide key={review.id}>
+          <SwiperSlide key={review.id} className='p-3'>
             <ReviewCard 
              
               comment={review.comment} 

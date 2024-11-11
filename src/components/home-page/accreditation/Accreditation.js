@@ -32,34 +32,34 @@ const Accreditation = () => {
   };
 
   return (
-    <div className="py-16 bg-[#FCF7F5]">
+    <div className="py-16 bg-[#FCF7F5] p-4 md:px-0">
       <div className="container mx-auto  static xl:relative">
         
         <div className="static xl:relative  rounded-3xl shadow-2xl bg-gradient-to-l from-gray-300  to-[#87ACBD] w-full xl:w-2/3">
         
-        <div className='p-8 xl:w-[42rem] '>
+        <div className='p-8  xl:w-[42rem] '>
           
-            <h2 className='text-3xl md:text-3xl font-extrabold text-gray-800 leading-tight mb-3 '> 
+            <h2 className='text-2xl md:text-3xl font-extrabold text-gray-800 leading-tight mb-3 '> 
               İş Dünyasında Değer Gören Sertifikalar
             </h2>
 
-            <h3 className='text-2xl md-text-4xl font-bold text-gray-700'>Akreditasyonlar</h3>
+            <h3 className='text-xl md-text-4xl font-bold text-gray-700'>Akreditasyonlar</h3>
        
-          <div className='flex items-center gap-5 mt-3'>
-            <div>
-              <Image src="/images/iso1.png" width={500} height={500} />
+          <div className='flex flex-col md:flex-row justify-center items-center gap-5 mt-3'>
+            <div className='relative w-32 h-32 md:w-96 md:h-44'>
+              <Image src="/images/iso1.png" fill className='object-contain' />
             </div>
             <div>
-              <h3 className='text-2xl md-text-4xl font-bold text-gray-700 '>İSO 9001</h3>
-              <p className='text-base text-gray-700'>
+              <h3 className='text-lg  md-text-4xl font-bold text-gray-700 '>İSO 9001</h3>
+              <p className='text-md md:text-base text-gray-700'>
                 ISO 9001, dünya çapında tanınan bir kalite yönetim standardıdır. Bu sertifika, eğitim modelimizin uluslararası kalite gereksinimlerine uygun olduğunu ve öğrencilerimize yüksek standartlarda eğitim sunduğumuzu gösterir. Bu sayede, öğrencilerimizin başarıları ve gelişimleri güvence altına alınmaktadır.
               </p>
             </div>
           </div>
 
-          <div className='flex items-center gap-5 mt-3'>
-            <div>
-              <Image src="/images/iso1.png" width={500} height={500} />
+          <div className='flex flex-col md:flex-row justify-center items-center gap-5 mt-3'>
+          <div className='relative w-32 h-32 md:w-96 md:h-44'>
+          <Image src="/images/iso1.png" fill className='object-contain' />
             </div>
             <div>
               <h3 className='text-2xl md-text-4xl font-bold text-gray-700'>İSO 9002</h3>

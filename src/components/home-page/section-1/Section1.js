@@ -52,7 +52,7 @@ const Section1 = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 ">
           {datas.map((data, index) => (
             <div
-              className="section-1-content relative overflow-hidden group rounded-lg shadow-2xl transition-all duration-300 ease-in-out border-4 border-white  "
+              className="m-2 md:m-0 section-1-content relative overflow-hidden group rounded-lg shadow-2xl transition-all duration-300 ease-in-out border-4 border-white  "
               key={index}
             >
               <Image

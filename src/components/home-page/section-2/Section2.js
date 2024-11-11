@@ -1,8 +1,6 @@
 "use client";
 import Image from "next/image";
 import React, { useState } from "react";
-import { FaBook, FaPen, FaSchool } from "react-icons/fa";
-import { RiBook2Fill } from "react-icons/ri";
 
 const Section2 = () => {
   const data = [
@@ -36,43 +34,67 @@ const Section2 = () => {
       image: "/images/home-page/section-2/3.jpeg",
       icon: "/images/home-page/section-2/book.png",
     },
-
   ];
 
   const [selectedId, setSelectedId] = useState(1);
   const selectedData = data.find((item) => item.id === selectedId);
+  const [isOpen, setIsOpen] = useState(null);
 
   return (
     <div className="container mx-auto p-4 md:px-0">
       {/* Kartlar */}
-      <div className=" flex flex-col md:flex-row justify-center gap-10  ">
+      <div className="flex flex-col md:flex-row justify-center gap-10">
         {data.map((item) => (
-          <div  key={item.id} onClick={() => setSelectedId(item.id)}
-            className={`w-full  border rounded-lg transition-all duration-300 cursor-pointer  p-4   ${
+          <div
+            key={item.id}
+            onClick={() => setSelectedId(item.id)}
+            className={`w-full md:w-96 border rounded-lg transition-all duration-300 cursor-pointer p-4 ${
               selectedId === item.id
                 ? "bg-gray-50 border-gray-600 shadow-lg"
                 : "bg-white border-gray-300"
             } hover:shadow-lg hover:border-gray-600`}
-          > 
-<div className="flex flex-row md:flex-col  items-center gap-0">
-          <div className="relative w-28 h-28 mb-2">
-                <Image fill src={item.icon} className="object-contain"
+          >
+            <div className="flex flex-col md:flex-col items-center gap-0">
+              <div className="relative w-28 h-28 mb-2">
+                <Image
+                  fill
+                  src={item.icon}
+                  className="object-contain"
                 />
               </div>
-     <div>
-              <h2 className="text-xl font-semibold text-gray-800 text-center mb-2">
-                {item.title}
-              </h2>  
-              <h2 className="text-base text-gray-600 text-center">
-            {item.description}
-          </h2>
-    </div>
-   </div>                
-   
-      
-         
-           
-        
+              <div>
+                <h2 className="text-xl font-semibold text-gray-800 text-start md:text-center mb-2">
+                  {item.title}
+                </h2>
+                <h2 className="text-base text-gray-600 text-start md:text-center">
+                  {item.description}
+                </h2>
+
+                {/* Küçük ekranlar için buton ve içerik */}
+                <div className="md:hidden mt-4">
+                  <button
+                    className="text-[#151A23]"
+                    onClick={() => setIsOpen(isOpen === item.id ? null : item.id)}
+                  >
+                    {isOpen === item.id ? "Daha Az" : "Daha Fazla Göster"}
+                  </button>
+                  {isOpen === item.id && (
+                    <div className="mt-2 text-gray-600">
+                      <p>{item.p1}</p>
+                      <p>{item.p2}</p>
+                      <div className="relative w-full h-60 mt-4">
+                        <Image
+                          fill
+                          src={item.image}
+                          alt={item.title}
+                          className="object-cover"
+                        />
+                      </div>
+                    </div>
+                  )}
+                </div>
+              </div>
+            </div>
           </div>
         ))}
       </div>
@@ -80,27 +102,25 @@ const Section2 = () => {
       <hr className="my-8 border-gray-300" />
 
       {/* Seçilen Kartın Detayları */}
-      <div className="flex flex-col md:flex-row items-start gap-12">
+      <div className="hidden md:flex flex-col md:flex-row items-start gap-12">
         {/* Metin Bölümü */}
         <div className="w-full md:w-2/3 space-y-4 transition-opacity duration-500 ease-in-out">
-        <h1 className="text-3xl md:text-5xl font-extrabold text-gray-800 leading-tight">
+          <h1 className="text-3xl md:text-5xl font-extrabold text-gray-800 leading-tight">
             {selectedData.title}
           </h1>
-          <h2 className="text-base text-gray-600 ">
-            {selectedData.description}
-          </h2>
+          <h2 className="text-base text-gray-600 ">{selectedData.description}</h2>
           <p className="text-base text-gray-600">{selectedData.p1}</p>
           <p className="text-base text-gray-600">{selectedData.p2}</p>
         </div>
 
         {/* Resim Bölümü */}
         <div className="w-full md:w-1/3 flex items-center justify-center">
-          <div className="relative w-full h-[400px] flex items-center justify-center overflow-hidden rounded-lg shadow-lg transform transition duration-500 ease-in-out">
+          <div className="relative w-full h-[600px] md:h-[450px] flex items-center justify-center overflow-hidden rounded-lg shadow-lg transform transition duration-500 ease-in-out">
             <Image
               src={selectedData.image}
               alt={`Image for ${selectedData.title}`}
               fill
-              className="rounded-lg object-cover hover:scale-105 transition-transform duration-500 ease-in-out"
+              className="object-cover"
             />
           </div>
         </div>
@@ -110,5 +130,3 @@ const Section2 = () => {
 };
 
 export default Section2;
-
-/**<svg xmlns="http://www.w3.org/2000/svg" width="2rem" height="2rem" viewBox="0 0 15 15"><path fill="none" stroke="black" d="m7.5 4.5l4 2v8h-8v-8zm0 0V0M0 14.5h15m-13.5 0v-6h2m10 6v-6h-2m-5 6v-3h2v3m-1-14h3v2h-3m0 7a1 1 0 1 1 0-2a1 1 0 0 1 0 2Z"/></svg> */
