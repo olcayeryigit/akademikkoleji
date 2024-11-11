@@ -61,7 +61,7 @@ const News = () => {
           {datas.length > 0 && (
             <div className="relative w-full h-full">
               <Image
-                src={datas[0].image}
+                src={datas[0].src}
                 alt={datas[0].alt}
                 fill
                 className="object-cover rounded-lg"
@@ -117,7 +117,7 @@ flexType="inline"
             >
               <div className="relative w-full h-56">
                 <Image
-                  src={data.image}
+                  src={data.src}
                   alt={data.alt}
                   fill
                   className="object-cover w-full rounded-lg"
