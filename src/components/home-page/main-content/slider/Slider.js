@@ -155,7 +155,6 @@ const Slider = () => {
 
             <SwiperSlide className='relative'>
                 <div className=''>
-ththt
                 </div>
             </SwiperSlide>
         </Swiper>

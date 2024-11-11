@@ -67,7 +67,7 @@ const HomePage = () => {
 <ForeignLanguage/>
 <Announcements/>
 <div className="relative">
-<img src="/other/3.png" className="absolute w-full h-full object-no-repeat object-cover object-center opacity-50" alt="Your Image"/>
+<img src="/images/3.png" className="absolute w-full h-full object-no-repeat object-cover object-center opacity-50" alt="Your Image"/>
 <Gallery/>
 <News/>
 </div>

@@ -11,7 +11,7 @@ const News = () => {
       text: "Eski profesyonel basketbolcu ve Bursa Uludağ Basketbol Baş Antrenörü Barış Güney, Akademik Koleji International School Space Kampüsü'nü ziyaret ederek, okulun spor çalışmaları hakkında bilgi aldı ve samimi bir sohbet gerçekleştirdi. Akademik Koleji ailesi olarak, spor alanındaki vizyonumuzu paylaşma fırsatı bulduğumuz ve değerli görüşleriyle bizleri onurlandıran Barış Güney'e teşekkür ederiz.",
       date: "02/12/2024",
       status: "Yeni",
-      image: "/img/2-.jpg"
+      src: '/images/main.jpg', 
     },
     {
       title: "Bursa Özel Okul Bursluluk Sınavları",
@@ -19,7 +19,7 @@ const News = () => {
       text: "Bursa Bursluluk Sınavı 2025, 1-2-3-4-5-6-7-8- 9-10-11. Sınıflar için 4-5 Ocak 2025 tarihinde Bursa Nilüfer Akademik Koleji'nde yapılacaktır.",
       date: "28/05/2024",
       status: "Devam Ediyor",
-      image: "/img/2-.jpg"
+      src: '/images/main.jpg', 
     },
     {
       title: "Akademik Koleji International School Nasa Campus Yeni Eğitim Yılına Başlıyor",
@@ -27,7 +27,7 @@ const News = () => {
       text: "Akademik Koleji International School Nasa Campus, yeni eğitim öğretim dönemine coşkuyla kapılarını açtı. Öğrencilerimizin parlak geleceğine ışık tutacak olan bu yeni dönemde, deneyimli öğretmen kadromuz ve özverili idari ekibimiz, eğitim yolculuğunda onlara rehberlik etmeye hazır.",
       date: "12/02/2024",
       status: "Tamamlandı",
-      image: "/img/2-.jpg"
+      src: '/images/main.jpg', 
     },
     {
       title: "Akademik Koleji International School Space Campus 2024-2025 Eğitim Öğretim Yılına Başladı",
@@ -35,14 +35,14 @@ const News = () => {
       text: "Akademik Koleji International School Space Campus, 2024-2025 eğitim öğretim yılına heyecanla kapılarını açtı! Deneyimli eğitim kadromuz ve sunduğumuz uluslararası standartlardaki eğitimle, her öğrencimizin yeteneklerini keşfetmesine olanak sağlayacağız.",
       date: "20/11/2024",
       status: "Yeni",
-      image: "/img/2-.jpg"
+      src: '/images/main.jpg', 
     },   {
       title: "Akademik Koleji International School Space Campus 2024-2025 Eğitim Öğretim Yılına Başladı",
       alt: 'Eğitim Görseli 4',
       text: "Akademik Koleji International School Space Campus, 2024-2025 eğitim öğretim yılına heyecanla kapılarını açtı! Deneyimli eğitim kadromuz ve sunduğumuz uluslararası standartlardaki eğitimle, her öğrencimizin yeteneklerini keşfetmesine olanak sağlayacağız.",
       date: "20/10/2024",
       status: "Yeni",
-      image: "/img/2-.jpg"
+      src: '/images/main.jpg', 
     },
   ];
 
