@@ -10,49 +10,49 @@ import LogoButton from '@/components/common/buttons/LogoButton';
 const Gallery = () => {
     const images = [
         { 
-            src: '/img/2-.jpg', 
+            src: '/images/main.jpg', 
             alt: 'Öğrenciler Ders Çalışıyor', 
             date: '2023-09-15',
             description: 'Derslere aktif katılım.'
         },
         { 
-            src: '/img/2-.jpg', 
+            src: '/images/main.jpg', 
             alt: 'Okul Bahçesi', 
             date: '2023-09-20',
             description: 'Öğrencilerin oyun alanı.'
         },
         { 
-            src: '/img/2-.jpg', 
+            src: '/images/main.jpg', 
             alt: 'Sınıf Aktiviteleri', 
             date: '2023-09-25',
             description: 'Eğlenceli sınıf etkinlikleri.'
         },
         { 
-            src: '/img/2-.jpg', 
+            src: '/images/main.jpg', 
             alt: 'Laboratuvar Çalışmaları', 
             date: '2023-10-01',
             description: 'Pratik deneyler.'
         },
         { 
-            src: '/img/2-.jpg', 
+            src: '/images/main.jpg', 
             alt: 'Öğretmen ve Öğrenciler', 
             date: '2023-10-05',
             description: 'Öğretmen rehberliği.'
         },
         { 
-            src: '/img/2-.jpg', 
+            src: '/images/main.jpg', 
             alt: 'Sınıf Düzeni', 
             date: '2023-10-10',
             description: 'Modern eğitim alanları.'
         },
         { 
-            src: '/img/2-.jpg', 
+            src: '/images/main.jpg', 
             alt: 'Kütüphane', 
             date: '2023-10-15',
             description: 'Bilgiye erişim noktası.'
         },
         { 
-            src: '/img/2-.jpg', 
+            src: '/images/main.jpg', 
             alt: 'Spor Aktiviteleri', 
             date: '2023-10-20',
             description: 'Fiziksel gelişim fırsatları.'
