@@ -4,41 +4,42 @@ import React from "react";
 const News = () => {
 
     const haberler = [
-        {
+        {            
+
             "baslik": "Basketbol Efsanesi Barış Güney'den Akademik International Kampüsüne Anlamlı Ziyaret",
             "tarih": "23/09/2024",
             "aciklama": "Eski profesyonel basketbolcu ve Bursa Uludağ Basketbol Baş Antrenörü Barış Güney, Akademik Koleji International School Space Kampüsü'nü ziyaret ederek, okulun spor çalışmaları hakkında bilgi aldı.",
-            "resim": "/images/basketbol-ziyaret.jpg"
+            "resim": "/images/main.jpg"
         },
         {
             "baslik": "Bursa Özel Okul Bursluluk Sınavları",
             "tarih": "10/09/2024",
             "aciklama": "Bursa Bursluluk Sınavı 2025, 1-11. sınıflar için 4-5 Ocak 2025 tarihlerinde Bursa Nilüfer Akademik Koleji'nde yapılacaktır.",
-            "resim": "/images/bursluluk-sinavi.jpg"
+            "resim": "/images/main.jpg"
         },
         {
             "baslik": "Akademik Koleji International School Nasa Campus Yeni Eğitim Yılına Başlıyor",
             "tarih": "10/09/2024",
             "aciklama": "Akademik Koleji International School Nasa Campus, yeni eğitim öğretim dönemine coşkuyla kapılarını açtı.",
-            "resim": "/images/nasa-campus.jpg"
+            "resim": "/images/main.jpg"
         },
         {
             "baslik": "Akademik Koleji International School Space Campus 2024-2025 Eğitim Öğretim Yılına Başladı",
             "tarih": "10/09/2024",
             "aciklama": "Akademik Koleji International School Space Campus, 2024-2025 eğitim öğretim yılına heyecanla kapılarını açtı!",
-            "resim": "/images/space-campus.jpg"
+            "resim": "/images/main.jpg"
         },
         {
             "baslik": "Psiko-Sosyal Danışmanlık Programı!",
             "tarih": "27/08/2024",
             "aciklama": "Akademik Koleji her öğrencinin akademik ve psiko/sosyal ihtiyaçlarını karşılamak üzere kapsamlı bir psikolojik danışmanlık programı sunar.",
-            "resim": "/images/psiko-danismanlik.jpg"
+            "resim": "/images/main.jpg"
         },
         {
             "baslik": "Akademik Koleji International School Anaokulu Oryantasyon Programı",
             "tarih": "22/08/2024",
             "aciklama": "Akademik Koleji International School Anaokulu Oryantasyon Programı ile öğrenciler yeni döneme hazır!",
-            "resim": "/images/anaokulu-oryantasyon.jpg"
+            "resim": "/images/main.jpg"
         }
     ];
 
