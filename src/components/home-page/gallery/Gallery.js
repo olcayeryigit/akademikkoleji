@@ -60,7 +60,7 @@ const Gallery = () => {
     ];
 
     return (
-        <div className="relative py-14">
+        <div className="relative py-14 px-4 md:px-0">
             <div className="w-full container mx-auto">
                 <h2 className="text-4xl font-bold text-center mb-8">Akademik Koleji Okul Galerisi</h2>
                 <p className="text-lg text-gray-800 max-w-2xl mx-auto mb-10 text-center">

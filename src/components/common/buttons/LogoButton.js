@@ -20,7 +20,7 @@ const LogoButton = ({
 }) => {
   // Dynamically set padding, text size, and logo size based on the size prop
   const buttonSize = size === "small" ? "p-2 text-sm" : "p-2.5 text-md";
-  const logoSize = size === "small" ? "w-3.5 h-3.5" : "w-4 h-4";  // Adjust logo size for small size
+  const logoSize = size === "small" ? "w-3 h-3" : "w-4 h-4";  // Adjust logo size for small size
   const inline= Isinline === true ? "inline-flex" : "flex";  // Adjust logo size for small size
   return (
     <div className='text-center'>

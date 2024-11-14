@@ -43,7 +43,7 @@ const ActionBar = () => {
               VELİ GİRİŞİ
             </Link>
             <span
-              className="block h-0.5 bg-white absolute -left-1 bottom-0 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"
+              className="block h-0.5 bg-white absolute -left-1 -bottom-1 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left rounded-full"
               style={{ width: "5.8rem" }}
             ></span>
           </div>
@@ -52,7 +52,7 @@ const ActionBar = () => {
               ÖĞRENCİ GİRİŞİ
             </Link>
             <span
-              className="block h-0.5 bg-white absolute -left-0.5 bottom-0 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"
+              className="block h-0.5 rounded-full bg-white absolute -left-0.5 -bottom-1 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"
               style={{ width: "7.95rem" }}
             ></span>
           </div>

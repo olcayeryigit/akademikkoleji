@@ -1,4 +1,5 @@
 "use client";
+import SectionTitle from "@/components/common/SectionTitle";
 import Image from "next/image";
 import React, { useState } from "react";
 
@@ -41,7 +42,8 @@ const Section2 = () => {
   const [isOpen, setIsOpen] = useState(null);
 
   return (
-    <div className="container mx-auto p-4 md:px-0">
+    <div className="bg-white">
+    <div className="container mx-auto p-4 md:px-0 ">
       {/* Kartlar */}
       <div className="flex flex-col md:flex-row justify-center gap-10">
         {data.map((item) => (
@@ -73,7 +75,7 @@ const Section2 = () => {
                 {/* Küçük ekranlar için buton ve içerik */}
                 <div className="md:hidden mt-4">
                   <button
-                    className="text-[#151A23]"
+                    className="text-[#151A23] font-medium"
                     onClick={() => setIsOpen(isOpen === item.id ? null : item.id)}
                   >
                     {isOpen === item.id ? "Daha Az" : "Daha Fazla Göster"}
@@ -105,9 +107,13 @@ const Section2 = () => {
       <div className="hidden md:flex flex-col md:flex-row items-start gap-12">
         {/* Metin Bölümü */}
         <div className="w-full md:w-2/3 space-y-4 transition-opacity duration-500 ease-in-out">
-          <h1 className="text-3xl md:text-5xl font-extrabold text-gray-800 leading-tight">
-            {selectedData.title}
-          </h1>
+       
+
+          <SectionTitle
+            title={selectedData.title}
+            position="text-start"
+            textColor="text-gray-800"/>
+
           <h2 className="text-base text-gray-600 ">{selectedData.description}</h2>
           <p className="text-base text-gray-600">{selectedData.p1}</p>
           <p className="text-base text-gray-600">{selectedData.p2}</p>
@@ -125,7 +131,7 @@ const Section2 = () => {
           </div>
         </div>
       </div>
-    </div>
+    </div></div>
   );
 };
 

@@ -204,14 +204,15 @@ const [isScrolled, setIsScrolled] = useState(false);
   }, []);
 
   return (
-    <header className={`fixed top-0 w-full text-white transition-colors duration-300 bg-[#151A23] ${isScrolled ? "bg-[#151A23]" : "md:bg-transparent"}`} style={{ zIndex: "999999" }}>
+    <header className={`fixed top-0 w-full text-white transition-colors duration-300 bg-[#151A23]  ${isScrolled ? "bg-[#151A23]" : "md:bg-transparent"}`} style={{ zIndex: "999999" }}>
       <div className={`transition-all duration-1000 ease-in-out overflow-hidden ${isScrolled ? "opacity-0 max-h-0" : "opacity-100 max-h-20"}`}>
         <ActionBar />
       </div>
 
-      <div className="container mx-auto flex justify-between items-center px-6 py-2">
+      <div className="  container mx-auto flex justify-between items-center px-6 py-2">
         <div className="flex items-center space-x-4">
           <Logo />
+        
         </div>
 
         <div className="hidden lg:flex items-center space-x-8">

@@ -5,7 +5,7 @@ import Students from './students/Students';
 
 const InfoSection = () => {
   return (
-    <div className='py-16 bg-[#FCF7F5]'>
+    <div className='py-8 md:py-16 bg-[#FCF7F5]'>
     <div className='container mx-auto'>
       <div className='grid grid-cols-3 gap-10 lg:gap-6'>
         <div className='col-span-3 lg:col-span-2 lg:mt-3'>

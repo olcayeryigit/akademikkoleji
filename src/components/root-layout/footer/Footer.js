@@ -1,5 +1,4 @@
 "use client"
-import React from 'react';
 import { FaFacebookF, FaInstagram, FaLinkedinIn, FaTwitter } from 'react-icons/fa';
 import FooterMenu from './FooterMenu';
 import Image from 'next/image';
@@ -8,6 +7,8 @@ import SubscriptionSection from './SubscriptionSection';
 import SocialMediaSection from './SocialMediaSection';
 import ContactInfoSection from './ContactInfoSection';
 import PolicyLinks from './PolicyLinks';
+import { usePathname } from 'next/navigation';
+import { useEffect, useState } from 'react';
 
 const socialMediaLinks = [
   {
@@ -59,11 +60,30 @@ const policies = [
 ];
 
 const Footer = () => {
+
+  const pathname = usePathname();
+  const currentPathname = pathname.split("/").pop().toLowerCase();
+
+  const [backgroundClass, setBackgroundClass] = useState("bg-white"); // Initial default
+
+  // Update background class based on pathname
+  useEffect(() => {
+    if (currentPathname === "hakkimizda") {
+      setBackgroundClass("bg-[#080D16] ");
+    } else if (currentPathname=== "vizyon-ve-misyon") {
+      setBackgroundClass("bg-[#2C3037] bg-opacity-20");
+    } else if (currentPathname === "/services") {
+      setBackgroundClass("bg-services");
+    } else {
+      setBackgroundClass("bg-white");
+    }
+  }, [currentPathname]); // Re-run when pathname changes
+
   return (
     <div className="footer relative  text-white relative bg-[url('/images/main.jpg')] bg-cover bg-top bg-no-repeat ">
-        <div className="absolute top-0 right-0 w-1/2 h-20 bg-white rounded-br-[130%] transform scale-x-[-1] z-40"></div>
+        <div className={`  absolute top-0 right-0 w-1/2 h-20 ${backgroundClass} rounded-br-[130%] transform scale-x-[-1] z-40`}></div>
 
-    <div className="absolute top-0 left-0 w-1/2 h-20 bg-white rounded-br-[130%] z-40 "></div>
+    <div className={`absolute top-0 left-0 w-1/2 h-20 ${backgroundClass}  rounded-br-[130%] z-40`}></div>
 
 
 

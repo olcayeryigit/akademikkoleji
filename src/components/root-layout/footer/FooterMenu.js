@@ -136,7 +136,7 @@ const FooterMenu = () => {
                     <span className="footer-subgroup-title text-sm font-medium underline mb-2">{item.name}</span>
                     <ul className="footer-subgroup-list text-sm">
                       {item.links && item.links.map((subItem, subIdx) => (
-                        <li key={subIdx} className="footer-subgroup-item mb-1 hover:text-green-300">
+                        <li key={subIdx} className="footer-subgroup-item mb-1 hover:text-red-300">
                           <a href={subItem.href}>{subItem.name}</a>
                         </li>
                       ))}

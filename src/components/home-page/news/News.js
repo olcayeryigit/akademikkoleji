@@ -51,7 +51,7 @@ const News = () => {
       <div className="container mx-auto px-4 py-12">
       <div className="flex justify-between items-center mb-1">
         <h1 className="text-3xl font-bold">HABERLER</h1>
-        <h2 className="text-xl text-gray-500 pt-3 hover:underline cursor-pointer">TÜM HABERLER</h2>
+        <h2 className="text-xl text-gray-500 pt-3 hover:underline cursor-pointer mb-2 md:mb-0">TÜM HABERLER</h2>
       </div>
 
       {/* Galeri Yapısı */}

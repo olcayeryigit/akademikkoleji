@@ -1,8 +1,24 @@
 import React from 'react';
+import Image from 'next/image';
+import ImageBanner from './image-banner/ImageBanner';
 
 const Kids = () => {
   return (
-    <div className="p-5">
+    <div className="bg-gradient-to-l from-gray-100  to-gray-50">
+        <ImageBanner 
+  src="/55.png"
+  title="Kampüsler" 
+  subTitle="Kids Kampüsü"
+  objectClass='object-top'
+  bg='bg-gradient-to-b from-[#6E2306] via-[#9E450B] to-[#B55C0C] opacity-70
+
+
+'
+/>
+<div className='container mx-auto p-8 flex'>
+<div className=''>
+
+  
       <h1 className="text-2xl font-bold mb-4">Akademik Koleji Anaokulu (Kids)</h1>
       
       <section className="mb-6">
@@ -23,9 +39,10 @@ const Kids = () => {
           <li>Çevreye duyarlı bireyler yetiştirmek.</li>
         </ul>
       </section>
-
-
-   
+</div>
+      <div className='absolute top-40 w-[1200px] h-[300px]'><Image src="/imgs/2.gif" fill className="object-contain " />
+      </div>
+      </div>
     </div>
   );
 };

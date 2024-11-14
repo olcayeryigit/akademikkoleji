@@ -24,11 +24,12 @@ const HomePage = () => {
 
   return (
     <div className="">
-      <div className="relative main "
+      <div className="relative main bg-gradient-to-l from-gray-300 to-gray-100"
    >
+    
 {/* Arka Plan Resmi */}
 <div 
-        className="absolute inset-0 bg-[url('/images/main.jpg')] bg-cover bg-top bg-no-repeat  "
+        className="absolute inset-0 bg-[url('/images/main.jpg')] bg-cover bg-top bg-no-repeat "
         // Resmin dosya yolu
       />
            <div className="absolute bottom-0 w-full ">
@@ -47,7 +48,7 @@ const HomePage = () => {
             </div> 
         
       {/* Overlay */}
-   <div className="absolute inset-0 bg-black opacity-50" /> 
+   <div className="absolute inset-0 bg-black opacity-50 " /> 
 
    { /*  <div className="absolute inset-0 bg-gradient-to-br from-black to-gray-800  opacity-80"></div>
 */}

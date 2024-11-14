@@ -34,7 +34,7 @@ const School= () => {
       <img
         src="/1.jpg" // Buraya kendi resim URL'nizi ekleyin
         alt="Eğitim"
-        className="object-cover w-full  max-h-[450px]  md:rounded-xl" // Resmin genişliği ve yüksekliği %100
+        className="object-cover w-full  h-[420px] md:max-h-[450px]  md:rounded-xl" // Resmin genişliği ve yüksekliği %100
       />
       <div className="absolute inset-0 left-0 w-full md:w-1/2 bg-[#EEE9E8] bg-opacity-90 p-10 md:p-6 flex flex-col justify-center text-white">
         <div className="flex flex-col gap-2 md:gap-4">

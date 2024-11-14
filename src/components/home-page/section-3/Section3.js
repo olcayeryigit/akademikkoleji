@@ -44,8 +44,8 @@ const Section3 = () => {
       <div className="container mx-auto text-center">
         <div className="flex justify-center gap-4">
           <div className="flex items-center gap-2 text-3xl md:text-5xl font-extrabold text-gray-800 leading-tight mb-3">
-            <div>4</div>
-            <div className="relative w-12 h-12">
+            <div className="text-3xl md:text-5xl font-extrabold text-gray-800 leading-tight mb-3 ">4</div>
+            <div className="relative w-8 h-8 mb-3 md:w-12 md:h-12 ">
               <Image
                 src="/images/home-page/section-3/x.png"
                 fill
@@ -53,7 +53,7 @@ const Section3 = () => {
                 alt="Section Image"
               />
             </div>
-            <div>4</div>
+            <div className="text-3xl md:text-5xl font-extrabold text-gray-800 leading-tight mb-3 ">4</div>
           </div>
           <h1 className="text-3xl md:text-5xl font-extrabold text-gray-800 leading-tight mb-3">
             Eğitim Modeli

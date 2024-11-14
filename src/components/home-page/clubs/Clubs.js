@@ -1,4 +1,5 @@
 "use client";
+import SectionTitle from '@/components/common/SectionTitle';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
@@ -20,9 +21,13 @@ const Clubs = () => {
     <div className="relative bg-gradient-to-r from-gray-100 to-white ">
        
       <div className='container mx-auto w-full md:w-3/4 px-6 md:px-0 py-12 '>
-        <h1 className="text-2xl md:text-4xl font-extrabold text-gray-800 leading-tight mb-3 text-center ">
-          Akademik Koleji Öğrenci Kulüpleri  
-        </h1>   
+    
+
+        <SectionTitle
+            title="Akademik Koleji Öğrenci Kulüpleri "
+            position="text-center"
+            />
+
         <h2 className='text-lg text-gray-800 max-w-2xl mx-auto mb-10 text-center'>Sosyal, Kültürel ve Akademik Gelişim İçin Kulüpler</h2>           
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
           {links.map((link, index) => (
@@ -33,12 +38,12 @@ const Clubs = () => {
             >
               <div className={`absolute inset-0 ${link.color} opacity-80`}></div>
               <div className="absolute inset-0 bg-black opacity-30"></div>
-              <img src="/bg-9.png" className="absolute w-full h-full object-cover opacity-50" alt="Your Image"/>
+              <img src="/bg-9.png" className="absolute w-full h-full object-cover  opacity-50" alt="Your Image"/>
               <div className="relative flex flex-col items-center justify-center h-full p-4 text-center ">
-                <div className="relative w-40 h-40 transition-transform duration-300 group-hover:scale-110">
+                <div className="relative w-32 h-32 md:w-40 md:h-40 transition-transform duration-300 group-hover:scale-110">
                   <Image src={link.icon} alt={link.text} fill className="object-contain" />
                 </div>
-                <h2 className="text-lg font-semibold mb-2">{link.text}</h2>
+                <h2 className="text-sm md:text-lg font-semibold mb-0 md:mb-2">{link.text}</h2>
                 {/* Sağ üst köşeye ok ikonu ekleme */}
                 <div className="absolute top-2 right-2 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                   <FaArrowRight className="text-white text-xl" />

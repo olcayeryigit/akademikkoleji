@@ -48,13 +48,17 @@ const Announcements = () => {
   }, [currentAnnouncements.length]);
 
   return (
-    <div className="px-5 lg:px-24 py-24 bg-[#F4F5F6] ">
+    <div className="relative  px-5 lg:px-24 py-24 bg-[#F4F5F6] ">
+     
+
       <div className="announcement-container container mx-auto  ">
+   
         <h2 className="text-3xl font-bold text-center text-gray-800 mb-8">Akademik Koleji Duyurular</h2>
         
-        <div className="flex flex-col grid grid-cols-1 lg:grid-cols-5 shadow-lg mx-auto rounded-lg overflow-hidden bg-white max-w-[1200px]  ">
-
-          <div className="lg:col-span-2 announcements-column flex flex-col p-6 text-gray-800 bg-[#97E981]">
+        <div className="relative bg-[url('/images/9.png')] bg-cover bg-top bg-no-repeat flex flex-col grid grid-cols-1 lg:grid-cols-5 shadow-lg mx-auto rounded-lg overflow-hidden bg-white max-w-[1200px]  ">
+    
+        <div class="absolute inset-0 bg-gradient-to-t from-red-500 to-blue-500  opacity-10 z-0"></div>
+          <div className="lg:col-span-2 announcements-column flex flex-col p-6 text-gray-800 bg-[#bdc5d4] bg-opacity-20 z-50">
             <div className="text-center mb-6 flex justify-center gap-2">
          
           
@@ -96,7 +100,7 @@ const Announcements = () => {
             </div>
           </div>
 
-          <div className="calendar-column lg:col-span-3 border-l border-gray-100 ">
+          <div className="calendar-column lg:col-span-3 border-l border-gray-100 z-50">
             <Calendar 
 
               locale="tr-TR" 
